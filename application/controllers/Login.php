@@ -18,17 +18,24 @@ class Login extends CI_Controller
 	{
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		// $json = array();
-		// $json['title']      = 'Berhasil';
-		// $json['mesg']       = '<strong>Sukses</strong>';
 
 		$cek = $this->mod->ceklogin($username, $password);
 
-		if ($cek->num_rows() == 1) {
-			foreach ($cek->result() as $data) {
-				$sess_data['username'] = $data->username;
-				$a = $this->session->set_userdata($sess_data);
+		if ($cek) {
+			$data = [
+				'user_id' => $cek->id,
+				'role_id' => $cek->role_id,
+				'username' => $cek->username
+			];
+
+			$this->session->set_userdata($data);
+
+			if ($data['role_id'] == 1) {
 				redirect('admin/home');
+			} else if ($data['role_id'] == 2) {
+				redirect('dosen/index');
+			} else if ($data['role_id'] == 3) {
+				redirect('mahasiswa/index');
 			}
 		} else {
 			$this->session->set_flashdata('notif', 'Maaf, Kombinasi Username dan Password salah.');

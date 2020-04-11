@@ -30,4 +30,9 @@
 - [x] Tambahan Function Detail Data Dosen
 - [ ] Query untuk Get Data Dosen by ID
 - [ ] Pisahkan role Berita Berdasarkan Mahasiswa atau Dosen
-- [ ] Tambahkan table agenda event
+- [x] Tambahkan table agenda event
+
+----
+sisfo:password
+dosen1:123456
+mahasiswa1:123456

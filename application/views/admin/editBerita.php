@@ -47,9 +47,7 @@
                                             <label>Isi</label>
                                             <textarea id="elm1" class="form-control" rows="3" name="isi"><?php echo $berita->isi; ?></textarea>
                                         </div>
-										
-												
-										
+																				
                                         <button type="submit" class="btn btn-info">Submit Button</button>
                                         <button type="reset" class="btn btn-warning">Reset Button</button>
                                     </form>

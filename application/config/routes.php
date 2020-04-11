@@ -52,3 +52,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'sisfo';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['admin/agenda'] = 'Event/list';
+$route['admin/agenda/create'] = 'Event/create';
+$route['admin/agenda/edit/(:any)'] = 'Event/edit/$1';

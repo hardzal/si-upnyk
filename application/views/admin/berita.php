@@ -28,8 +28,7 @@
 									<a href="<?php echo base_url ('index.php/admin/addberita') ?>"><button type="button" class="btn btn-primary btn-sm">Tambah Berita</button></a>
 									<br>
 									<br>
-                                    <div class="panel panel-default">
-									
+                                    <div class="panel panel-default">									
 										<!-- /.panel-heading -->
 										<div class="panel-body">
 											<div class="dataTable_wrapper">

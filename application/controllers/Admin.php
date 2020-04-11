@@ -41,7 +41,6 @@ class Admin extends CI_Controller
 
 	public function updateprofil()
 	{
-
 		$data['id'] 		= $this->input->post('id');
 		$data['visi'] 		= $this->input->post('visi');
 		$data['misi'] 		= $this->input->post('misi');
@@ -69,7 +68,6 @@ class Admin extends CI_Controller
 
 	public function updateStruktur()
 	{
-
 		$data = array(
 			'id' 	=> $this->input->post('id')
 		);

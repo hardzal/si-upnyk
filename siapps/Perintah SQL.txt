@@ -1,0 +1,3 @@
+SELECT kode,shipper,kirim_kor2 FROM `terima_str_closing` WHERE (kode>='P01' AND kode<='P07' OR kode='P09' OR kode>='P11' AND kode<='P14' OR kode='P16' OR kode='P17' OR kode='P20' OR kode='P24') AND tanggal='2018-02-07' 
+
+UPDATE `terima_str_closing` SET kirim_kor2=Volume1, terima_akt2=Volume1, kirim_km3=Volume1 WHERE kode='P16'

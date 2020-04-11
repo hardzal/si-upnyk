@@ -1,0 +1,173 @@
+/*
+Atur gambar atas navbar
+*/
+.logo-header{
+	width: 80vw;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+/*
+Atur tombol keatas
+*/
+#backToTop {
+	display: none; /* Hidden by default */
+	position: fixed; /* Fixed/sticky position */
+	bottom: 20px; /* Place the button at the bottom of the page */
+	right: 30px; /* Place the button 30px from the right */
+	z-index: 99; /* Make sure it does not overlap */
+	border: none; /* Remove borders */
+	outline: none; /* Remove outline */
+	background-color: grey; /* Set a background color */
+	color: white; /* Text color */
+	cursor: pointer; /* Add a mouse pointer on hover */
+	padding: 10px; /* Some padding */
+	border-radius: 5px; /* Rounded corners */
+	font-size: 18px; /* Increase font size */
+}
+
+#backToTop:hover {
+	background-color: #555; /* Add a dark-grey background on hover */
+}
+/*
+Atur container keseluruhan
+*/
+.badan {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	min-height: 100vh;
+
+}
+/*
+Atur container home
+*/
+.badan-home {
+	padding-bottom: 25px;
+	min-height: 100vh;
+}
+/*
+Atur peta
+*/
+.map-container-2{
+	overflow:hidden;
+	padding-bottom:56.25%;
+	position:relative;
+	height:0;
+}
+.map-container-2 iframe{
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	position:absolute;
+}
+
+/*
+Atur Carousel HP
+Removes white gap between slides - chagnge to base color of slide images
+*/
+.carousel {
+	background:#fafafa;
+}
+
+.row1 {
+	margin-top: 15px;
+}
+
+/*
+Forces image to be 100% width and not max width of 100%
+*/
+.carousel-item .img-fluid {
+	width:100%;
+	height: 30vh;
+	object-fit: cover;
+}
+
+/* 
+anchors are inline so you need ot make them block to go full width
+*/
+.carousel-item a {
+	display: block;
+	width:100%;
+}
+
+/* 
+atur table
+*/
+.tabel .foto {
+	padding-right: 13px;
+}
+/* 
+atur foto buat hp
+*/
+.foto-dosen {
+	height: 80px;
+	width: 60px;
+	object-fit: cover;
+	image-orientation: from-image;
+}
+.foto {
+	display: block;
+}
+.img-terkini {
+    height:25vh;
+    object-fit: cover;
+}
+
+a {
+	color: #2e2e2e;
+}
+
+#readMore {
+	color: blue;
+}
+
+#hrBeritalain {
+	width: 50%;
+	margin-left: 0;
+}
+
+/*
+Atur ukuran layar medium
+*/
+@media only screen and (min-width: 768px) {
+	/* For desktop: */
+	.logo-header{
+		width: 40vw;
+		margin-left: 5vw;
+	}
+
+	.navi {
+		margin-left: 5vw;
+	}
+
+	.row1 {
+		margin-top: 15px;
+	}
+
+	.carousel-item .img-fluid {
+		width:100%;
+		height: 65vh;
+		object-fit: cover;
+	}
+
+	.foto-berita {
+		width: 100%;
+		height: 60vh;
+		object-fit: cover;
+	}
+
+	.foto-dosen {
+		height: 160px;
+		width: 110px;
+		object-fit: cover;
+		image-orientation: from-image;
+	}
+	
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  
+}

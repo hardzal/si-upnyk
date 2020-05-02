@@ -6,7 +6,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Administrator</title>
+	<title>Administrator | <?php echo show_role($_SESSION['role_id']);?></title>
 
 	<!-- Bootstrap Core CSS -->
 	<link href="<?php echo base_url('assets/admin/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">

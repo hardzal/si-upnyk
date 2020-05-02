@@ -84,7 +84,14 @@ class Event extends CI_Controller
 		}
 	}
 
-	public function delete()
+	public function delete($id)
 	{
+		if ($this->event->delete($id)) {
+			$this->session->set_flashdata("message", '<div class="alert alert-success">Berhasil menghapus data agenda</div>');
+		} else {
+			$this->session->set_flashdata("message", '<div class="alert alert-danger">Gagal menghapus data agenda</div>');
+		}
+
+		redirect('admin/agenda');
 	}
 }

@@ -12,7 +12,8 @@ class Dosen extends CI_Controller
 			exit();
 		}
 		$this->load->model('mdata');
-		if($this->session->userdata('role_id') != 2) {
+
+		if ($this->session->userdata('role_id') != 2) {
 			redirect(base_url());
 		}
 	}
@@ -24,7 +25,8 @@ class Dosen extends CI_Controller
 
 	public function Berita()
 	{
-		$data['berita'] = $this->mdata->all_berita()->result();
+		// $data['berita'] = $this->mdata->all_berita()->result();
+		$data['berita'] = $this->mdata->beritaByRole($this->session->userdata('role_id'));
 		$this->load->view('dosen/berita', $data);
 	}
 
@@ -33,11 +35,85 @@ class Dosen extends CI_Controller
 		$this->load->view('dosen/addBerita');
 	}
 
+	public function insertBerita()
+	{
+		$data = array(
+			'judul' 			=> $this->input->post('judul'),
+			'user_id' 		=> $this->session->userdata('user_id'),
+			'tgl' 			=> $this->input->post('tgl'),
+			'isi' 				=> $this->input->post('isi'),
+			'file' 				=> $this->input->post('file')
+		);
+
+		$config['upload_path']          = './assets/images/berita';
+		$config['max_size']             = 10000;
+		$config['allowed_types'] 		= 'jpg|png|jpeg|JPG|PNG';
+
+		$this->load->library('upload', $config);
+		$this->upload->initialize($config);
+
+		$status = $this->upload->do_upload('file');
+
+		if ($data) {
+			$upload_data = $this->upload->data();
+			$name = $upload_data['file_name'];
+			$data['file'] = 'berita/' . $name;
+			$this->mdata->insertberita($data);
+			$this->session->set_flashdata('notif', 'Berhasil disimpan');
+		}
+
+
+		redirect(site_url('dosen/berita'));
+	}
+
 	public function ubahberita($id)
 	{
 		$data['berita'] = $this->mdata->idberita($id)->row();
 		$this->load->view('dosen/editBerita', $data);
 	}
+
+	public function updateberita()
+	{
+		$data = array(
+			'id' 			=> $this->input->post('id'),
+			'judul' 		=> $this->input->post('judul'),
+			'tgl' 			=> $this->input->post('tgl'),
+			'isi' 			=> $this->input->post('isi')
+		);
+
+		if ($_FILES['file']['tmp_name'] != '') {
+
+			$config['upload_path']          = './assets/images/berita/';
+			$config['max_size']             = 10000;
+			$config['allowed_types'] 		= 'jpg|png|jpeg|JPG|PNG';
+
+			$this->load->library('upload');
+			$this->upload->initialize($config);
+
+			$id = $this->input->post('id');
+
+			$data['file'] = $this->mdata->idberita($id)->row();
+			$a = $data['file']->file;
+
+
+			if (file_exists('./assets/images/' . $a)) {
+				unlink('./assets/images/' . $a);
+			}
+
+			$status = $this->upload->do_upload('file');
+
+			if ($status) {
+				$upload_data = $this->upload->data();
+				$data['file'] = 'berita/' . $upload_data['file_name'];
+			}
+		}
+
+		$id = $this->input->post('id');
+		$this->mdata->update_berita($id, $data);
+		$this->session->set_flashdata('notif', '<div class="alert alert-success">Berhasil disimpan</div>');
+		redirect(site_url('dosen/berita'));
+	}
+
 	public function beritaDosen($id)
 	{
 		$data['berita'] = $this->mdata->idberita($id)->row();

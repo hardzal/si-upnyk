@@ -504,4 +504,16 @@ class Mdata extends CI_Model
 		$this->db->order_by('id', 'desc');
 		return $this->db->get();
 	}
+
+	public function beritaByRole($role_id)
+	{
+		return $this->db
+			->select('berita.*')
+			->from('berita')
+			->join('admin', 'admin.id = berita.user_id')
+			->where('admin.role_id', $role_id)
+			->order_by('tgl', 'DESC')
+			->get()
+			->result_object();
+	}
 }

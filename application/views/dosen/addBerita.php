@@ -25,7 +25,7 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-8">
-									<form role="form" method="POST" action="<?php echo base_url('index.php/admin/insertBerita') ?>" enctype="multipart/form-data">
+									<form role="form" method="POST" action="<?php echo base_url('index.php/dosen/insertBerita') ?>" enctype="multipart/form-data">
 
 										<div class="form-group">
 											<label>Judul Berita</label>

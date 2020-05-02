@@ -11,6 +11,10 @@ class Login extends CI_Controller
 
 	public function index()
 	{
+		if ($this->session->userdata('user_id')) {
+			redirect('Admin');
+		}
+
 		$this->load->view('login');
 	}
 
@@ -38,7 +42,7 @@ class Login extends CI_Controller
 				redirect('mahasiswa/index');
 			}
 		} else {
-			$this->session->set_flashdata('notif', 'Maaf, Kombinasi Username dan Password salah.');
+			$this->session->set_flashdata('notif', '<div class="alert alert-danger">Maaf, Kombinasi Username dan Password salah.</div>');
 			redirect('login');
 		}
 	}

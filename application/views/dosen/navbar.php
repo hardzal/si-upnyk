@@ -6,7 +6,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="index.html">Administrator|Dosen</a>
+		<a class="navbar-brand" href="<?php echo base_url('dosen'); ?>">Administrator|Dosen</a>
 	</div>
 	<!-- /.navbar-header -->
 
@@ -45,7 +45,7 @@
 				<!-- <li>
 					<a href="<?php echo base_url('dosen/agenda'); ?>"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> Agenda</a>
 				</li> -->
-				
+
 
 				<!-- <li class="active">
                             <a href="#"><i class="fa fa-bullhorn fa-fw"></i> Informasi<span class="fa arrow"></span></a>

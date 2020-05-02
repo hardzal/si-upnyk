@@ -39,12 +39,12 @@
 			<div class="col-md-4 col-md-offset-4">
 
 				<div class="login-panel panel panel-default">
-					<?php echo $this->session->flashdata('notif'); ?>
 					<div class="panel-heading" style="background-color: #34388b;">
 						<h3 class="panel-title"><b>
 								<font color="white">Admin Sistem Informasi</font>
 							</b></h3>
 					</div>
+					<?php echo $this->session->flashdata('notif'); ?>
 					<div class="panel-body">
 						<form role="form" action="<?php echo base_url('index.php/Login/proseslogin') ?>" method="POST">
 							<fieldset>

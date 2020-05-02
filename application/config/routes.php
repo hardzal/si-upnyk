@@ -56,3 +56,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['admin/agenda'] = 'Event/list';
 $route['admin/agenda/create'] = 'Event/create';
 $route['admin/agenda/edit/(:any)'] = 'Event/edit/$1';
+$route['admin/agenda/delete/(:any)'] = 'Event/delete/$1';

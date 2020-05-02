@@ -12,6 +12,17 @@ class Admin extends CI_Controller
 			redirect('login/logout');
 			exit();
 		}
+
+		if ($this->session->userdata('role_id') != 1) {
+			if ($this->session->userdata('role_id') == 2) {
+				redirect('Dosen');
+			} else if ($this->session->userdata('role_id') == 3) {
+				redirect('Mahasiswa');
+			} else {
+				redirect(base_url());
+			}
+		}
+
 		$this->load->model('mdata');
 	}
 
@@ -682,8 +693,8 @@ class Admin extends CI_Controller
 	public function insertberita()
 	{
 		$data = array(
-
 			'judul' 			=> $this->input->post('judul'),
+			'user_id' 		=> $this->session->userdata('user_id'),
 			'tgl' 			=> $this->input->post('tgl'),
 			'isi' 				=> $this->input->post('isi'),
 			'file' 				=> $this->input->post('file')
@@ -718,7 +729,6 @@ class Admin extends CI_Controller
 
 	public function updateberita()
 	{
-
 		$data = array(
 			'id' 			=> $this->input->post('id'),
 			'judul' 		=> $this->input->post('judul'),
@@ -755,7 +765,7 @@ class Admin extends CI_Controller
 
 		$id = $this->input->post('id');
 		$this->mdata->update_berita($id, $data);
-		$this->session->set_flashdata('notif', 'Berhasil disimpan');
+		$this->session->set_flashdata('notif', '<div class="alert alert-success">Berhasil disimpan</div>');
 		redirect(site_url('admin/berita'));
 	}
 

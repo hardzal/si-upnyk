@@ -105,8 +105,6 @@ class Admin extends CI_Controller
 		redirect(site_url('Admin/struktur'));
 	}
 
-
-
 	//DOSEN
 	public function Dosen()
 	{

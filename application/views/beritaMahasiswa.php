@@ -47,29 +47,27 @@
             <!-- <div class="row justify-content-center mb-5 pb-2">
               <div class="col-md-8 text-center heading-section ftco-animate">
                 <h2 class=""><span>Berita</span> Terbaru</h2>
-                <hr> -->
-                <!-- <p>Daftar berita terbaru</p> -->
-              <!-- </div>
+                <hr>
+                <p>Daftar berita terbaru</p>
+              </div>
             </div> -->
             <div class="row">
-              <!-- <?php 
-                $count = 0;
-                foreach ($berita as $key => $value) {
-                  if ($count < 3) {
-                  $waktu = strtotime($value->tgl);
-              ?> -->
+              <?php 
+                foreach ($berita as $data) {
+                  $waktu = strtotime($data->tgl);
+              ?>
                   <div class="col-md-6 col-lg-4 ftco-animate">
                     <div class="blog-entry">
                       <a href="blog-single.html" class="block-16 d-flex align-items-end">
                         <img class="img-terkini w-100" src="<?php echo base_url('assets/images/'.$value->file)?>" style="height: 250px;" alt="<?php echo $value->file ?>">
                         <div class="meta-date text-center p-2" style="position: absolute;">
-                          <span class="day"><!-- <?=date("d",$waktu);?> --></span>
-                          <span class="mos"><!-- <?=date("F",$waktu);?> --></span>
-                          <span class="yr"><!-- <?=date("Y",$waktu);?> --></span>
+                          <span class="day"><?=date("d",$waktu);?></span>
+                          <span class="mos"><?=date("F",$waktu);?></span>
+                          <span class="yr"><?=date("Y",$waktu);?></span>
                         </div>
                       </a>
                       <div class="text bg-white p-4">
-                        <h3 class="heading"><a href="<?php echo base_url('index.php/sisfo/detailberita/'.$value->id)?>"><!-- <?php echo $value->judul; ?> --></a></h3>
+                        <h3 class="heading"><a href="<?php echo base_url('index.php/sisfo/detailberita/'.$value->id)?>"><?php echo $data->judul; ?></a></h3>
                         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                         <div class="d-flex justify-content-end mt-4">
                           <p class="mb-0"><a href="#" class="btn btn-sm btn-outline-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
@@ -77,11 +75,11 @@
                       </div>
                     </div>
                   </div>
-                  <!-- <?php 
-                      }
-                      $count++;
+                  <?php 
+                      
+                      // $count++;
                     }
-                  ?> -->
+                  ?>
                 </div>
           </div>
         </section>

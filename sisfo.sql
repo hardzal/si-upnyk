@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Apr 11, 2020 at 01:51 PM
+-- Generation Time: May 06, 2020 at 01:52 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.5
 
@@ -43,8 +43,8 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 INSERT INTO `admin` (`id`, `username`, `password`, `role_id`) VALUES
 (1, 'sisfo', '$2y$10$YsJo7i93gc9x.eIoVQI.4OnZQT3buAN8V/MNsHlgNEXDLJw8nlCcq', 1),
-(2, 'dosen1', '$2y$10$zyqOb3dL4RvQaivn1haTH.//Z9xajEJO6Uwt5Sdxj10Iogl0pa8Zi', 2),
-(3, 'mahasiswa1', '$2y$10$C5Rs7HwkRStUKy/QlsV5N.tkrfDH6lSu1PrWis/X8HxxWCMVym2Wq', 3);
+(2, 'dosen1', '$2y$10$/OR2f6yKmuedtiJnVCl7VOmjC/8pjPNpB5FEYxCndnxYpAWWepwvq', 2),
+(3, 'mahasiswa1', '$2y$10$/OR2f6yKmuedtiJnVCl7VOmjC/8pjPNpB5FEYxCndnxYpAWWepwvq', 3);
 
 -- --------------------------------------------------------
 
@@ -61,18 +61,20 @@ CREATE TABLE IF NOT EXISTS `berita` (
   `isi` text NOT NULL,
   `file` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=143 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=147 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `berita`
 --
 
 INSERT INTO `berita` (`id`, `user_id`, `judul`, `tgl`, `isi`, `file`) VALUES
-(141, 1, 'Lorem Ipsum Lorem Lorem Ipsuuum', '2018-08-28', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>a</p>\r\n</body>\r\n</html>', 'berita/sanji__one_piece__minimalist_wallpaper_by_greenmapple17-daczm4t.png'),
 (142, 1, 'Lorem Ipsum Lorem Ipsum Ipsum', '2018-08-23', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper ex quis odio vestibulum viverra vulputate quis justo. Aliquam aliquet, justo eget viverra aliquet, massa dui bibendum enim, vitae porttitor tellus ex quis nibh. Sed a aliquam felis, id molestie tellus. Fusce accumsan nisi enim, ut placerat nulla pharetra quis. Suspendisse rutrum sodales ipsum vitae tincidunt. Mauris tincidunt porta justo, quis pharetra libero. Etiam nec tincidunt tortor.</p>\r\n</body>\r\n</html>', 'berita/839874-superman-logo-wallpapers-3840x2160-4k.jpg'),
 (137, 1, 'Lorem Ipsum Dolor Sit Amet', '2018-08-16', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper ex quis odio vestibulum viverra vulputate quis justo. Aliquam aliquet, justo eget viverra aliquet, massa dui bibendum enim, vitae porttitor tellus ex quis nibh. Sed a aliquam felis, id molestie tellus. Fusce accumsan nisi enim, ut placerat nulla pharetra quis. Suspendisse rutrum sodales ipsum vitae tincidunt. Mauris tincidunt porta justo, quis pharetra libero. Etiam nec tincidunt tortor.</p>\r\n</body>\r\n</html>', 'berita/artificial-intelligence-3382509_960_720.png'),
 (138, 1, 'Lorem Ipsum', '2018-08-26', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper ex quis odio vestibulum viverra vulputate quis justo. Aliquam aliquet, justo eget viverra aliquet, massa dui bibendum enim, vitae porttitor tellus ex quis nibh. Sed a aliquam felis, id molestie tellus. Fusce accumsan nisi enim, ut placerat nulla pharetra quis. Suspendisse rutrum sodales ipsum vitae tincidunt. Mauris tincidunt porta justo, quis pharetra libero. Etiam nec tincidunt tortor.</p>\r\n</body>\r\n</html>', 'berita/download.jpg'),
-(140, 1, 'Lorem Ipsum Lorem Lorem', '2018-08-28', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper ex quis odio vestibulum viverra vulputate quis justo. Aliquam aliquet, justo eget viverra aliquet, massa dui bibendum enim, vitae porttitor tellus ex quis nibh. Sed a aliquam felis, id molestie tellus. Fusce accumsan nisi enim, ut placerat nulla pharetra quis. Suspendisse rutrum sodales ipsum vitae tincidunt. Mauris tincidunt porta justo, quis pharetra libero. Etiam nec tincidunt tortor.</p>\r\n</body>\r\n</html>', 'berita/sxRURqa.jpg');
+(144, 2, 'Bberita terbaru dari seorang dosen', '2020-05-19', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>hiya docker terstruktur lagi dan lagi mencoba seesuatu yang tidak ada habis nya</p>\r\n</body>\r\n</html>', 'berita/docker-arsitektur1.png'),
+(145, 3, 'berita contoh', '2020-05-30', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>dari sana menuju kesini saya tidak tah tujuan saya kemana kapanpun menjadi yang terhebat</p>\r\n</body>\r\n</html>', 'berita/penginapan-mahal.jpg'),
+(146, 3, 'berita mahasiswa kedua', '2020-05-22', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>Berita terbaru saat ini sedang corona virus</p>\r\n</body>\r\n</html>', 'berita/ini-tahapan-pemilihan-calon-presiden-dan-wakil-presiden-2014.png'),
+(143, 2, 'Judul berita baru', '2020-05-21', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>berita baru disini</p>\r\n</body>\r\n</html>', 'berita/Capture.PNG');
 
 -- --------------------------------------------------------
 
@@ -141,14 +143,14 @@ CREATE TABLE IF NOT EXISTS `events` (
   `status` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `events`
 --
 
 INSERT INTO `events` (`id`, `user_id`, `title`, `description`, `location`, `time_start`, `time_end`, `status`, `created_at`) VALUES
-(1, 1, 'Agenda diperbaharui!!', 'value=\"value=\"value=\"&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>tidak tahu aku</p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;\"\"\"', 'Aishh', '2020-04-13 03:30:00', '2020-04-15 06:30:00', 0, NULL);
+(2, 1, 'Agenda terbaru', '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>siapa sih kamu ini</p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', 'Sistem Informasi', '2020-05-13 09:00:00', '2020-05-16 07:30:00', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -282,7 +284,7 @@ CREATE TABLE IF NOT EXISTS `slide` (
 
 INSERT INTO `slide` (`id`, `file`, `link`) VALUES
 (29, 'slide/mobile_app1.jpg', '#'),
-(30, 'slide/2.jpg', '#'),
+(30, 'slide/sample.png', '#'),
 (27, 'slide/760210_7215_2.jpg', '#'),
 (25, 'slide/slider1.jpg', 'ss'),
 (24, 'slide/desert.jpg', 'rekrut.id.i'),

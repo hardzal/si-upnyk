@@ -44,7 +44,8 @@ class Dosen extends CI_Controller
 			'isi' 				=> $this->input->post('isi'),
 			'file' 				=> $this->input->post('file')
 		);
-
+		var_dump($data);
+		die();
 		$config['upload_path']          = './assets/images/berita';
 		$config['max_size']             = 10000;
 		$config['allowed_types'] 		= 'jpg|png|jpeg|JPG|PNG';

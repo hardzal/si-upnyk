@@ -333,7 +333,8 @@ class Sisfo extends CI_Controller
     }
 
     public function beritaDosen(){
-        $this->load->view('beritaDosen');
+        $data['berita'] = $this->mdata->beritabyRole(2);
+        $this->load->view('beritaDosen',$data);
     }
 
     public function beritaMahasiswa(){

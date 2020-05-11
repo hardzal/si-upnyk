@@ -54,8 +54,16 @@
 											<input class="form-control" type="text" name="location" id="location" required />
 										</div>
 										<div class="form-group">
+											<label for="image">Cover</label>
+											<input type="file" name="image" class="form-control" id="image" />
+										</div>
+										<div class="form-group">
 											<label for="description" class="col-form-label">Isi Berita</label>
 											<textarea id="elm1" class="form-control" rows="3" name="description"></textarea>
+										</div>
+										<div class="form-group">
+											<label for="file" class="col-form-label">File</label>
+											<input type="file" name="file" class="form-control" id="file" />
 										</div>
 										<div class="form-group">
 											<label class="col-form-label" for="status">Status</label>

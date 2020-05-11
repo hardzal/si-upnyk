@@ -41,15 +41,17 @@
 									<tbody>
 										<?php $no = 1;
 										foreach ($events as $event) : ?>
-											<td width="10px" class="text-center"><?php echo $no++; ?>
-											<td><?php echo $event->title; ?></td>
-											<td><?php echo date('H:i d-F-Y', strtotime($event->time_start)) . " s/d " . date('H:i d-F-Y', strtotime($event->time_end)); ?></td>
-											<td><?php echo $event->location; ?></td>
-											<td><?php echo is_publish($event->status); ?></td>
-											<td>
-												<a href="<?php echo base_url('admin/agenda/edit/') . $event->id; ?>" class="btn btn-xs btn-primary mr-3">Edit</a>
-												<a href="<?php echo base_url('admin/agenda/delete/') . $event->id; ?>" class="btn btn-xs btn-danger" onclick="return confirm('apakah kamu yakin ingin menghapusnya?')">Hapus</a>
-											</td>
+											<tr>
+												<td width="10px" class="text-center"><?php echo $no++; ?>
+												<td><?php echo $event->title; ?></td>
+												<td><?php echo date('H:i d-F-Y', strtotime($event->time_start)) . " s/d " . date('H:i d-F-Y', strtotime($event->time_end)); ?></td>
+												<td><?php echo $event->location; ?></td>
+												<td><?php echo is_publish($event->status); ?></td>
+												<td>
+													<a href="<?php echo base_url('admin/agenda/edit/') . $event->id; ?>" class="btn btn-xs btn-primary mr-3">Edit</a>
+													<a href="<?php echo base_url('admin/agenda/delete/') . $event->id; ?>" class="btn btn-xs btn-danger" onclick="return confirm('apakah kamu yakin ingin menghapusnya?')">Hapus</a>
+												</td>
+											</tr>
 										<?php endforeach; ?>
 									</tbody>
 								</table>

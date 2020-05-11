@@ -786,6 +786,7 @@ class Admin extends CI_Controller
 		$data['berita'] = $this->mdata->idberita($id)->row();
 		$this->load->view('admin/beritaadmin', $data);
 	}
+	
 	/*		
 	//Info Jurusan
 	public function infoJurusan()

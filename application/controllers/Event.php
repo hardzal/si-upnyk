@@ -35,8 +35,38 @@ class Event extends CI_Controller
 				'location' => $this->input->post('location', true),
 				'time_start' => $this->input->post('tgl_start', true) . " " . $this->input->post('time_start', true),
 				'time_end' => $this->input->post('tgl_end', true) . " " . $this->input->post('time_end', true),
-				'status' => $this->input->post('status', true)
+				'status' => $this->input->post('status', true),
 			];
+
+			if ($_FILES['image']['tmp_name']) {
+				$config['file_name'] = changeFileName($_FILES['image']);
+				$config['allowed_types'] = "gif|jpg|png|jfif|bmp";
+				$config['max_size'] = 2048;
+				$config['upload_path'] = "./assets/images/agenda/";
+
+				if (!uploadFile($config, 'image')) {
+					$error = $this->upload->display_errors();
+					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal mengupload gambar!<br>' . $error . '</div>');
+					redirect('admin/agenda');
+				}
+
+				$data['cover'] = $config['upload_path'] . $config['file_name'];
+			}
+
+			if ($_FILES['file']['tmp_name']) {
+				$config['file_name'] = changeFileName($_FILES['file']);
+				$config['allowed_types'] = "doc|docx|pdf";
+				$config['max_size'] = 2048;
+				$config['upload_path'] = "./assets/file/agenda/";
+
+				if (!uploadFile($config, 'file')) {
+					$error = $this->upload->display_errors();
+					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal mengupload file!<br>' . $error . '</div>');
+					redirect('admin/agenda');
+				}
+
+				$data['file'] = $config['upload_path'] . $config['file_name'];
+			}
 
 			if ($this->event->insert($data)) {
 				$this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil menambahkan data</div>');
@@ -71,8 +101,49 @@ class Event extends CI_Controller
 				'location' => $this->input->post('location', true),
 				'time_start' => $this->input->post('tgl_start', true) . " " . $this->input->post('time_start', true),
 				'time_end' => $this->input->post('tgl_end', true) . " " . $this->input->post('time_end', true),
-				'status' => $this->input->post('status', true)
+				'status' => $this->input->post('status', true),
+				'updated_at' => date('d-m-Y H:i:s', time())
 			];
+
+			if ($_FILES['image']['tmp_name']) {
+				$config['file_name'] = changeFileName($_FILES['image']);
+				$config['allowed_types'] = "gif|jpg|png|jfif|bmp";
+				$config['max_size'] = 2048;
+				$config['upload_path'] = "./assets/images/agenda/";
+
+				if (!deleteFile(FCPATH . $config['upload_path'] . $data['event']->cover)) {
+					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus gambar sebelumnya!</div>');
+					redirect('admin/agenda');
+				}
+
+				if (!uploadFile($config, 'image')) {
+					$error = $this->upload->display_errors();
+					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal mengupload gambar!<br>' . $error . '</div>');
+					redirect('admin/agenda');
+				}
+
+				$data['cover'] = $config['upload_path'] . $config['file_name'];
+			}
+
+			if ($_FILES['file']['tmp_name']) {
+				$config['file_name'] = changeFileName($_FILES['file']);
+				$config['allowed_types'] = "pdf|doc|docx";
+				$config['max_size'] = 2048;
+				$config['upload_path'] = "./assets/file/agenda/";
+
+				if (!deleteFile(FCPATH . $config['upload_path'] . $data['event']->file)) {
+					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus file sebelumnya!</div>');
+					redirect('admin/agenda');
+				}
+
+				if (!uploadFile($config, 'file')) {
+					$error = $this->upload->display_errors();
+					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal mengupload file!<br>' . $error . '</div>');
+					redirect('admin/agenda');
+				}
+
+				$data['file'] = $config['upload_path'] . $config['file_name'];
+			}
 
 			if ($this->event->update($data, $id)) {
 				$this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil memperbaharui data</div>');

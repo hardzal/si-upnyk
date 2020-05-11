@@ -54,8 +54,23 @@
 											<input class="form-control" type="text" value="<?php echo $event->location; ?>" name="location" id="location" required />
 										</div>
 										<div class="form-group">
+											<div class="row">
+												<label for="image" class="col-form-label col-md-12">Cover</label>
+												<?php if ($event->cover) : ?>
+													<div class="col-md-12 my-5">
+														<img src="<?php echo base_url($event->cover); ?>" width="300px" class="img-thumbnail" />
+													</div>
+												<?php endif; ?>
+											</div>
+											<input type="file" name="image" id="image" />
+										</div>
+										<div class=" form-group">
 											<label for="description" class="col-form-label">Isi Berita</label>
 											<textarea id="elm1" class="form-control" rows="3" name="description">value="<?php echo $event->description; ?>"</textarea>
+										</div>
+										<div class="form-group">
+											<label for="file" class="col-form-label">File</label>
+											<input type="file" name="file" class="form-control" id="file" />
 										</div>
 										<div class="form-group">
 											<label class="col-form-label" for="status">Status</label>

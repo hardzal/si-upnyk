@@ -20,3 +20,32 @@ function show_role($role_id)
 		->row_object()
 		->role);
 }
+
+function uploadFile($config, $key)
+{
+	$ci = &get_instance();
+
+	$ci->load->library('upload', $config);
+	$ci->upload->initialize($config);
+
+	return $ci->upload->do_upload($key, $config);
+}
+
+function changeFileName($file)
+{
+	$file_name = explode('.', $file['name']);
+	$image_name = strtolower($file_name[0] . "-" . time() . "." . $file_name[1]);
+
+	return $image_name;
+}
+
+function deleteFile($file)
+{
+	if (file_exists(FCPATH . $file)) {
+		if (!unlink($file)) {
+			return false;
+		}
+	}
+
+	return true;
+}

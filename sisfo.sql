@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: May 06, 2020 at 01:52 PM
+-- Generation Time: May 11, 2020 at 03:21 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.5
 
@@ -141,16 +141,21 @@ CREATE TABLE IF NOT EXISTS `events` (
   `time_start` timestamp NULL DEFAULT NULL,
   `time_end` timestamp NOT NULL,
   `status` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
+  `cover` text NOT NULL,
+  `file` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `user_id`, `title`, `description`, `location`, `time_start`, `time_end`, `status`, `created_at`) VALUES
-(2, 1, 'Agenda terbaru', '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>siapa sih kamu ini</p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', 'Sistem Informasi', '2020-05-13 09:00:00', '2020-05-16 07:30:00', 0, NULL);
+INSERT INTO `events` (`id`, `user_id`, `title`, `description`, `location`, `time_start`, `time_end`, `status`, `cover`, `file`, `created_at`, `updated_at`) VALUES
+(2, 1, 'Agenda terbaru', '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>siapa sih kamu ini</p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', 'Sistem Informasi', '2020-05-13 09:00:00', '2020-05-16 07:30:00', 0, '', '', NULL, NULL),
+(3, 1, 'Seminar Melawan Corona-2020', 'value=\"value=\"&lt;!DOCTYPE html&gt;\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n&lt;p&gt;kokokookokko&lt;/p&gt;\r\n&lt;/body&gt;\r\n&lt;/html&gt;\"\"', 'R. Seminar, Jurusan  Teknik Informatika', '2020-05-13 03:00:00', '2020-05-12 17:00:00', 1, './assets/images/agenda/growth-mindset-1589209108.png', './assets/file/agenda/sample-2-1589209586.docx', '2020-05-11 14:36:04', '0000-00-00 00:00:00'),
+(4, 1, 'Seminar Akselerasi Melawan sesuatu', 'value=\"&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>hello, world kapan kita bisa begini lagi</p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;\"', 'Sistem Informasi', '2020-05-20 03:30:00', '2020-05-20 06:00:00', 0, './assets/images/agenda/penginapan-mahal-1589210156.jpg', './assets/file/agenda/bab 1-1589210156.pdf', '2020-05-11 15:15:56', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -284,10 +289,10 @@ CREATE TABLE IF NOT EXISTS `slide` (
 
 INSERT INTO `slide` (`id`, `file`, `link`) VALUES
 (29, 'slide/mobile_app1.jpg', '#'),
-(30, 'slide/sample.png', '#'),
-(27, 'slide/760210_7215_2.jpg', '#'),
+(30, 'slide/sample.png', 'https://www.faceboook.com'),
+(27, 'slide/760210_7215_2.jpg', 'https://cdns.klimg.com/merdeka.com/i/w/news/2015/10/19/647451/670x335/dari-sini-kamu-bisa-lihat-pano'),
 (25, 'slide/slider1.jpg', 'ss'),
-(24, 'slide/desert.jpg', 'rekrut.id.i'),
+(24, 'slide/ini-tahapan-pemilihan-calon-presiden-dan-wakil-presiden-2014.png', 'rekrut.id.i'),
 (26, 'slide/web_app1.jpg', 'll');
 
 -- --------------------------------------------------------

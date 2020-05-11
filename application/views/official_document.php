@@ -14,8 +14,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-            <h1 class="mb-2 bread">Sambutan Koordinator</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Profil <i class="ion-ios-arrow-forward"></i></a></span> <span>Sambutan <i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-2 bread">Official Documents</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Profil <i class="ion-ios-arrow-forward"></i></a></span> <span>Documents <i class="ion-ios-arrow-forward"></i></span></p>
           </div>
         </div>
       </div>
@@ -28,11 +28,11 @@
 
     <div class="row" id="topSection">
       <div class="col-md-8">
-        <h3 class=" mb-3 text-center text-uppercase ftco-animate">Sambutan</h3>
+        <h3 class=" mb-3 text-center text-uppercase ftco-animate">Documents</h3>
         <hr>
         <!-- Row Berita -->
         <div class="row">
-         <div class="profil mb-3 ftco-animate">
+         <!-- <div class="profil mb-3 ftco-animate">
            <h4 class="text-uppercase ">Koordinator Program Studi <br> Sistem Informasi</h4>
            <small>
              <p>Menjadi Program Studi Sistem Informasi yang profesional dan berintegritas berlandaskan jiwa bela negara dengan keunggulan di bidang Sistem Informasi Kebumian di Tingkat Nasional pada tahun 2027</p>
@@ -59,7 +59,7 @@
              4. Menjalin kerjasama dengan lembaga pemerintah maupun swasta dalam rangka meningkatkan mutu pendidikan sistem informasi
            </p>
          </small>
-       </div>
+       </div> -->
 
        <hr>
      </div>

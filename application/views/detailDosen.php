@@ -5,6 +5,7 @@
 	<style type="text/css">
 		td {
 			padding: 5px;
+			font-size: 24px;
 		}
 	</style>
 </head>
@@ -23,45 +24,59 @@
 						<!-- Container Detail Dosen -->
 						<div class="container">
 							<h4 class="font-weight-bold" style="font-size: 30px">
-				              Profil (Nama Dosen)
+				              <?=$dosen->nama;?>
 				            </h4>
 							<hr>
 							<div class="gambar text-center">
-								<img src="<?php echo base_url('assets/images/dosen/bayu.JPG')?>" class="img-fluid mb-3 img-thumbnail" alt="gambar">
+								<img src="<?php echo base_url('assets/images/'.$dosen->file); ?>" class="img-fluid mb-3 img-thumbnail" alt="gambar" width="45%">
 							</div>
 							<hr>
-							<table width="100%">
+							<!-- <p class="font-24">
+								<span class="font-weight-bold">Nama Dosen :</span>
+								<span class="ml-5"><?=$dosen->nama;?></span>
+							</p>
+							<p class="font-24">
+								<span class="font-weight-bold">NIP/NIK :</span>
+								<span class="ml-5"><?=$dosen->nip;?></span>
+							</p> -->
+							<table width="100%" border="0">
 								<tr>
-									<td>Nama Dosen</td>
-									<td>(Konten Nama)</td>
+									<td class="font-weight-bold">Nama Dosen</td>
+									<td><?=$dosen->nama;?></td>
 								</tr>
 								<tr>
-									<td>NIP/NIK</td>
-									<td>(Konten NIK)</td>
+									<td class="font-weight-bold">NIP/NIK</td>
+									<td><?=$dosen->nip;?></td>
 								</tr>
 								<tr>
-									<td>Pendidikan</td>
-									<td>(Konten Pendidikan)</td>
+									<td class="font-weight-bold">Pendidikan</td>
+									<td><?=$dosen->pendidikan;?></td>
 								</tr>
 								<tr>
-									<td>Bidang</td>
-									<td>(Konten Bidang)</td>
+									<td class="font-weight-bold">Bidang</td>
+									<td><?=$dosen->bidang;?></td>
 								</tr>
 								<tr>
-									<td>Penelitian</td>
-									<td>(Konten Penelitian)</td>
+									<td class="font-weight-bold">Penelitian</td>
 								</tr>
 								<tr>
-									<td>Pengabdian</td>
-									<td>(Konten Pengabdian)</td>
+									<td colspan="2"><?=$dosen->penelitian;?></td>
+								</tr>
+								<tr>
+									<td class="font-weight-bold">Pengabdian</td>
+								</tr>
+								<tr>
+									<td colspan="2"><?=$dosen->pengabdian;?></td>
 								</tr>
 								<tr>	
-									<td>Pelatihan</td>
-									<td>(Konten Pelaltihan)</td>
+									<td class="font-weight-bold">Pelatihan</td>
 								</tr>
 								<tr>
-									<td>Email</td>
-									<td>(Konten Email)</td>
+									<td colspan="2"><?=$dosen->pelatihan;?></td>
+								</tr>
+								<tr>
+									<td class="font-weight-bold">Email</td>
+									<td><?=$dosen->email;?></td>
 								</tr>
 								
 							</table>

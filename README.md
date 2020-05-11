@@ -28,11 +28,15 @@
 
 # List Fitur Ongoing
 - [x] Tambahan Function Detail Data Dosen
-- [ ] Query untuk Get Data Dosen by ID
-- [ x] Pisahkan role Berita Berdasarkan Mahasiswa atau Dosen
+- [x] Query untuk Get Data Dosen by ID
+- [x] Pisahkan role Berita Berdasarkan Mahasiswa atau Dosen
 - [x] Tambahkan table agenda event
 - User Login sebagai mahasiswa atau dosen.
 - CRUD Berita by Mahasiswa/Dosen.
+- [x] Tampilan List Berita Mahasiswa dan Dosen
+- [x] Tampilan List Event [Masih Sementara]
+- [ ] Tampilan Detail Event
+- [ ] Penambahan input file (pdf atau gambar) pada event
 ----
 sisfo:password
 dosen1:123456

@@ -150,7 +150,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- <h4 class=" mb-3 text-center text-uppercase">Event</h4> -->
             <hr>
             <!-- Load Link Terkait -->
-            <?php $this->load->view("_partial/agenda.php") ?>
+            <?php $count = 0; 
+              foreach ($events as $event) {
+              if($count < 3){ 
+              $waktu = strtotime($event->time_start);
+              $waktu2 = strtotime($event->time_end);
+            ?>
+            <div class="row mt-2 ftco-animate">
+              <div class=" text-center grey lighten-1 py-3 w-25" style="border-radius: 10px 0px 0px 10px;">
+                
+                <div class="meta-date text-center p-2" >
+                  <!-- <span class="day">23</span>
+                      <span class="mos">Jul</span> -->
+                      <h3 style="font-size: 42px; font-weight: bold; color: black;"><?=date("d",$waktu);?></h3>
+                  <h4 style="font-weight: bold; color: black; margin-top: -20px;"><?=date("F",$waktu);?></h4>
+                </div>
+                
+              </div>
+              <div class=" grey lighten-2 p-3 w-75 align-content-center" style="border-radius: 0px 10px 10px 0px;">
+                <a class="mb-0" href=""><p style="font-size: 18px;  color: black;"><?php echo $event->title; ?></p></a>
+                <p style=" margin-top: -10px;"><i class="icon icon-calendar"></i> <?=date("H:i",$waktu);?> - <?=date("H:i",$waktu);?></p>
+                <p style=" margin-top: -18px;"><i class="icon icon-map-marker"></i> <?php echo $event->location; ?></p>
+              </div>
+            </div>
+            <?php 
+                }
+                $count++;
+              }
+            ?>
           </div>
           <div class="mt-4">
             <div class="row justify-content-center pt-2">

@@ -27,6 +27,7 @@ class Sisfo extends CI_Controller
         $this->load->library('form_validation');
         $this->load->library('session');
         $this->load->model('mdata');
+        $this->load->model('Event_model', 'event');
         //$this->load->view('admin/head');
         //$this->load->view('sidebar');
     }
@@ -88,6 +89,7 @@ class Sisfo extends CI_Controller
         /*$data['info'] 		= $this->mdata->limit_info($limitinfo)->result();
 		$data['kegiatan'] 		= $this->mdata->limit_kegiatan($limitkegiatan)->result();*/
         $data['slide']      = $this->mdata->all_slide()->result_array();
+        $data['events'] = $this->event->getAll();
 
         $this->load->view('index', $data);
     }
@@ -296,8 +298,9 @@ class Sisfo extends CI_Controller
     }
 
     // Function Baru dan Perlu penambahan data dan penyesuaian
-    public function detailDosen(){
-        $this->load->view('detailDosen');
+    public function detailDosen($id){
+        $data['dosen'] = $this->mdata->iddosen($id)->row();
+        $this->load->view('detailDosen',$data);
     }
 
     public function sejarah(){
@@ -351,6 +354,10 @@ class Sisfo extends CI_Controller
     }
 
     public function event(){
-        $this->load->view('event');
+        $data['events'] = $this->event->getAll();
+        $this->load->view('event',$data);
+    }
+    public function officialDocument(){
+        $this->load->view('official_document');
     }
 }

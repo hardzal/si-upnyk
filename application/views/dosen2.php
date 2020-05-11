@@ -28,27 +28,30 @@
           <?php foreach ($data->result() as $row) :?>
 
           <div class="col-md-6 col-lg-3 ftco-animate">
-            <div class="staff">
-              <div class="img-wrap d-flex align-items-stretch">
-                <div class="img align-self-stretch" style="background-image: url(<?php echo base_url('assets/images/'.$row->file); ?>);"></div>
-              </div>
-              <div class="text pt-3 text-center">
-                <h3><?php echo $row->nama; ?></h3>
-                <span class="position mb-2" style="color: #26428B;"><?php echo $row->nip; ?></span>
-                <div class="faded">
-                  <p><?php echo $row->bidang; ?></p>
-                  <!-- <ul class="ftco-social text-center" >
-                      <li class="ftco-animate"><a href="#"><span class="icon-twitter" style="color: #26428B;"></span></a></li>
-                      <li class="ftco-animate"><a href="#"><span class="icon-facebook" style="color: #26428B;"></span></a></li>
-                      <li class="ftco-animate"><a href="#"><span class="icon-google-plus" style="color: #26428B;"></span></a></li>
-                      <li class="ftco-animate"><a href="#"><span class="icon-instagram" style="color: #26428B;"></span></a></li>
-                  </ul> -->
+            <a href="<?php echo base_url('sisfo/detailDosen/'. $row->id); ?> ">
+              <div class="staff">
+                <div class="img-wrap d-flex align-items-stretch">
+                  <div class="img align-self-stretch" style="background-image: url(<?php echo base_url('assets/images/'.$row->file); ?>);"></div>
+                </div>
+                <div class="text pt-3 text-center">
+                  <h3><?php echo $row->nama; ?></h3>
+                  <span class="position mb-2" style="color: #26428B;"><?php echo $row->nip; ?></span>
+                  <div class="faded">
+                    <p><?php echo $row->bidang; ?></p>
+                    <!-- <ul class="ftco-social text-center" >
+                        <li class="ftco-animate"><a href="#"><span class="icon-twitter" style="color: #26428B;"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-facebook" style="color: #26428B;"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-google-plus" style="color: #26428B;"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-instagram" style="color: #26428B;"></span></a></li>
+                    </ul> -->
+                  </div>
                 </div>
               </div>
-            </div>
+              
+            </a>
           </div>
 
-             <?php endforeach; ?>
+          <?php endforeach; ?>
 
         </div>
       </div>

@@ -37,7 +37,46 @@
               <!-- <div class="col-md-6 mb-2">
                 <a href="" class="text-capitalize"><i class="fas fa-download"></i> Kurikulum tahun ajaran</a>
               </div> -->
-              
+              <div class="container py-5">
+            <!-- <div class="row justify-content-center mb-5 pb-2">
+              <div class="col-md-8 text-center heading-section ftco-animate">
+                <h2 class=""><span>Berita</span> Terbaru</h2>
+                <hr> -->
+                <!-- <p>Daftar berita terbaru</p> -->
+              <!-- </div>
+            </div> -->
+            <div class="row">
+              <?php
+                foreach ($events as $event) {
+                  $time_start = strtotime($event->time_start);
+                  $time_end = strtotime($event->time_end);
+                ?>
+                  <div class="col-md-6 col-lg-4 ftco-animate">
+                    <div class="blog-entry">
+                      <a href="blog-single.html" class="block-16 d-flex align-items-end">
+                        <img class="img-terkini w-100" src="<?php echo base_url('assets/images/slide/jurusan-if.jpg')?>" style="height: 250px;" alt="gambar">
+                        <div class="meta-date text-center p-2" style="position: absolute;">
+                          <span class="day"><?= date("d", $time_start); ?></span>
+                          <span class="mos"><?= date("F", $time_start); ?></span>
+                          <span class="yr"><?= date("Y", $time_start); ?></span>
+                        </div>
+                      </a>
+                      <div class="text bg-white p-4">
+                        <h3 class="heading"><a href="<?php echo base_url('index.php/sisfo/detailevent/'.$event->id)?>" style="font-weight: bold;"><?php echo $event->title; ?></a></h3>
+                        <p>Thumbnail text</p>
+                        <div class="d-flex justify-content-end mt-4">
+                          <p class="mb-0"><a href="#" class="btn btn-sm btn-outline-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <?php
+
+                  // $count++;
+                }
+                ?>
+                </div>
+          </div>
             <!-- </div> -->
             <!-- end Row kurikulum -->
             <!-- <hr> -->

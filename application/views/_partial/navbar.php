@@ -16,7 +16,7 @@
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PROFIL</a>
           <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="#">SEJARAH</a>
-            <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/visimisi')?>">VISI & MISI</a>
+            <a class="dropdown-item" href="<?php echo base_url('sisfo/visimisi')?>">VISI & MISI</a>
             <a class="dropdown-item" href="#">SAMBUTAN KAPRODI</a>
             <a class="dropdown-item" href="#">OFFICIAL DOCUMENT</a>
           </div>
@@ -25,15 +25,15 @@
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DATA PERSONIL
           </a>
           <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/dosen')?>">DOSEN</a>
-            <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/tendik')?>">TENAGA PENDIDIK</a>
+            <a class="dropdown-item" href="<?php echo base_url('sisfo/dosen')?>">DOSEN</a>
+            <a class="dropdown-item" href="<?php echo base_url('sisfo/tendik')?>">TENAGA PENDIDIK</a>
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AKADEMIK</a>
           <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/kurikulum')?>">KURIKULUM</a>
-            <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/akademik')?>">KALENDER AKADEMIK</a>
+            <a class="dropdown-item" href="<?php echo base_url('sisfo/kurikulum')?>">KURIKULUM</a>
+            <a class="dropdown-item" href="<?php echo base_url('sisfo/akademik')?>">KALENDER AKADEMIK</a>
             <a class="dropdown-item" href="#">JADWAL SKRIPSI</a> -->
           <!-- <a class="dropdown-item" href="http://si.upnyk.ac.id/siapps/index.php">STUDENT PAGE</a> -->
           <!-- </div>
@@ -64,10 +64,10 @@
           </div>
         </li> -->
       <!-- <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('index.php/sisfo/berita')?>">BERITA</a>
+        <a class="nav-link" href="<?php echo base_url('sisfo/berita')?>">BERITA</a>
       </li> -->
         <!-- <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url('index.php/sisfo/download')?>">DOWNLOAD</a>
+          <a class="nav-link" href="<?php echo base_url('sisfo/download')?>">DOWNLOAD</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KUISIONER</a>
@@ -79,7 +79,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url('index.php/sisfo/kontak')?>">KONTAK</a>
+          <a class="nav-link" href="<?php echo base_url('sisfo/kontak')?>">KONTAK</a>
         </li>
       </ul>
     </div>
@@ -109,31 +109,31 @@
         </form> -->
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a href="<?php echo base_url('index.php')?>" class="nav-link p-3" style="font-weight: bold; color: #26428B;">Home</a></li>
+            <li class="nav-item"><a href="<?php echo base_url('')?>" class="nav-link p-3" style="font-weight: bold; color: #26428B;">Home</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link p-3 dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-weight: bold; color: #26428B;">Profil</a>
               <div class="dropdown-menu dropdown-primary px-3 ftco-animate" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/sejarah') ?>">Sejarah</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/visimisi')?>">Visi & Misi</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/organisasiDosen') ?>">Struktur Organisasi</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/sambutan') ?>">Sambutan KoorProdi</a>
-                <a class="dropdown-item" href="#">Official Document</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/sejarah') ?>">Sejarah</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/visimisi')?>">Visi & Misi</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/organisasiDosen') ?>">Struktur Organisasi</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/sambutan') ?>">Sambutan KoorProdi</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/officialDocument') ?>">Official Document</a>
               </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link p-3 dropdown-toggle" style="font-weight: bold; color: #26428B;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data Personil</a>
               <div class="dropdown-menu dropdown-primary px-3 ftco-animate" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/dosen')?>">Dosen</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/tendik')?>">Tenaga Pendidik</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/dosen')?>">Dosen</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/tendik')?>">Tenaga Pendidik</a>
               </div>
             </li>
 
             <li class="nav-item dropdown">
               <a class="nav-link p-3 dropdown-toggle" style="font-weight: bold; color: #26428B;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Akademik</a>
               <div class="dropdown-menu dropdown-primary px-3 ftco-animate" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/kurikulum')?>">Kurikulum</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/akademik')?>">Kalender Akademik</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/download')?>">Materi</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/kurikulum')?>">Kurikulum</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/akademik')?>">Kalender Akademik</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/download')?>">Materi</a>
                 <a class="dropdown-item" href="#">Jadwal Skripsi</a>
               </div>
             </li>
@@ -141,25 +141,29 @@
               <a class="nav-link p-3 dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-weight: bold; color: #26428B;">Mahasiswa
               </a>
               <div class="dropdown-menu dropdown-primary ftco-animate" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/organisasiMahasiswa')?>">Organisasi Mahasiswa</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/prestasi')?>">Prestasi Mahasiswa</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/karier')?>">Karier Mahasiswa</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/Alumni')?>">Alumni</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/informasiWisuda')?>">Informasi Wisuda</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/organisasiMahasiswa')?>">Organisasi Mahasiswa</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/prestasi')?>">Prestasi Mahasiswa</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/karier')?>">Karier Mahasiswa</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/Alumni')?>">Alumni</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/informasiWisuda')?>">Informasi Wisuda</a>
               </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link p-3 dropdown-toggle" style="font-weight: bold; color: #26428B;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Berita</a>
               <div class="dropdown-menu dropdown-primary ftco-animate" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/event');?>">Event</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/beritaDosen');?>">Berita Dosen</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/beritaMahasiswa');?>">Berita Mahasiswa</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/informasiAkademik');?>">Informasi Akademik</a>
-                <a class="dropdown-item" href="<?php echo base_url('index.php/sisfo/informasiGrafik');?>">Informasi Grafik</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/event');?>">Event</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/beritaDosen');?>">Berita Dosen</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/beritaMahasiswa');?>">Berita Mahasiswa</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/informasiAkademik');?>">Informasi Akademik</a>
+                <a class="dropdown-item" href="<?php echo base_url('sisfo/informasiGrafik');?>">Informasi Grafik</a>
               </div>
             </li>
-            <li class="nav-item"><a href="<?php echo base_url('index.php/sisfo/applist')?>" class="nav-link p-3" style="font-weight: bold;  color: #26428B;">Aplikasi</a></li>
-            
+            <li class="nav-item">
+              <a href="<?php echo base_url('sisfo/applist')?>" class="nav-link p-3" style="font-weight: bold;  color: #26428B;">Aplikasi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-3" style="font-weight: bold;  color: #26428B;" href="<?php echo base_url('sisfo/kontak')?>">Kontak</a>
+            </li>
           </ul>
         </div>
       </div>

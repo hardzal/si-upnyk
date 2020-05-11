@@ -33,7 +33,8 @@
         <!-- Row Berita -->
         <div class="row">
          <div class="profil mb-3 ftco-animate">
-           <h4 class="text-uppercase">Visi</h4>
+           <h4 class="text-uppercase">Sejarah Program Studi Sistem Informasi</h4>
+           <br>
            <small>
              <p>Menjadi Program Studi Sistem Informasi yang profesional dan berintegritas berlandaskan jiwa bela negara dengan keunggulan di bidang Sistem Informasi Kebumian di Tingkat Nasional pada tahun 2027. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

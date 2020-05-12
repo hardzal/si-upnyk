@@ -65,8 +65,8 @@
 											<input type="file" name="image" id="image" />
 										</div>
 										<div class=" form-group">
-											<label for="description" class="col-form-label">Isi Berita</label>
-											<textarea id="elm1" class="form-control" rows="3" name="description">value="<?php echo $event->description; ?>"</textarea>
+											<label for="description" class="col-form-label">Isi Agenda</label>
+											<textarea id="elm1" class="form-control" rows="3" name="description" value="<?php echo $event->description; ?>"><?php echo $event->description; ?></textarea>
 										</div>
 										<div class="form-group">
 											<label for="file" class="col-form-label">File</label>

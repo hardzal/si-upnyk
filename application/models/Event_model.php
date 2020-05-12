@@ -18,6 +18,15 @@ class Event_model extends CI_Model
 		return $this->db->get_where('events', ['id' => $id])->row_object();
 	}
 
+	public function getActive($id)
+	{
+		return $this->db->get_where('events', ['id' => $id, 'status' => true])->row_object();
+	}
+
+	public function getAllActive() {
+		return $this->db->get_where('events', ['status' => true])->result_object();
+	}
+
 	public function insert($data)
 	{
 		return $this->db->insert('events', $data);

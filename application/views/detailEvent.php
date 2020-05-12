@@ -40,7 +40,7 @@
 								<span class="font-weight-bold">NIP/NIK :</span>
 								<span class="ml-5"><?=$dosen->nip;?></span>
 							</p> -->
-							<?php echo $event->description;?>
+							<?php echo html_entity_decode($event->description);?>
 							
 						</div>
 					</div>

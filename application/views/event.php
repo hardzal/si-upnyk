@@ -53,8 +53,8 @@
                 ?>
                   <div class="col-md-6 col-lg-4 ftco-animate">
                     <div class="blog-entry">
-                      <a href="blog-single.html" class="block-16 d-flex align-items-end">
-                        <img class="img-terkini w-100" src="<?php echo base_url('assets/images/slide/jurusan-if.jpg')?>" style="height: 250px;" alt="gambar">
+                      <a href="<?php echo base_url($event->cover)?>" class="block-16 d-flex align-items-end">
+                        <img class="img-terkini w-100" src="<?php echo base_url($event->cover)?>" style="height: 250px;" alt="gambar">
                         <div class="meta-date text-center p-2" style="position: absolute;">
                           <span class="day"><?= date("d", $time_start); ?></span>
                           <span class="mos"><?= date("F", $time_start); ?></span>
@@ -65,7 +65,7 @@
                         <h3 class="heading"><a href="<?php echo base_url('index.php/sisfo/detailevent/'.$event->id)?>" style="font-weight: bold;"><?php echo $event->title; ?></a></h3>
                         <p>Thumbnail text</p>
                         <div class="d-flex justify-content-end mt-4">
-                          <p class="mb-0"><a href="#" class="btn btn-sm btn-outline-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                          <p class="mb-0"><a href="<?php echo base_url('index.php/sisfo/detailevent/'.$event->id)?>" class="btn btn-sm btn-outline-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
                         </div>
                       </div>
                     </div>

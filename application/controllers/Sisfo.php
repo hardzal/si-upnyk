@@ -357,6 +357,11 @@ class Sisfo extends CI_Controller
         $data['events'] = $this->event->getAll();
         $this->load->view('event',$data);
     }
+
+    public function detailEvent($id){
+        $data['event'] = $this->event->get($id);
+        $this->load->view('detailEvent',$data);
+    }
     public function officialDocument(){
         $this->load->view('official_document');
     }

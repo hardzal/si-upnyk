@@ -7,6 +7,17 @@
 
   <!-- Start your project here-->
   <?php $this->load->view("_partial/navbar.php") ?>
+  <section class="hero-wrap hero-wrap-2" style="background-image: url(<?php echo base_url('assets/images/informasi.jpg') ?>);">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-2 bread">Download Materi</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Akademik <i class="ion-ios-arrow-forward"></i></a></span> <span>Materi <i class="ion-ios-arrow-forward"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
 
 <!--Main layout-->
 <div class="container-fluid grey lighten-5">
@@ -14,7 +25,7 @@
     <div class="row" id="topSection">
       <!-- Kolom Download -->
       <div class="col-md-8">
-        <h4 class=" mb-3 text-center text-uppercase">Download Materi</h4>
+        <h4 class=" mb-3 text-center text-uppercase">List Materi</h4>
 
         <hr>
         <!-- Row Download -->

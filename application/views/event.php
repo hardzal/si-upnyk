@@ -62,10 +62,10 @@
                         </div>
                       </a>
                       <div class="text bg-white p-4">
-                        <h3 class="heading"><a href="<?php echo base_url('index.php/sisfo/detailevent/'.$event->id)?>" style="font-weight: bold;"><?php echo $event->title; ?></a></h3>
+                        <h3 class="heading"><a href="<?php echo base_url('home/detailevent/'.$event->id)?>" style="font-weight: bold;"><?php echo $event->title; ?></a></h3>
                         <p>Thumbnail text</p>
                         <div class="d-flex justify-content-end mt-4">
-                          <p class="mb-0"><a href="<?php echo base_url('index.php/sisfo/detailevent/'.$event->id)?>" class="btn btn-sm btn-outline-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                          <p class="mb-0"><a href="<?php echo base_url('home/detailevent/'.$event->id)?>" class="btn btn-sm btn-outline-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
                         </div>
                       </div>
                     </div>

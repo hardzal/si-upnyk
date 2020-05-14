@@ -11,6 +11,21 @@
 </head>
 <body>
 	<?php $this->load->view("_partial/navbar.php") ?>
+	<section class="hero-wrap hero-wrap-2" style="background-image: url(<?php echo base_url('assets/images/event.jpg') ?>);">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-2 bread">Detail Event</h1>
+            <p class="breadcrumbs">
+            	<span class="mr-2">Berita <i class="ion-ios-arrow-forward"></i></span>
+            	<span class="mr-2">Event <i class="ion-ios-arrow-forward"></i></span> 
+            	<span >Detail <i class="ion-ios-arrow-forward"></i></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
 <!-- Main Layout -->
 	<div class="container-fluid grey lighten-5">

@@ -35,8 +35,8 @@
 - CRUD Berita by Mahasiswa/Dosen.
 - [x] Tampilan List Berita Mahasiswa dan Dosen
 - [x] Tampilan List Event [Masih Sementara]
-- [ ] Tampilan Detail Event
-- [ ] Penambahan input file (pdf atau gambar) pada event
+- [x] Tampilan Detail Event
+- [x] Penambahan input file (pdf atau gambar) pada event
 ----
 sisfo:password
 dosen1:123456

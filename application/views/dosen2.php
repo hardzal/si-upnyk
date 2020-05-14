@@ -28,7 +28,7 @@
           <?php foreach ($data->result() as $row) :?>
 
           <div class="col-md-6 col-lg-3 ftco-animate">
-            <a href="<?php echo base_url('sisfo/detailDosen/'. $row->id); ?> ">
+            <a href="<?php echo base_url('home/detailDosen/'. $row->id); ?> ">
               <div class="staff">
                 <div class="img-wrap d-flex align-items-stretch">
                   <div class="img align-self-stretch" style="background-image: url(<?php echo base_url('assets/images/'.$row->file); ?>);"></div>

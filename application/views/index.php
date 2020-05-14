@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       </div>
                     </a>
                     <div class="text bg-white p-4">
-                      <h3 class="heading"><a href="<?php echo base_url('index.php/sisfo/detailberita/'.$value->id)?>"><?php echo $value->judul; ?></a></h3>
+                      <h3 class="heading"><a href="<?php echo base_url('home/detailberita/'.$value->id)?>"><?php echo $value->judul; ?></a></h3>
                       <p>
                         <?php  ;
                           $string = strip_tags($value->isi);
@@ -88,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         ?>
                       </p>
                       <div class="d-flex justify-content-end mt-4">
-                        <p class="mb-0"><a href="<?php echo base_url('index.php/sisfo/detailberita/'.$value->id)?>" class="btn btn-sm btn-outline-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                        <p class="mb-0"><a href="<?php echo base_url('home/detailberita/'.$value->id)?>" class="btn btn-sm btn-outline-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
                       </div>
                     </div>
                   </div>

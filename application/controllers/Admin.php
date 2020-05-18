@@ -234,8 +234,6 @@ class Admin extends CI_Controller
 		$this->load->view('admin/detailDosen', $data);
 	}
 
-
-
 	//Tendik
 	public function Tendik()
 	{
@@ -363,7 +361,6 @@ class Admin extends CI_Controller
 
 	public function updateAkademik()
 	{
-
 		$data = array(
 			'id' 	=> $this->input->post('id'),
 			'tahun' => $this->input->post('tahun')

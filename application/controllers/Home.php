@@ -15,7 +15,7 @@ class Home extends CI_Controller
      * config/routes.php, it's displayed at http://example.com/
      *
      * So any other public methods not prefixed with an underscore will
-     * map to /index.php/welcome/<method_name>
+     * map to /index.p	hp/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
 
@@ -27,7 +27,7 @@ class Home extends CI_Controller
         $this->load->library('form_validation');
         $this->load->library('session');
         $this->load->model('mdata');
-        $this->load->model('Event_model', 'event');
+        $this->load->model('MEvent', 'event');
         //$this->load->view('admin/head');
         //$this->load->view('sidebar');
     }

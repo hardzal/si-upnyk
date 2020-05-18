@@ -5,7 +5,7 @@ class Event extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Event_model', 'event');
+		$this->load->model('MEvent', 'event');
 	}
 
 	public function list()
@@ -40,9 +40,10 @@ class Event extends CI_Controller
 
 			if ($_FILES['image']['tmp_name']) {
 				$config['file_name'] = changeFileName($_FILES['image']);
-				$config['allowed_types'] = "gif|jpg|png|jfif|bmp";
+				$config['allowed_types'] = "gif|jpg|jpeg|png|jfif|bmp";
 				$config['max_size'] = 2048;
 				$config['upload_path'] = "./assets/images/agenda/";
+				$config['remove_spaces'] = false;
 
 				if (!uploadFile($config, 'image')) {
 					$error = $this->upload->display_errors();
@@ -111,7 +112,7 @@ class Event extends CI_Controller
 				$config['max_size'] = 2048;
 				$config['upload_path'] = "./assets/images/agenda/";
 
-				if (!deleteFile(FCPATH . $config['upload_path'] . $data['event']->cover)) {
+				if (!deleteFile($data['event']->cover)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus gambar sebelumnya!</div>');
 					redirect('admin/agenda');
 				}
@@ -131,7 +132,7 @@ class Event extends CI_Controller
 				$config['max_size'] = 2048;
 				$config['upload_path'] = "./assets/file/agenda/";
 
-				if (!deleteFile(FCPATH . $config['upload_path'] . $data['event']->file)) {
+				if (!deleteFile($data['event']->file)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus file sebelumnya!</div>');
 					redirect('admin/agenda');
 				}
@@ -157,6 +158,17 @@ class Event extends CI_Controller
 
 	public function delete($id)
 	{
+		$event = $this->event->get($id);
+		if (!deleteFile($event->cover)) {
+			$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus gambar sebelumnya!</div>');
+			redirect('admin/agenda');
+		}
+
+		if (!deleteFile($event->file)) {
+			$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus file sebelumnya!</div>');
+			redirect('admin/agenda');
+		}
+
 		if ($this->event->delete($id)) {
 			$this->session->set_flashdata("message", '<div class="alert alert-success">Berhasil menghapus data agenda</div>');
 		} else {

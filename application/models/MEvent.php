@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Event_model extends CI_Model
+class MEvent extends CI_Model
 {
 	public function getAll()
 	{
@@ -23,7 +23,8 @@ class Event_model extends CI_Model
 		return $this->db->get_where('events', ['id' => $id, 'status' => true])->row_object();
 	}
 
-	public function getAllActive() {
+	public function getAllActive()
+	{
 		return $this->db->get_where('events', ['status' => true])->result_object();
 	}
 

@@ -75,11 +75,11 @@ class Gallery extends CI_Controller
 				$config['upload_path'] = "./assets/images/gallery/";
 				$config['remove_spaces'] = false;
 
-				if (!deleteFile($gallery->image)) {
+				if (!deleteFile($data['gallery']->image)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus gambar sebelumnya!</div>');
 					redirect('admin/galleries');
 				}
-		
+
 				if (!uploadFile($config, 'image')) {
 					$error = $this->upload->display_errors();
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal mengupload gambar!<br>' . $error . '</div>');

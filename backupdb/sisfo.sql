@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: May 11, 2020 at 03:21 PM
+-- Generation Time: May 19, 2020 at 07:46 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.5
 
@@ -154,8 +154,8 @@ CREATE TABLE IF NOT EXISTS `events` (
 
 INSERT INTO `events` (`id`, `user_id`, `title`, `description`, `location`, `time_start`, `time_end`, `status`, `cover`, `file`, `created_at`, `updated_at`) VALUES
 (2, 1, 'Agenda terbaru', '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>siapa sih kamu ini</p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', 'Sistem Informasi', '2020-05-13 09:00:00', '2020-05-16 07:30:00', 0, '', '', NULL, NULL),
-(3, 1, 'Seminar Melawan Corona-2020', 'value=\"value=\"&lt;!DOCTYPE html&gt;\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n&lt;p&gt;kokokookokko&lt;/p&gt;\r\n&lt;/body&gt;\r\n&lt;/html&gt;\"\"', 'R. Seminar, Jurusan  Teknik Informatika', '2020-05-13 03:00:00', '2020-05-12 17:00:00', 1, './assets/images/agenda/growth-mindset-1589209108.png', './assets/file/agenda/sample-2-1589209586.docx', '2020-05-11 14:36:04', '0000-00-00 00:00:00'),
-(4, 1, 'Seminar Akselerasi Melawan sesuatu', 'value=\"&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>hello, world kapan kita bisa begini lagi</p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;\"', 'Sistem Informasi', '2020-05-20 03:30:00', '2020-05-20 06:00:00', 0, './assets/images/agenda/penginapan-mahal-1589210156.jpg', './assets/file/agenda/bab 1-1589210156.pdf', '2020-05-11 15:15:56', '0000-00-00 00:00:00');
+(3, 1, 'Seminar Melawan Corona-2020', '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>wwwwwwwwwwwww percobaan lagi </p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', 'R. Seminar, Jurusan  Teknik Informatika', '2020-05-13 03:00:00', '2020-05-12 17:00:00', 1, './assets/images/agenda/growth-mindset-1589209108.png', './assets/file/agenda/sample-2-1589209586.docx', '2020-05-11 14:36:04', '0000-00-00 00:00:00'),
+(4, 1, 'Seminar Akselerasi Melawan sesuatu', '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>what kok nggak ada</p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', 'Sistem Informasi', '2020-05-20 03:30:00', '2020-05-20 06:00:00', 1, './assets/images/agenda/penginapan-mahal-1589210156.jpg', './assets/file/agenda/bab 1-1589210156.pdf', '2020-05-11 15:15:56', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -179,6 +179,30 @@ INSERT INTO `file` (`id`, `file`, `keterangan`) VALUES
 (48, 'file/Modul_Prak_Algo1.zip', 'Algoritma dan Pemrograman 1'),
 (49, 'file/Modul_PBO.zip', 'Modul PBO'),
 (50, 'file/Modul_Struktur_Data.zip', 'Modul Struktur Data');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `galleries`
+--
+
+DROP TABLE IF EXISTS `galleries`;
+CREATE TABLE IF NOT EXISTS `galleries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `keterangan` text,
+  `image` text NOT NULL,
+  `status` int(1) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `galleries`
+--
+
+INSERT INTO `galleries` (`id`, `keterangan`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(8, 'ai suru yo hito yo', './assets/images/gallery/appimage1-1589844375.jpeg', 0, '2020-05-18 23:26:15', NULL);
 
 -- --------------------------------------------------------
 

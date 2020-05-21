@@ -84,7 +84,6 @@ class Home extends CI_Controller
         $limitkegiatan['offset'] 	= $offset;*/
         //info kegiatan
 
-
         $data['berita']     = $this->mdata->limit_ber($limitberita)->result();
         /*$data['info'] 		= $this->mdata->limit_info($limitinfo)->result();
 		$data['kegiatan'] 		= $this->mdata->limit_kegiatan($limitkegiatan)->result();*/

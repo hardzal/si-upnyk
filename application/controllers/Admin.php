@@ -26,7 +26,6 @@ class Admin extends CI_Controller
 		$this->load->model('mdata');
 	}
 
-
 	public function index()
 	{
 		$this->load->view('admin/home');

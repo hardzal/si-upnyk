@@ -98,7 +98,7 @@
 							<a href="<?php echo base_url('index.php/admin/download') ?>"><i class="fa fa-upload fa-fw"></i> File Upload</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url('index.php/admin/gaLleries'); ?>"><i class="fa fa-picture-o" aria-hidden="true"></i>
+							<a href="<?php echo base_url('index.php/admin/galleries'); ?>"><i class="fa fa-picture-o" aria-hidden="true"></i>
 								Galery</a>
 						</li>
 						<!-- <li class="active">

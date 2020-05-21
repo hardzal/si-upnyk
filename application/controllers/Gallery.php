@@ -5,7 +5,7 @@ class Gallery extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('MGalery', 'gallery');
+		$this->load->model('MGallery', 'gallery');
 	}
 
 	public function list()

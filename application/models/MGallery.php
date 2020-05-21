@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class MGalery extends CI_Model
+class MGallery extends CI_Model
 {
 	public function getAll()
 	{

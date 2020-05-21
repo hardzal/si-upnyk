@@ -42,14 +42,14 @@
 				              <?=$event->title;?>
 				            </h4>
 				            <table width="100%">
-				            	<tr>
+				            	<tr> 
 				            		<td style="border: solid 2px #26428B ;background-color: #26428B; color: white;" width="25%">
 				            			<?php
-				            	if (date('d:w',strtotime($event->time_start)) == date('d:w',strtotime($event->time_end))) {
-				            		echo date('D, d F Y', strtotime($event->time_start));
-				            	} else {
-				            		echo date('D, d F Y', strtotime($event->time_start)) . " s/d " . date('D, d F Y', strtotime($event->time_end));
-				            	} ?>
+						            	if (date('d:w',strtotime($event->time_start)) == date('d:w',strtotime($event->time_end))) {
+						            		echo date('D, d F Y', strtotime($event->time_start));
+						            	} else {
+						            		echo date('D, d F Y', strtotime($event->time_start)) . " s/d " . date('D, d F Y', strtotime($event->time_end));
+						            	} ?>
 				            		</td>
 				            	</tr>
 				            	<tr>

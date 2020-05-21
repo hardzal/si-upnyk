@@ -142,14 +142,86 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <!-- Row Galeri -->
           <div class="row">
             <div class="col-md-12 berita-lain">
-              <!-- <h3 class=" mb-3 text-center text-uppercase heading-section ftco-animate" style="font-size: 32px;">Galeri</h3> -->
+              <h3 class=" mb-1 text-center  heading-section ftco-animate" style="font-size: 30px;">Galeri</h3>
               <div class="row justify-content-center pb-2">
               <div class="col-md-8 text-center heading-section ftco-animate">
                 <!-- <h2 class=""><span>Galeri</span></h2> -->
               </div>
             </div>
               <hr>
-              <!-- <?php $this->load->view("_partial/galeri") ?> -->
+              <div id="main">
+                <div class="inner">
+                  <div class="columns">
+                    <?php 
+                      foreach ($galleries as $photo) {
+                    ?>
+                        <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url($photo->image)?>" alt="" /></a>
+                        </div>
+
+                    <?php
+                      }
+                    ?>
+                      
+                    <!-- Column 1 (horizontal, vertical, horizontal, vertical) -->
+                      <!-- <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic01.jpg')?>" alt="" /></a>
+                      </div>
+                      <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic02.jpg')?>" alt="" /></a>
+                      </div>
+                      <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic03.jpg')?>" alt="" /></a>
+                      </div>
+                      <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic04.jpg')?>" alt="" /></a>
+                      </div> -->
+
+
+                    <!-- Column 2 (vertical, horizontal, vertical, horizontal) -->
+                      <!-- <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic06.jpg')?>" alt="" /></a>
+                      </div>
+                      <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic05.jpg')?>" alt="" /></a>
+                      </div>
+                      <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic08 .jpg')?>" alt="" /></a>
+                      </div>
+                      <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic07.jpg')?>" alt="" /></a>
+                      </div> -->
+
+                    <!-- Column 3 (horizontal, vertical, horizontal, vertical) -->
+                      <!-- <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic09.jpg')?>" alt="" /></a>
+                      </div>
+                      <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic12.jpg')?>" alt="" /></a>
+                      </div>
+                      <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic11.jpg')?>" alt="" /></a>
+                      </div>
+                      <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic10.jpg')?>" alt="" /></a>
+                      </div> -->
+
+                    <!-- Column 4 (vertical, horizontal, vertical, horizontal) -->
+                      <!-- <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic13.jpg')?>" alt="" /></a>
+                      </div>
+                      <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic14.jpg')?>" alt="" /></a>
+                      </div>
+                      <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic15.jpg')?>" alt="" /></a>
+                      </div>
+                      <div class="image fit">
+                        <a href="detail1.html"><img src="<?=base_url('assets/images/gallery/pic16.jpg')?>" alt="" /></a>
+                      </div> -->
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- Row Galei -->

@@ -1,167 +1,63 @@
-<div class="row d-flex align-items-stretch">
-        
-        <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up">
-          <a href="<?=base_url('assets/assets_galeri/images/img_1.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_1.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <a href="<?=base_url('assets/assets_galeri/images/img_2.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_2.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-          <a href="<?=base_url('assets/assets_galeri/images/img_3.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_3.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
+<div id="main">
+        <div class="inner">
+          <div class="columns">
 
-        <div class="col-6 col-md-6 col-lg-8" data-aos="fade-up">
-          <a href="<?=base_url('assets/assets_galeri/images/img_4.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_4.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <a href="<?=base_url('assets/assets_galeri/images/img_5.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_5.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
+            <!-- Column 1 (horizontal, vertical, horizontal, vertical) -->
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic01.jpg" alt="" /></a>
+              </div>
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic02.jpg" alt="" /></a>
+              </div>
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic03.jpg" alt="" /></a>
+              </div>
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic04.jpg" alt="" /></a>
+              </div>
 
-        <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up">
-          <a href="<?=base_url('assets/assets_galeri/images/img_6.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_6.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <a href="<?=base_url('assets/assets_galeri/images/img_7.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_7.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
+            <!-- Column 2 (vertical, horizontal, vertical, horizontal) -->
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic06.jpg" alt="" /></a>
+              </div>
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic05.jpg" alt="" /></a>
+              </div>
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic08.jpg" alt="" /></a>
+              </div>
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic07.jpg" alt="" /></a>
+              </div>
 
+            <!-- Column 3 (horizontal, vertical, horizontal, vertical) -->
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic09.jpg" alt="" /></a>
+              </div>
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic12.jpg" alt="" /></a>
+              </div>
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic11.jpg" alt="" /></a>
+              </div>
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic10.jpg" alt="" /></a>
+              </div>
 
-        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
-          <a href="<?=base_url('assets/assets_galeri/images/img_8.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_8.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <a href="<?=base_url('assets/assets_galeri/images/img_9.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_9.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <a href="<?=base_url('assets/assets_galeri/images/img_10.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_10.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
+            <!-- Column 4 (vertical, horizontal, vertical, horizontal) -->
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic13.jpg" alt="" /></a>
+              </div>
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic14.jpg" alt="" /></a>
+              </div>
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic15.jpg" alt="" /></a>
+              </div>
+              <div class="image fit">
+                <a href="detail1.html"><img src="images/pic16.jpg" alt="" /></a>
+              </div>
 
-
-        <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up">
-          <a href="<?=base_url('assets/assets_galeri/images/img_1.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_1.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
+          </div>
         </div>
-        <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <a href="<?=base_url('assets/assets_galeri/images/img_2.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_2.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-          <a href="<?=base_url('assets/assets_galeri/images/img_3.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_3.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-6 col-lg-8" data-aos="fade-up">
-          <a href="<?=base_url('assets/assets_galeri/images/img_4.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_4.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <a href="<?=base_url('assets/assets_galeri/images/img_5.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_5.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up">
-          <a href="<?=base_url('assets/assets_galeri/images/img_6.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_6.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <a href="<?=base_url('assets/assets_galeri/images/img_7.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_7.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-
-
-        <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
-          <a href="<?=base_url('assets/assets_galeri/images/img_8.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_8.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-6 col-md-6 col-lg-8" data-aos="fade-up" data-aos-delay="100">
-          <a href="<?=base_url('assets/assets_galeri/images/img_9.jpg')?>" class="d-block photo-item" data-fancybox="gallery">
-            <img src="<?=base_url('assets/assets_galeri/images/img_9.jpg')?>" alt="Image" class="img-fluid">
-            <div class="photo-text-more">
-              <span class="icon icon-search"></span>
-            </div>
-          </a>
-        </div>
-        
-
       </div>

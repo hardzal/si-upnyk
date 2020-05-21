@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/assets2/css/style.css')?>">
   <!-- END OF ORIGINAL SOURCE -->
 
+  <link rel="stylesheet" href="<?=base_url('assets/radius/css/main.css')?>" />
+
   <!-- Utk Galeri -->
     <link rel="stylesheet" href="<?=base_url('assets/assets_galeri/fonts/icomoon/style.css')?>">
 
@@ -59,3 +61,11 @@
   <link rel="stylesheet" href="<?=base_url('assets/assets_fox/css/flaticon.css')?>">
   <link rel="stylesheet" href="<?=base_url('assets/assets_fox/css/icomoon.css')?>">
   <link rel="stylesheet" href="<?=base_url('assets/assets_fox/css/style.css')?>">
+
+  <!-- stylesheets -->
+  <link href="<?=base_url('assets/photoarkwork/css/style.css')?>" rel="stylesheet" type="text/css">
+  <link href="<?=base_url('assets/photoarkwork/css/portfolio_two.css')?>" rel="stylesheet" type="text/css">
+  <link href="<?=base_url('assets/photoarkwork/css/dark.css')?>" rel="stylesheet" type="text/css">
+  <style>.noscript { display: none; }</style>
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="<?=base_url('assets/photoarkwork/js/modernizr-1.5.min.js')?>"></script>

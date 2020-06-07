@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
   <?php $this->load->view("_partial/head.php") ?>
+  <style type="text/css">
+    .center {
+      margin: auto;
+      width: 50%;
+      /*border: 3px solid green;*/
+      padding: 10px;
+    }
+  </style>
   
 </head>
 <body >
@@ -17,27 +25,27 @@
           </div>
 
           <div class="row w-100" >
-            <div class="col-md-4 text-center align-self-end">
+            <!-- <div class="col-md-4 text-center align-self-end">
+              <br>
+              <div class="row justify-content-center">
+                <img src="<?php echo base_url('assets/assets2/img/logo_sisfo.ico'); ?>">              
+              </div>
+              <a href="http://si.upnyk.ac.id/siapps/index.php" class="ftco-heading-2"><em>Student Page</em></a>
+            </div> -->s
+            <div class="center col-md-4 text-center align-self-center">
               <br>
               <div class="row justify-content-center">
                 <img src="<?php echo base_url('assets/assets2/img/logo_sisfo.ico'); ?>">              
               </div>
               <a href="http://si.upnyk.ac.id/siapps/index.php" class="ftco-heading-2"><em>Student Page</em></a>
             </div>
-            <div class="col-md-4 text-center align-self-end">
+             <!-- <div class="col-md-4 text-center align-self-end">
               <br>
               <div class="row justify-content-center">
                 <img src="<?php echo base_url('assets/assets2/img/logo_sisfo.ico'); ?>">              
               </div>
               <a href="http://si.upnyk.ac.id/siapps/index.php" class="ftco-heading-2"><em>Student Page</em></a>
-            </div>
-             <div class="col-md-4 text-center align-self-end">
-              <br>
-              <div class="row justify-content-center">
-                <img src="<?php echo base_url('assets/assets2/img/logo_sisfo.ico'); ?>">              
-              </div>
-              <a href="http://si.upnyk.ac.id/siapps/index.php" class="ftco-heading-2"><em>Student Page</em></a>
-            </div>
+            </div> -->
           </div>
           
         </div>

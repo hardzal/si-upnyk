@@ -40,10 +40,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section>
   </div>
   <!--Main layout-->
-  <div class="container-fluid grey lighten-4" >
+  <div class="container-fluid grey lighten-3" >
     <div class="container-fluid" >
       <!-- <hr> -->
-      <section class=" grey lighten-4 " >
+      <section class=" grey lighten-3 " >
         <div class="container text-center py-5" >
           <div class="row justify-content-center mb-5 pb-2">
             <div class="col-md-8 text-center heading-section ftco-animate">
@@ -156,7 +156,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       foreach ($galleries as $photo) {
                     ?>
                         <div class="image fit">
-                        <a href="detail1.html"><img src="<?=base_url($photo->image)?>" alt="" /></a>
+                        <a href="<?=base_url($photo->image)?>"><img src="<?=base_url($photo->image)?>" alt="" /></a>
                         </div>
 
                     <?php
@@ -255,7 +255,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
               </div>
               <div class=" grey lighten-2 p-3 w-75 align-content-center" style="border-radius: 0px 10px 10px 0px;">
-                <a class="mb-0" href=""><p style="font-size: 18px;  color: black;"><?php echo $event->title; ?></p></a>
+                <a class="mb-0" href="<?php echo base_url('home/detailevent/'.$event->id)?>"><p style="font-size: 18px;  color: black;"><?php echo $event->title; ?></p></a>
                 <p style=" margin-top: -10px;"><i class="icon icon-calendar"></i> <?=date("H:i",$waktu);?> - <?=date("H:i",$waktu);?></p>
                 <p style=" margin-top: -18px;"><i class="icon icon-map-marker"></i> <?php echo $event->location; ?></p>
               </div>

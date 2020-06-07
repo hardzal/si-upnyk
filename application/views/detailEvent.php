@@ -7,6 +7,12 @@
 			padding: 5px;
 			font-size: 24px;
 		}
+		.center {
+		  margin: auto;
+		  width: 50%;
+		  border: 3px solid green;
+		  padding: 10px;
+		}
 	</style>
 </head>
 <body>

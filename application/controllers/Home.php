@@ -89,7 +89,7 @@ class Home extends CI_Controller
 		/*$data['info'] 		= $this->mdata->limit_info($limitinfo)->result();
 		$data['kegiatan'] 		= $this->mdata->limit_kegiatan($limitkegiatan)->result();*/
 		$data['slide']      = $this->mdata->all_slide()->result_array();
-		$data['events'] = $this->event->getAll();
+		$data['events'] = $this->event->getAllActive();
 		$data['galleries'] = $this->gallery->getAll();
 
 		$this->load->view('index', $data);

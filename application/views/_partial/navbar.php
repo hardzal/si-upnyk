@@ -133,7 +133,7 @@
               <div class="dropdown-menu dropdown-primary px-3 ftco-animate" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="<?php echo base_url('home/kurikulum')?>">Kurikulum</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/akademik')?>">Kalender Akademik</a>
-                <a class="dropdown-item" href="<?php echo base_url('home/download')?>">Materi</a>
+                <a class="dropdown-item" href="<?php echo base_url('home/download')?>">Bidang Minat</a>
                 <a class="dropdown-item" href="#">Jadwal Skripsi</a>
               </div>
             </li>

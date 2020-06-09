@@ -75,10 +75,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<div class="text bg-white p-4">
 											<h3 class="heading"><a href="<?php echo base_url('home/detailberita/' . $value->id) ?>"><?php echo $value->judul; ?></a></h3>
 											<p>
-												<?php;
+												<?php
 												$string = strip_tags($value->isi);
 												if (strlen($string) > 50) {
-
 													// truncate string
 													$stringCut = substr($string, 0, 40);
 													$endPoint = strrpos($stringCut, ' ');
@@ -114,10 +113,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<!-- Row Berita -->
 					<!-- <div class="row">
             <?php
-						$count = 0;
-						foreach ($berita as $key => $value) {
-							if ($count < 3) {
-						?> -->
+			$count = 0;
+			foreach ($berita as $key => $value) {
+				if ($count < 3) {
+			?> -->
 					<!-- Card -->
 					<!-- <div class="col-md-4 mb-4"> -->
 					<!-- Card image -->
@@ -135,13 +134,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<!-- </div> -->
 					<!-- end Card -->
 					<!-- <?php
-							}
-							$count++;
 						}
-								?>
+						$count++;
+					}
+							?>
           </div> -->
 					<!-- Row Berita -->
-
 					<!-- Row Galeri -->
 					<div class="row">
 						<div class="col-md-12 berita-lain">
@@ -159,7 +157,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										foreach ($galleries as $photo) {
 										?>
 											<div class="image fit">
-												<a href="detail1.html"><img src="<?= base_url($photo->image) ?>" alt="" /></a>
+												<a href="<?= base_url($photo->image) ?>"><img src="<?= base_url($photo->image) ?>" alt="" /></a>
 											</div>
 
 										<?php
@@ -258,7 +256,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 									</div>
 									<div class=" grey lighten-2 p-3 w-75 align-content-center" style="border-radius: 0px 10px 10px 0px;">
-										<a class="mb-0" href="">
+										<a class="mb-0" href="<?php echo base_url('home/detailevent/' . $event->id) ?>">
 											<p style="font-size: 18px;  color: black;"><?php echo $event->title; ?></p>
 										</a>
 										<p style=" margin-top: -10px;"><i class="icon icon-calendar"></i> <?= date("H:i", $waktu); ?> - <?= date("H:i", $waktu); ?></p>
@@ -283,8 +281,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<?php $this->load->view("_partial/linkTerkait.php") ?>
 					</div>
 				</div>
-
-
 			</div>
 		</div>
 

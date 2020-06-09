@@ -62,3 +62,8 @@ $route['admin/galleries'] = 'Gallery/list';
 $route['admin/galleries/create'] = 'Gallery/create';
 $route['admin/galleries/edit/(:any)'] = 'Gallery/edit/$1';
 $route['admin/galleries/delete/(:any)'] = 'Gallery/delete/$1';
+
+$route['admin/specialization'] = 'Specialization/list';
+$route['admin/specialization/create'] = 'Specialization/create';
+$route['admin/specialization/edit/(:any)'] = 'Specialization/edit/$1';
+$route['admin/specialization/delete/(:any)'] = 'Specialization/delete/$1';

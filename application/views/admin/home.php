@@ -101,6 +101,9 @@
 							<a href="<?php echo base_url('index.php/admin/galleries'); ?>"><i class="fa fa-picture-o" aria-hidden="true"></i>
 								Galery</a>
 						</li>
+						<li>
+							<a href="<?php echo base_url('index.php/admin/specialization'); ?>"><i class="fa fa-info-circle" aria-hidden="true"></i> Perminatan</a>
+						</li>
 						<!-- <li class="active">
                             <a href="#"><i class="fa fa-bullhorn fa-fw"></i> Informasi<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

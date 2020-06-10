@@ -120,6 +120,7 @@
                 <a class="dropdown-item" href="<?php echo base_url('home/officialDocument') ?>">Official Document</a>
               </div>
             </li>
+            
             <li class="nav-item dropdown">
               <a class="nav-link p-3 dropdown-toggle" style="font-weight: bold; color: #26428B;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data Personil</a>
               <div class="dropdown-menu dropdown-primary px-3 ftco-animate" aria-labelledby="navbarDropdownMenuLink">
@@ -157,6 +158,9 @@
                 <a class="dropdown-item" href="<?php echo base_url('home/informasiAkademik');?>">Informasi Akademik</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/informasiGrafik');?>">Informasi Grafik</a>
               </div>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo base_url('home/applist')?>" class="nav-link p-3" style="font-weight: bold;  color: #26428B;">Fasilitas</a>
             </li>
             <li class="nav-item">
               <a href="<?php echo base_url('home/applist')?>" class="nav-link p-3" style="font-weight: bold;  color: #26428B;">Aplikasi</a>

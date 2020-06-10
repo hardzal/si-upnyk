@@ -55,6 +55,14 @@
             </div> -->
 							<div class="row">
 								<?php
+								if(empty($berita)){
+				                  ?>
+
+				                    <div class="w-100 alert alert-danger" role="alert" align="center">
+				                      Berita Masih Kosong..
+				                    </div>
+				                <?php
+				                }
 								foreach ($berita as $data) {
 									$waktu = strtotime($data->tgl);
 								?>

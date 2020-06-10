@@ -46,7 +46,13 @@
               <!-- </div>
             </div> -->
             <div class="row">
-              <?php
+              <?php if (empty($events)) {
+                ?>
+                    <div class="w-100 alert alert-danger" role="alert" align="center">
+                      Event Masih Kosong..
+                    </div>
+                <?php
+              }
                 foreach ($events as $event) {
                   $time_start = strtotime($event->time_start);
                   $time_end = strtotime($event->time_end);

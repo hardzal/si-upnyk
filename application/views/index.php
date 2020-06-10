@@ -99,6 +99,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							}
 							$count++;
 						}
+            if ($count==0) {
+              ?>    <div class=" w-100 alert alert-danger" role="alert">
+                      Berita Masih Kosong..
+                    </div>
+            <?php
+            }
 						?>
 					</div>
 				</div>
@@ -154,6 +160,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<div class="inner">
 									<div class="columns">
 										<?php
+                     if (empty($galleries)) {
+                        ?>
+                            <div class="w-100 alert alert-danger" role="alert" align="center">
+                              Galeri Masih Kosong..
+                            </div>
+                        <?php
+                      }
 										foreach ($galleries as $photo) {
 										?>
 											<div class="image fit">
@@ -239,6 +252,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<hr>
 						<!-- Load Link Terkait -->
 						<?php $count = 0;
+            if (empty($events)) {
+              ?>
+                  <div class="w-100 alert alert-danger" role="alert" align="center">
+                    Event Masih Kosong..
+                  </div>
+              <?php
+            }
 						foreach ($events as $event) {
 							if ($count < 3) {
 								$waktu = strtotime($event->time_start);

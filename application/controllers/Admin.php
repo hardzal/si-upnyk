@@ -1021,7 +1021,9 @@ class Admin extends CI_Controller
 			'file'		 	=> $this->input->post('file'),
 			'link' 		=> $this->input->post('link')
 		);
-
+		var_dump($data);
+		die();
+		
 		$config['upload_path']          = './assets/images/slide';
 		$config['max_size']             = 10000;
 		$config['allowed_types'] 		= 'jpg|png|jpeg|gif|mp4|3gp|mpeg|mpg';

@@ -160,10 +160,27 @@ class Home extends CI_Controller
 		$data['file'] = $this->mdata->download()->result();
 		$this->load->view('download', $data);
 	}
+
 	public function kontak()
 	{
+		$this->load->model('MQuestion', 'question');
 		//$data['profil'] = $this->mdata->profil()->result();
-		$this->load->view('kontak');
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('kontak');
+		} else {
+			$data = [
+				'name' => $this->input->post('name', true),
+				'quest' => $this->input->post('question', true)
+			];
+
+			if ($this->question->insert($data)) {
+				$this->session->set_flashdata("message", '<div class="alert alert-success">Berhasil mengirimkan pertanyaan</div>');
+			} else {
+				$this->session->set_flashdata("message", '<div class="alert alert-danger">Gagal mengirimkan pertanyaan</div>');
+			}
+
+			redirect(base_url("home/kontak"));
+		}
 	}
 
 	public function strukor($offset = 0)

@@ -35,14 +35,13 @@
          <div class="profil mb-3 ftco-animate">
            <h4 class="text-uppercase">Sejarah Program Studi Sistem Informasi</h4>
            <br>
-           <small>
-             <p>Menjadi Program Studi Sistem Informasi yang profesional dan berintegritas berlandaskan jiwa bela negara dengan keunggulan di bidang Sistem Informasi Kebumian di Tingkat Nasional pada tahun 2027. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-           </small>
+           <div align="justify">
+            <small>
+               <?php
+                echo $profil->sejarah;
+               ?>
+            </small>
+            </div>
          </div>
 
        <hr>

@@ -40,7 +40,7 @@
 					<a href="#"><i class="fa fa-flag fa-fw"></i> Profil <span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a href="<?php echo base_url('index.php/admin/profil') ?>">Visi Misi dan Tujuan</a>
+							<a href="<?php echo base_url('index.php/admin/profil') ?>">Sejarah, Visi Misi dan Tujuan</a>
 						</li>
 						<li>
 							<a href="<?php echo base_url('index.php/admin/struktur') ?>">Struktur Organisasi</a>
@@ -94,6 +94,9 @@
 				</li>
 				<li>
 					<a href="<?php echo base_url('index.php/admin/specialization'); ?>"><i class="fa fa-info-circle" aria-hidden="true"></i> Perminatan</a>
+				</li>
+				<li>
+					<a href="<?php echo base_url('index.php/admin/question'); ?>"><i class="fa fa-question-circle" aria-hidden="true"></i> Pertanyaan</a>
 				</li>
 
 				<!-- <li class="active">

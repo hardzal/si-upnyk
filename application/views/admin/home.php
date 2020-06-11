@@ -104,6 +104,9 @@
 						<li>
 							<a href="<?php echo base_url('index.php/admin/specialization'); ?>"><i class="fa fa-info-circle" aria-hidden="true"></i> Perminatan</a>
 						</li>
+						<li>
+							<a href="<?php echo base_url('index.php/admin/question'); ?>"><i class="fa fa-question-circle" aria-hidden="true"></i> Pertanyaan</a>
+						</li>
 						<!-- <li class="active">
                             <a href="#"><i class="fa fa-bullhorn fa-fw"></i> Informasi<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

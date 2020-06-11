@@ -24,31 +24,54 @@
              UPN "Veteran" Yogyakarta
           </div>
 
-          <div class="row w-100" >
-            <!-- <div class="col-md-4 text-center align-self-end">
+          <div class="row w-100" style="margin-bottom: -15px;">
+             <div class="center col-md-4 text-center align-self-center">
               <br>
-              <div class="row justify-content-center">
+              <a href="http://si.upnyk.ac.id/siapps/index.php">
+                <div class="row justify-content-center">
                 <img src="<?php echo base_url('assets/assets2/img/logo_sisfo.ico'); ?>">              
-              </div>
-              <a href="http://si.upnyk.ac.id/siapps/index.php" class="ftco-heading-2"><em>Student Page</em></a>
-            </div> -->s
+                </div>
+                
+              </a>
+              
+            </div>
+             <div class="center col-md-4 text-center align-self-center">
+              <br>
+              <a href="http://sadewa.upnyk.ac.id/">
+                <div class="row justify-content-center">
+                <img width="40%" src="<?php echo base_url('assets/images/sadewav2.png'); ?>" style="border-radius: 50%;">              
+                </div>
+                
+              </a>
+              
+            </div>
+            
             <div class="center col-md-4 text-center align-self-center">
               <br>
-              <div class="row justify-content-center">
-                <img src="<?php echo base_url('assets/assets2/img/logo_sisfo.ico'); ?>">              
-              </div>
-              <a href="http://si.upnyk.ac.id/siapps/index.php" class="ftco-heading-2"><em>Student Page</em></a>
+              <a href="fti.upnyk.ac.id/">
+                <div class="row justify-content-center">
+                <img width="70%" src="<?php echo base_url('assets/images/UPN Veteran.png'); ?>" >              
+                </div>
+                
+              </a>
+              
             </div>
-             <!-- <div class="col-md-4 text-center align-self-end">
-              <br>
-              <div class="row justify-content-center">
-                <img src="<?php echo base_url('assets/assets2/img/logo_sisfo.ico'); ?>">              
-              </div>
-              <a href="http://si.upnyk.ac.id/siapps/index.php" class="ftco-heading-2"><em>Student Page</em></a>
-            </div> -->
+            
           </div>
+          <div class="row w-100" >
+            <div class="center col-md-4 text-center align-self-center">
+            <a href="http://si.upnyk.ac.id/siapps/index.php" class="ftco-heading-2"><em>Student Page</em></a>  
+            </div>
+            <div class="center col-md-4 text-center align-self-center">
+            <a href="http://sadewa.upnyk.ac.id/" class="ftco-heading-2"><em>Sadewa UPNVY</em></a>
+            </div>
+            <div class="center col-md-4 text-center align-self-center">
+            <a href="fti.upnyk.ac.id/" class="ftco-heading-2"><em>CBIS FTI</em></a>  
+            </div>
+        </div>
           
         </div>
+        
         <div class="col-md-6 col-lg-6 text-center mt-5" >
           <a style=" width: 100%;" href=""><img width="60%" src="<?php echo base_url('assets/assets2/img/logo-sisfo.png'); ?>"></a>
         </div>

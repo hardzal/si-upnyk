@@ -28,6 +28,13 @@
                                     <form role="form" method="POST" action="<?php echo base_url('index.php/admin/updateprofil')?>">
                                          <input type="hidden" class="form-control" rows="3" name="id" value="<?php echo $profil->id; ?>">
                                         <div class="form-group">
+                                            <label>Sejarah</label>
+                                           
+                                            <textarea id="elm1" class="form-control" rows="3" name="sejarah" ><?php echo $profil->sejarah; ?></textarea>
+                                        </div>
+                                        
+										<br>
+                                        <div class="form-group">
                                             <label>Visi</label>
                                            
                                             <textarea id="elm1" class="form-control" rows="3" name="visi" ><?php echo $profil->visi; ?></textarea>
@@ -40,7 +47,12 @@
                                         </div>
 										
 										<br>
-                                       
+                                        <div class="form-group">
+                                            <label>Tujuan</label>
+                                            <textarea id="elm1" class="form-control" rows="3" name="tujuan"><?php echo $profil->tujuan; ?></textarea>
+                                        </div>
+										
+										<br>
 										
                                         <button type="submit" class="btn btn-info">Submit Button</button>
                                         <button type="reset" class="btn btn-warning">Reset Button</button>

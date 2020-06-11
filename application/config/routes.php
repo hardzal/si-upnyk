@@ -53,17 +53,21 @@ $route['default_controller'] = 'Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['admin/agenda'] = 'Event/list';
+$route['admin/agenda'] = 'Event/lists';
 $route['admin/agenda/create'] = 'Event/create';
 $route['admin/agenda/edit/(:any)'] = 'Event/edit/$1';
 $route['admin/agenda/delete/(:any)'] = 'Event/delete/$1';
 
-$route['admin/galleries'] = 'Gallery/list';
+$route['admin/galleries'] = 'Gallery/lists';
 $route['admin/galleries/create'] = 'Gallery/create';
 $route['admin/galleries/edit/(:any)'] = 'Gallery/edit/$1';
 $route['admin/galleries/delete/(:any)'] = 'Gallery/delete/$1';
 
-$route['admin/specialization'] = 'Specialization/list';
+$route['admin/specialization'] = 'Specialization/lists';
 $route['admin/specialization/create'] = 'Specialization/create';
 $route['admin/specialization/edit/(:any)'] = 'Specialization/edit/$1';
 $route['admin/specialization/delete/(:any)'] = 'Specialization/delete/$1';
+
+$route['admin/question'] = 'Question/lists';
+$route['admin/question/show/(:any)'] = 'Question/show/$1';
+$route['admin/question/delete/(:any)'] = 'Question/delete/$1';

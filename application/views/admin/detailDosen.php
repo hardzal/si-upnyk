@@ -30,7 +30,7 @@
 											
 									<br>
 									<br>
-										<img src="<?php echo base_url('assets/'.$dosen->file)?>" width="20%">
+										<img src="<?php echo base_url('assets/images/'.$dosen->file)?>" width="20%">
 											<br>
 											<br>
                                     <div class="panel panel-default">

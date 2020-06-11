@@ -1,18 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class MSpecialization extends CI_Model
+class MQuestion extends CI_Model
 {
-	private $table = "specialization";
+	private $table = "questions";
 
 	public function getAll()
 	{
 		return $this->db->get($this->table)->result_object();
-	}
-
-	public function getActive()
-	{
-		return $this->db->get_where($this->table, ['status' => 1])->result_object();
 	}
 
 	public function get($id)
@@ -23,11 +18,6 @@ class MSpecialization extends CI_Model
 	public function insert($data)
 	{
 		return $this->db->insert($this->table, $data);
-	}
-
-	public function update($data, $id)
-	{
-		return $this->db->update($this->table, $data, ['id' => $id]);
 	}
 
 	public function delete($id)

@@ -4,8 +4,8 @@
 	<br>
 </a>
 
-<a href="http://fti.upnyk.ac.id/" class="ftco-animate">
-	<img class="img-fluid" src="<?php echo base_url('assets/assets2/img-link/cbis.png')?>">
+<a href="http://www.if.upnyk.ac.id/" class="ftco-animate">
+	<img class="img-fluid" src="<?php echo base_url('assets/assets2/img-link/if.png')?>">
 	<br>
 	<br>
 </a>

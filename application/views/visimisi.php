@@ -28,39 +28,39 @@
 
     <div class="row" id="topSection">
       <div class="col-md-8">
-        <!-- <h3 class=" mb-3 text-center text-uppercase heading-section ftco-animate">Visi & Misi</h3> -->
+         <!--<h3 class=" mb-3 text-center text-uppercase heading-section ftco-animate">Visi & Misi</h3> -->
         <hr>
         <!-- Row Berita -->
         <div class="row">
           <div class="profil mb-3 ftco-animate">
            <h4 class="text-uppercase">Visi</h4>
+           <div align="justify">
            <small>
-             <p>Menjadi Program Studi Sistem Informasi yang profesional dan berintegritas berlandaskan jiwa bela negara dengan keunggulan di bidang Sistem Informasi Kebumian di Tingkat Nasional pada tahun 2027</p>
+           <?php
+            echo $profil->visi;
+           ?>
            </small>
+           </div>
           </div>
          <div class="profil ftco-animate">
             <h4 class="text-uppercase">Misi</h4>
+            <div align="justify">
             <small>
-              <p> 1. Menyelenggarakan pendidikan tinggi untuk menghasilkan sarjana sistem informasi di bidang kebumian dengan berpedoman pada standar mutu pendidikan nasional dan trend perkembangan TIK di tingkat internasional
-              <br>
-              2. Berperan aktif dalam penelitian dan pemanfaatan sistem informasi/teknologi informasi yang bertujuan meningkatkan kesejahteraan masyarakat dan daya saing bangsa
-              <br>
-              3. Menyelenggarakan penabdian kepada masyarakat dengan memanfaatkan dan menerapkan hasil penelitian di bidang sistem informasi dan telekomunikasi</p>
+            <?php
+                echo $profil->misi;
+            ?>
             </small>
+            </div>
           </div>
         <div class="profil ftco-animate">
           <h4 class="text-uppercase">Tujuan</h4>
+          <div align="justify">
           <small>
-            <p>
-             1. Menghasilkan lulusan sistem informasi yang bermoral, profesional, berintegritas dan memiliki jiwa bela negara serta memiliki kompetensi di bidang sistem informasi
-             <br>
-             2. Menghasilkan penelitian yang berorientasi pada pengembangan Sistem Informasi
-             <br>
-             3. Mengembangkan kegiatan pengabdian pada masyarakat yang dapat membantu penanganan masalah dan meningkatkan kualitas hidup
-             <br>
-             4. Menjalin kerjasama dengan lembaga pemerintah maupun swasta dalam rangka meningkatkan mutu pendidikan sistem informasi
-            </p>
-          </small>
+          <?php
+                echo $profil->tujuan;
+            ?>
+            </small>
+            </div>
         </div>
         <hr>
       </div>

@@ -32,7 +32,7 @@
           <div class="col-md-6 col-lg-3 ftco-animate">
             <div class="staff">
               <div class="img-wrap d-flex align-items-stretch">
-                <div class="img align-self-stretch" style="background-image: url(<?php echo base_url('assets/images/'.$row->file); ?>);"></div>
+                <div class="img align-self-stretch" style="background-image: url(<?php echo base_url('assets/'.$row->file); ?>);"></div>
               </div>
               <div class="text pt-3 text-center">
                 <h3><?php echo $row->nama; ?></h3>

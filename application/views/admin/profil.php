@@ -21,6 +21,22 @@
 			<?php 
 				foreach($struk as $data){
 			?>
+			<h3>Sejarah</h3>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                       
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <?php echo $data->sejarah; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
 			<h3>Visi</h3>
             <div class="row">
                 <div class="col-lg-12">
@@ -46,6 +62,22 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                    <?php echo $data->misi; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        	<h3>Tujuan</h3>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                       
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                   <?php echo $data->tujuan; ?>
                                 </div>
                             </div>
                         </div>

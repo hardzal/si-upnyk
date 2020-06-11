@@ -52,6 +52,7 @@ class Admin extends CI_Controller
 	public function updateprofil()
 	{
 		$data['id'] 		= $this->input->post('id');
+		$data['sejarah']    = $this->input->post('sejarah');
 		$data['visi'] 		= $this->input->post('visi');
 		$data['misi'] 		= $this->input->post('misi');
 		$data['tujuan'] 		= $this->input->post('tujuan');
@@ -197,8 +198,8 @@ class Admin extends CI_Controller
 			$a = $data['file']->file;
 
 
-			if (file_exists('./assets/' . $a)) {
-				unlink('assets/' . $a);
+			if (file_exists('./assets/images/' . $a)) {
+				unlink('assets/images/' . $a);
 			}
 
 			$status = $this->upload->do_upload('file');
@@ -221,7 +222,7 @@ class Admin extends CI_Controller
 		$data['file'] = $this->mdata->iddosen($id)->row();
 		$a = $data['file']->file;
 
-		unlink('assets/' . $a);
+		unlink('assets/images/' . $a);
 		$this->mdata->deleteDosen($id);
 		$this->session->set_flashdata('notif', 'Berhasil dihapus');
 		redirect(site_url('admin/dosen'));
@@ -307,8 +308,8 @@ class Admin extends CI_Controller
 			$a = $data['file']->file;
 
 
-			if (file_exists('./assets/' . $a)) {
-				unlink('./assets/' . $a);
+			if (file_exists('./assets/images/' . $a)) {
+				unlink('./assets/images/' . $a);
 			}
 
 			$status = $this->upload->do_upload('file');
@@ -331,7 +332,7 @@ class Admin extends CI_Controller
 		$data['file'] = $this->mdata->idtendik($id)->row();
 		$a = $data['file']->file;
 
-		unlink('assets/' . $a);
+		unlink('assets/images/' . $a);
 		$this->mdata->deletetendik($id);
 		$this->session->set_flashdata('notif', 'Berhasil dihapus');
 		redirect(site_url('admin/tendik'));
@@ -782,7 +783,7 @@ class Admin extends CI_Controller
 		$data['berita'] = $this->mdata->idberita($id)->row();
 		$this->load->view('admin/beritaadmin', $data);
 	}
-	
+
 	/*		
 	//Info Jurusan
 	public function infoJurusan()
@@ -1021,9 +1022,7 @@ class Admin extends CI_Controller
 			'file'		 	=> $this->input->post('file'),
 			'link' 		=> $this->input->post('link')
 		);
-		var_dump($data);
-		die();
-		
+
 		$config['upload_path']          = './assets/images/slide';
 		$config['max_size']             = 10000;
 		$config['allowed_types'] 		= 'jpg|png|jpeg|gif|mp4|3gp|mpeg|mpg';

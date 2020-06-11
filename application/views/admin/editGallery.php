@@ -29,25 +29,25 @@
 										<p class="alert alert-danger"><?php echo validation_errors(); ?></p>
 									<?php endif; ?>
 
-									<form role="form" method="POST" action="<?php echo base_url('index.php/Gallery/edit/'. $gallery->id) ?>" enctype="multipart/form-data">
+									<form role="form" method="POST" action="<?php echo base_url('index.php/Gallery/edit/' . $gallery->id) ?>" enctype="multipart/form-data">
 										<div class="form-group">
 											<label>File Image</label>
 											<div class="row">
-												<?php if($gallery->image) :?>
-													<img src='<?php echo base_url($gallery->image);?>' width='300px;'/>
-												<?php endif;?>
+												<?php if ($gallery->image) : ?>
+													<img src='<?php echo base_url($gallery->image); ?>' width='300px;' />
+												<?php endif; ?>
 												<input class="form-control col-sm-12" type="file" name="image">
 											</div>
 										</div>
 
 										<div class="form-group">
 											<label>Keterangan</label>
-											<input class="form-control" placeholder="Keterangan" type="text" name="keterangan" value="<?php echo $gallery->keterangan ?? "";?>">
+											<input class="form-control" placeholder="Keterangan" type="text" name="keterangan" value="<?php echo $gallery->keterangan ? $gallery->keterangan : ""; ?>">
 										</div>
 
 										<div class="form-group">
 											<label>Publish?</label>
-											<input type="checkbox" name="status" value=1 <?php echo $gallery->status==1 ? 'checked' : '';?>/>
+											<input type="checkbox" name="status" value=1 <?php echo $gallery->status == 1 ? 'checked' : ''; ?> />
 										</div>
 
 										<button type="submit" class="btn btn-info">Submit Button</button>

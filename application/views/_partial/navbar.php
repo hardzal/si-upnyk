@@ -117,6 +117,7 @@
                 <a class="dropdown-item" href="<?php echo base_url('home/visimisi')?>">Visi & Misi</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/organisasiDosen') ?>">Struktur Organisasi</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/sambutan') ?>">Sambutan KoorProdi</a>
+                <a class="dropdown-item" href="<?php echo base_url('home/fasilitas')?>">Fasilitas</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/officialDocument') ?>">Official Document</a>
               </div>
             </li>
@@ -135,6 +136,8 @@
                 <a class="dropdown-item" href="<?php echo base_url('home/kurikulum')?>">Kurikulum</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/akademik')?>">Kalender Akademik</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/download')?>">Bidang Minat</a>
+                <a class="dropdown-item" href="<?php echo base_url('home/kerja_praktik')?>">Kerja Praktik</a>
+                <a class="dropdown-item" href="<?php echo base_url('home/skripsi')?>">Skripsi</a>
                 <a class="dropdown-item" href="#">Jadwal Skripsi</a>
               </div>
             </li>
@@ -144,7 +147,6 @@
               <div class="dropdown-menu dropdown-primary ftco-animate" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="<?php echo base_url('home/organisasiMahasiswa')?>">Organisasi Mahasiswa</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/prestasi')?>">Prestasi Mahasiswa</a>
-                <a class="dropdown-item" href="<?php echo base_url('home/karier')?>">Karier Mahasiswa</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/Alumni')?>">Alumni</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/informasiWisuda')?>">Informasi Wisuda</a>
               </div>
@@ -157,10 +159,8 @@
                 <a class="dropdown-item" href="<?php echo base_url('home/beritaMahasiswa');?>">Berita Mahasiswa</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/informasiAkademik');?>">Informasi Akademik</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/informasiGrafik');?>">Informasi Grafik</a>
+                <a class="dropdown-item" href="<?php echo base_url('home/informasilowker')?>">Informasi Lowongan Kerja</a>
               </div>
-            </li>
-            <li class="nav-item">
-              <a href="<?php echo base_url('home/applist')?>" class="nav-link p-3" style="font-weight: bold;  color: #26428B;">Fasilitas</a>
             </li>
             <li class="nav-item">
               <a href="<?php echo base_url('home/applist')?>" class="nav-link p-3" style="font-weight: bold;  color: #26428B;">Aplikasi</a>

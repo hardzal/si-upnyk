@@ -400,75 +400,6 @@ class Admin extends CI_Controller
 		redirect(site_url('Admin/akademik'));
 	}
 
-
-
-	//kurikulum
-	public function Kurikulum()
-	{
-		$data['kurikulum'] = $this->mdata->kurikulum()->result();
-		$this->load->view('admin/kurikulum', $data);
-	}
-
-
-	public function ubahKurikulum($id)
-	{
-		$data['kurikulum'] = $this->mdata->idkurikulum($id)->row();
-		$this->load->view('admin/editKurikulum', $data);
-	}
-
-	public function updateKurikulum()
-	{
-
-		$data = array(
-			'id' 	=> $this->input->post('id'),
-			'tahun' => $this->input->post('tahun')
-		);
-
-		if ($_FILES['file']['tmp_name'] != '') {
-
-			$config['upload_path']          = './assets/images/';
-			$config['max_size']             = 10000;
-			$config['allowed_types'] 		= 'jpg|png|jpeg|gif|doc|docx|xls|pdf';
-
-			$this->load->library('upload');
-			$this->upload->initialize($config);
-
-			$id = $this->input->post('id');
-
-			$data['file'] = $this->mdata->idkurikulum($id)->row();
-			$a = $data['file']->file;
-
-
-			if (file_exists('./assets/' . $a)) {
-				unlink('assets/' . $a);
-			}
-
-			$status = $this->upload->do_upload('file');
-
-			if ($status) {
-				$upload_data = $this->upload->data();
-				$data['file'] = 'images/' . $upload_data['file_name'];
-			}
-		}
-
-		$id = $this->input->post('id');
-		$this->mdata->updatekurikulum($id, $data);
-		$this->session->set_flashdata('notif', 'Berhasil disimpan');
-		redirect(site_url('Admin/kurikulum'));
-	}
-
-	public function hapusKurikulum($id)
-	{
-		$data['kurikulum'] = $this->mdata->idkurikulum($id)->row();
-
-		$this->mdata->deletekurikulum($id);
-		$this->session->set_flashdata('notif', 'Berhasil dihapus');
-		redirect(site_url('admin/kurikulum'));
-	}
-
-
-
-
 	//Prestasi
 	public function Prestasi()
 	{
@@ -1004,8 +935,6 @@ class Admin extends CI_Controller
 		
 */
 	//SLIDE
-
-
 	public function slide()
 	{
 		$data['slide'] = $this->mdata->all_slide()->result();

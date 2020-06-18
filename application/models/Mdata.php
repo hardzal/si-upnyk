@@ -154,42 +154,7 @@ class Mdata extends CI_Model
 		$this->db->update('kalendar', $data);
 	}
 
-
-	//KURIKULUM
-
-	function kurikulum()
-	{
-		$this->db->select('*');
-		$this->db->from('kurikulum');
-		$this->db->order_by('id', 'desc');
-		return $this->db->get();
-	}
-
-	function idkurikulum($id)
-	{
-		$this->db->select('*');
-		$this->db->from('kurikulum');
-		$this->db->where('id', $id);
-		return $this->db->get();
-	}
-	function insertkurikulum($data)
-	{
-		$this->db->insert('kurikulum', $data);
-	}
-	function updateKurikulum($id, $data)
-	{
-		$this->db->where('id', $id);
-		$this->db->update('kurikulum', $data);
-	}
-
-	function deletekurikulum($id)
-	{
-		$row = $this->db->where('id', $id);
-		$this->db->delete('kurikulum');
-	}
-
 	//PRESTASI
-
 	function prestasi()
 	{
 		$this->db->select('*');

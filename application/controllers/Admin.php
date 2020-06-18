@@ -24,6 +24,7 @@ class Admin extends CI_Controller
 		}
 
 		$this->load->model('mdata');
+		$this->load->model('MTriDharma', 'mdharma');
 	}
 
 	public function index()
@@ -1102,8 +1103,6 @@ class Admin extends CI_Controller
 		$this->session->set_flashdata('notif', 'Berhasil dihapus, <a href="slide">Kembali.</a>');
 		redirect(site_url('admin/slide'));
 	}
-
-
 
 
 

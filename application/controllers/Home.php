@@ -29,6 +29,7 @@ class Home extends CI_Controller
 		$this->load->model('mdata');
 		$this->load->model('MEvent', 'event');
 		$this->load->model('MGallery', 'gallery');
+		$this->load->model('MSpecialization', 'specialization');
 		//$this->load->view('admin/head');
 		//$this->load->view('sidebar');
 	}
@@ -145,7 +146,7 @@ class Home extends CI_Controller
 
 	public function visimisi()
 	{
-		$data['profil'] = $this->mdata->profil()->result();
+		$data['profil'] = $this->mdata->profil()->row_object();
 		$this->load->view('visimisi', $data);
 	}
 
@@ -157,19 +158,25 @@ class Home extends CI_Controller
 
 	public function download()
 	{
-		$data['file'] = $this->mdata->download()->result();
+		// 		$data['file'] = $this->mdata->download()->result();
+		$data['specializations'] = $this->specialization->getAll();
 		$this->load->view('download', $data);
 	}
 
+	//$data['profil'] = $this->mdata->profil()->result();
 	public function kontak()
 	{
 		$this->load->model('MQuestion', 'question');
 		//$data['profil'] = $this->mdata->profil()->result();
+		$this->form_validation->set_rules('name', 'Nama', 'required|min_length[3]');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('question', 'Pertanyaan', 'required|min_length[5]');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('kontak');
 		} else {
 			$data = [
 				'name' => $this->input->post('name', true),
+				'email' => $this->input->post('email',true),
 				'quest' => $this->input->post('question', true)
 			];
 
@@ -182,6 +189,7 @@ class Home extends CI_Controller
 			redirect(base_url("home/kontak"));
 		}
 	}
+
 
 	public function strukor($offset = 0)
 	{
@@ -324,7 +332,8 @@ class Home extends CI_Controller
 
 	public function sejarah()
 	{
-		$this->load->view('sejarah'); // tatis
+		$data['profil'] = $this->mdata->profil()->row_object();
+		$this->load->view('sejarah', $data);
 	}
 
 	public function sambutan()
@@ -401,8 +410,28 @@ class Home extends CI_Controller
 		}
 	}
 
-	public function officialDocument()
+	public function triDharma()
 	{
-		$this->load->view('official_document');
+		$this->load->view('tri_dharma');
+	}
+
+	public function fasilitas()
+	{
+		$this->load->view('fasilitas');
+	}
+
+	public function informasilowker()
+	{
+		$this->load->view('informasilowker');
+	}
+
+	public function skripsi()
+	{
+		$this->load->view('skripsi');
+	}
+
+	public function kerja_praktik()
+	{
+		$this->load->view('kerja_praktik');
 	}
 }

@@ -58,15 +58,15 @@
             </div>
             
           </div>
-          <div class="row w-100" >
+          <div class="row w-100">
             <div class="center col-md-4 text-center align-self-center">
-            <a href="http://si.upnyk.ac.id/siapps/index.php" class="ftco-heading-2"><em>Student Page</em></a>  
+            <a href="http://si.upnyk.ac.id/siapps/index.php" class="ftco-heading-2"  style="color: white;"><em>Student Page</em></a>  
             </div>
             <div class="center col-md-4 text-center align-self-center">
-            <a href="http://sadewa.upnyk.ac.id/" class="ftco-heading-2"><em>Sadewa UPNVY</em></a>
+            <a href="http://sadewa.upnyk.ac.id/" class="ftco-heading-2"  style="color: white;"><em>Sadewa UPNVY</em></a>
             </div>
             <div class="center col-md-4 text-center align-self-center">
-            <a href="fti.upnyk.ac.id/" class="ftco-heading-2"><em>CBIS FTI</em></a>  
+            <a href="fti.upnyk.ac.id/" class="ftco-heading-2"  style="color: white;"><em>CBIS FTI</em></a>  
             </div>
         </div>
           

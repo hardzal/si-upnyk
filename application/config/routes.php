@@ -71,3 +71,18 @@ $route['admin/specialization/delete/(:any)'] = 'Specialization/delete/$1';
 $route['admin/question'] = 'Question/lists';
 $route['admin/question/show/(:any)'] = 'Question/show/$1';
 $route['admin/question/delete/(:any)'] = 'Question/delete/$1';
+
+$route['admin/pengajaran'] = 'Tridharma/list_pengajaran';
+$route['admin/pengajaran/create'] = 'Tridharma/create_pengajaran';
+$route['admin/pengajaran/edit/(:any)'] = 'Tridharma/edit_pengajaran/$1';
+$route['admin/pengajaran/delete/(:any)'] = 'Tridharma/delete_pengajaran/$1';
+
+$route['admin/penelitian'] = 'Tridharma/list_penelitian';
+$route['admin/penelitian/create'] = 'Tridharma/create_penelitian';
+$route['admin/penelitian/edit/(:any)'] = 'Tridharma/edit_penelitian/$1';
+$route['admin/penelitian/delete/(:any)'] = 'Tridharma/delete_penelitian/$1';
+
+$route['admin/pengabdian'] = 'Tridharma/list_pengabdian';
+$route['admin/pengabdian/create'] = 'Tridharma/create_pengabdian';
+$route['admin/pengabdian/edit/(:any)'] = 'Tridharma/edit_pengabdian/$1';
+$route['admin/pengabdian/delete/(:any)'] = 'Tridharma/delete_pengabdian/$1';

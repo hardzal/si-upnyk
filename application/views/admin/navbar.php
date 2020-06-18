@@ -40,10 +40,27 @@
 					<a href="#"><i class="fa fa-flag fa-fw"></i> Profil <span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a href="<?php echo base_url('index.php/admin/profil') ?>">Sejarah, Visi Misi dan Tujuan</a>
+							<a href="<?php echo base_url('admin/profil') ?>">Sejarah, Visi Misi dan Tujuan</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url('index.php/admin/struktur') ?>">Struktur Organisasi</a>
+							<a href="<?php echo base_url('admin/struktur') ?>">Struktur Organisasi</a>
+						</li>
+						<li>
+							<a href="#">Tri Dharma<span class="fa arrow"></span></a>
+						    <ul class="nav nav-third-level">
+						        <li>
+						            <a href="<?php echo base_url('admin/pengajaran') ?>">Pengajaran</a>
+						        </li>
+						        <li>
+						            <a href="<?php echo base_url('admin/penelitian') ?>">Penelitian</a>
+						        </li>
+						        <li>
+						            <a href="<?php echo base_url('admin/pengabdian') ?>">Pengabdian</a>
+						        </li>
+						    </ul>
+						</li>
+						<li>
+						    <a href="">Fasilitas</a>
 						</li>
 					</ul>
 					<!-- /.nav-second-level -->
@@ -69,6 +86,9 @@
 						<li>
 							<a href="<?php echo base_url('index.php/admin/Kurikulum') ?>">Kurikulum</a>
 						</li>
+						<li>
+        					<a href="<?php echo base_url('index.php/admin/specialization'); ?>"> Perminatan</a>
+        				</li>
 
 					</ul>
 					<!-- /.nav-second-level -->
@@ -92,9 +112,7 @@
 					<a href="<?php echo base_url('index.php/admin/galleries'); ?>"><i class="fa fa-picture-o" aria-hidden="true"></i>
 						Galery</a>
 				</li>
-				<li>
-					<a href="<?php echo base_url('index.php/admin/specialization'); ?>"><i class="fa fa-info-circle" aria-hidden="true"></i> Perminatan</a>
-				</li>
+				
 				<li>
 					<a href="<?php echo base_url('index.php/admin/question'); ?>"><i class="fa fa-question-circle" aria-hidden="true"></i> Pertanyaan</a>
 				</li>

@@ -9,7 +9,7 @@ class Specialization extends CI_Controller
 		$this->load->model('MSpecialization', 'specialization');
 	}
 
-	public function list()
+	public function lists()
 	{
 		$data['specializations'] = $this->specialization->getAll();
 		$this->load->view('admin/specialization', $data);
@@ -28,7 +28,7 @@ class Specialization extends CI_Controller
 			$data = [
 				'title' => $this->input->post('title', true),
 				'description' => $this->input->post('description', true),
-				'status' => $this->input->post('status', true) ?? 0
+				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
 			];
 
 			if ($_FILES['image']['tmp_name']) {
@@ -53,7 +53,7 @@ class Specialization extends CI_Controller
 				$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menambahkan data</div>');
 			}
 
-			redirect('admin/galleries');
+			redirect('admin/specialization');
 		}
 	}
 
@@ -66,8 +66,9 @@ class Specialization extends CI_Controller
 			$this->load->view('admin/editSpecialization', $data);
 		} else {
 			$data = [
+			    'title' => $this->input->post('title', true),
 				'description' => $this->input->post('description', true),
-				'status' => $this->input->post('status', true) ?? 0
+				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
 			];
 
 			if ($_FILES['image']['tmp_name']) {

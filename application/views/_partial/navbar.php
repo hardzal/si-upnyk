@@ -115,10 +115,10 @@
               <div class="dropdown-menu dropdown-primary px-3 ftco-animate" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="<?php echo base_url('home/sejarah') ?>">Sejarah</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/visimisi')?>">Visi & Misi</a>
+                <a class="dropdown-item" href="<?php echo base_url('home/triDharma') ?>">Tri Dharma</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/organisasiDosen') ?>">Struktur Organisasi</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/sambutan') ?>">Sambutan KoorProdi</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/fasilitas')?>">Fasilitas</a>
-                <a class="dropdown-item" href="<?php echo base_url('home/officialDocument') ?>">Official Document</a>
               </div>
             </li>
             
@@ -138,7 +138,6 @@
                 <a class="dropdown-item" href="<?php echo base_url('home/download')?>">Bidang Minat</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/kerja_praktik')?>">Kerja Praktik</a>
                 <a class="dropdown-item" href="<?php echo base_url('home/skripsi')?>">Skripsi</a>
-                <a class="dropdown-item" href="#">Jadwal Skripsi</a>
               </div>
             </li>
             <li class="nav-item dropdown">

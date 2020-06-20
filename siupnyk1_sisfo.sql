@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Jun 18, 2020 at 09:19 AM
+-- Generation Time: Jun 20, 2020 at 02:08 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.5
 
@@ -141,6 +141,22 @@ INSERT INTO `events` (`id`, `user_id`, `title`, `description`, `location`, `time
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `fasilitas`
+--
+
+DROP TABLE IF EXISTS `fasilitas`;
+CREATE TABLE IF NOT EXISTS `fasilitas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) DEFAULT NULL,
+  `image` text,
+  `status` int(1) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `file`
 --
 
@@ -206,15 +222,35 @@ CREATE TABLE IF NOT EXISTS `kalendar` (
   `id` int(3) NOT NULL AUTO_INCREMENT,
   `tahun` varchar(30) NOT NULL,
   `file` varchar(100) NOT NULL,
+  `status` int(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `kalendar`
 --
 
-INSERT INTO `kalendar` (`id`, `tahun`, `file`) VALUES
-(1, '2018/2019', 'images/Kalender_Akademik_19-201.pdf');
+INSERT INTO `kalendar` (`id`, `tahun`, `file`, `status`, `created_at`) VALUES
+(1, '2020/2021', 'kalender/Kalender_Akademik_19-20.pdf', 1, '2020-06-20 00:11:16'),
+(2, '2016/2017', '', 1, '2020-06-20 00:26:14');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kerja_praktik`
+--
+
+DROP TABLE IF EXISTS `kerja_praktik`;
+CREATE TABLE IF NOT EXISTS `kerja_praktik` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) DEFAULT NULL,
+  `description` text,
+  `file` text,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -226,16 +262,19 @@ DROP TABLE IF EXISTS `kurikulum`;
 CREATE TABLE IF NOT EXISTS `kurikulum` (
   `id` int(3) NOT NULL AUTO_INCREMENT,
   `tahun` varchar(20) NOT NULL,
-  `file` varchar(100) NOT NULL,
+  `file` text NOT NULL,
+  `status` int(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=366 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=367 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `kurikulum`
 --
 
-INSERT INTO `kurikulum` (`id`, `tahun`, `file`) VALUES
-(365, '2018/2019', 'images/Kurikulum_SI-20171.pdf');
+INSERT INTO `kurikulum` (`id`, `tahun`, `file`, `status`, `created_at`) VALUES
+(365, '2018/2019', 'Kurikulum_SI-2017.pdf', 0, '2020-06-16 17:00:00'),
+(366, '2017/2018', '', 1, '2020-06-20 00:01:59');
 
 -- --------------------------------------------------------
 
@@ -310,6 +349,23 @@ INSERT INTO `roles` (`id`, `role`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `skripsi`
+--
+
+DROP TABLE IF EXISTS `skripsi`;
+CREATE TABLE IF NOT EXISTS `skripsi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `description` text,
+  `file` text,
+  `status` int(1) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `slide`
 --
 
@@ -339,6 +395,7 @@ DROP TABLE IF EXISTS `specialization`;
 CREATE TABLE IF NOT EXISTS `specialization` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
+  `id_dosen` int(11) NOT NULL,
   `description` text,
   `img` text,
   `status` int(1) DEFAULT NULL,
@@ -350,10 +407,10 @@ CREATE TABLE IF NOT EXISTS `specialization` (
 -- Dumping data for table `specialization`
 --
 
-INSERT INTO `specialization` (`id`, `title`, `description`, `img`, `status`, `created_at`) VALUES
-(2, 'Manajemen Informasi Bisnis (Business Information Management)', '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>Manajemen Informasi Bisnis merupakan perpanduan antara ilmu manajemen dan teknologi informasi dengan penerapannya didunia bisnis dengan mempertimbangkan faktor manusia, organisasi/perusahaan, informasi dan teknologi. Topik-topik pembahasan pada peminatan ini meliputi peningkatan performa bisnis dengan SI/TI, strategi pengembangan bisnis dengan SI/TI, pengelolaan SI/TI sampai dengan evaluasi kinerja dari SI/TI dalam mendukung bisnis ataupun organisasi.</p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', './assets/images/perminatan/minat1-1591799751.jpg', 1, '2020-06-10 14:35:51'),
-(3, 'Kecerdasan dan Analisis Bisnis (Business Intelligence and Analytics)', '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p xss=removed align=\"justify\"><span xss=removed>Kecerdasan dan analisis bisnis merupakan solusi isu dalam manajemen data dan informasi, terutama data dan informasi perusahaan. Kecerdasan bisnis menggunakan data dan informasi masa lampau untuk mencari tahu penyebab kondisi sekarang, sedangkan analisis bisnis menganalisis penyebab kondisi masa lampau dan bisa digunakan untuk pengambilan keputusan.</span></p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', './assets/images/perminatan/business-intelligence-1591800838.jpg', 1, '2020-06-10 14:53:58'),
-(4, 'Pengembangan dan Pengintegrasian Sistem Informasi dan Sistem Informasi Kebumian (IS/ESIS Integration and Development)', '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p xss=removed align=\"justify\"><span xss=removed>Pengembangan dan Pengintegrasian Sistem Informasi dan Sistem Informasi Kebumian merupakan peminatan yang berfokus tidak hanya pada mengembangkan dan mengintegrasikan suatu sistem informasi akan tetapi meliputi sistem informasi kebumian, yang dimaksudkan sistem informasi kebumian yaitu sistem yang dapat memberikan data dan informasi dalam bentuk visualisasi (map) terkait geologi suatu tempat atau daerah. Sistem informasi ataupun Sistem Informasi Kebumian akan dikembangkan sesuai dengan kebutuhan bisnis atau perusahaan dengan melakukan analisis hingga testing untuk nantinya dapat di implementasikan. Tidak hanya pengembangan, integrasi sistem informasi diperlukan sehingga proses bisnis dari sistem bisa lebih singkat dan efektif, dengan adanya sistem terintegrasi dapat memudahkan pengguna dalam mencari data ataupun informasi yang komplex tanpa harus membuka satu persatu sistem yang telah ada.</span></p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', './assets/images/perminatan/esis_-_rueckkanal-1591801782.png', 1, '2020-06-10 15:09:42');
+INSERT INTO `specialization` (`id`, `title`, `id_dosen`, `description`, `img`, `status`, `created_at`) VALUES
+(2, 'Manajemen Informasi Bisnis (Business Information Management)', 0, '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>Manajemen Informasi Bisnis merupakan perpanduan antara ilmu manajemen dan teknologi informasi dengan penerapannya didunia bisnis dengan mempertimbangkan faktor manusia, organisasi/perusahaan, informasi dan teknologi. Topik-topik pembahasan pada peminatan ini meliputi peningkatan performa bisnis dengan SI/TI, strategi pengembangan bisnis dengan SI/TI, pengelolaan SI/TI sampai dengan evaluasi kinerja dari SI/TI dalam mendukung bisnis ataupun organisasi.</p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', './assets/images/perminatan/minat1-1591799751.jpg', 1, '2020-06-10 14:35:51'),
+(3, 'Kecerdasan dan Analisis Bisnis (Business Intelligence and Analytics)', 1, '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p xss=removed align=\"justify\"><span xss=removed>Kecerdasan dan analisis bisnis merupakan solusi isu dalam manajemen data dan informasi, terutama data dan informasi perusahaan. Kecerdasan bisnis menggunakan data dan informasi masa lampau untuk mencari tahu penyebab kondisi sekarang, sedangkan analisis bisnis menganalisis penyebab kondisi masa lampau dan bisa digunakan untuk pengambilan keputusan.</span></p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', './assets/images/perminatan/business-intelligence-1591800838.jpg', 1, '2020-06-10 14:53:58'),
+(4, 'Pengembangan dan Pengintegrasian Sistem Informasi dan Sistem Informasi Kebumian (IS/ESIS Integration and Development)', 1, '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p xss=removed align=\"justify\"><span xss=removed>Pengembangan dan Pengintegrasian Sistem Informasi dan Sistem Informasi Kebumian merupakan peminatan yang berfokus tidak hanya pada mengembangkan dan mengintegrasikan suatu sistem informasi akan tetapi meliputi sistem informasi kebumian, yang dimaksudkan sistem informasi kebumian yaitu sistem yang dapat memberikan data dan informasi dalam bentuk visualisasi (map) terkait geologi suatu tempat atau daerah. Sistem informasi ataupun Sistem Informasi Kebumian akan dikembangkan sesuai dengan kebutuhan bisnis atau perusahaan dengan melakukan analisis hingga testing untuk nantinya dapat di implementasikan. Tidak hanya pengembangan, integrasi sistem informasi diperlukan sehingga proses bisnis dari sistem bisa lebih singkat dan efektif, dengan adanya sistem terintegrasi dapat memudahkan pengguna dalam mencari data ataupun informasi yang komplex tanpa harus membuka satu persatu sistem yang telah ada.</span></p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', './assets/images/perminatan/esis_-_rueckkanal-1591801782.png', 1, '2020-06-10 15:09:42');
 
 -- --------------------------------------------------------
 
@@ -472,6 +529,30 @@ CREATE TABLE IF NOT EXISTS `tridharma_pengajaran` (
 INSERT INTO `tridharma_pengajaran` (`id`, `title`, `description`, `file`, `status`, `created_at`) VALUES
 (1, 'coba lagi ya coba', '</p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;\">&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>COBACOOACAOCA</p>\r\n<p> </p>\r\n<p><img src=\"https://image.shutterstock.com/image-vector/square-grunge-black-example-stamp-260nw-647778754.jpg\" alt=\"\" width=\"599\" height=\"280\"></p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', './assets/file/tri_dharma/pengajaran/1530-1369-1-pb-1592464825.pdf', 1, '2020-06-18 07:20:25'),
 (2, 'coba coba lagi deh', '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>ai suru hito yo shiranai tomo yo</p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', './assets/file/tri_dharma/pengajaran/169-333-1-sm-1592471875.pdf', 0, '2020-06-18 09:17:55');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wisuda`
+--
+
+DROP TABLE IF EXISTS `wisuda`;
+CREATE TABLE IF NOT EXISTS `wisuda` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `description` text,
+  `file` text,
+  `status` int(1) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `wisuda`
+--
+
+INSERT INTO `wisuda` (`id`, `title`, `description`, `file`, `status`, `created_at`) VALUES
+(1, 'Wisuda tahun baru apasaja?', '&lt;!DOCTYPE html>\r\n&lt;html&gt;\r\n&lt;head&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;\r\n<p>akowkaoowaoakowoqwaokoakdoakwkad</p>\r\n&lt;/body&gt;\r\n&lt;/html&gt;', './assets/file/wisuda/paper yuyun snastikom 2015-1592625148.pdf', 0, '2020-06-20 03:18:32');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

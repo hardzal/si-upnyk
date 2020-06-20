@@ -25,7 +25,7 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-8">
-									<form role="form" method="POST" action="<?php echo base_url('admin/kurikulum/update') ?>" enctype="multipart/form-data">
+									<form role="form" method="POST" action="<?php echo base_url('admin/kurikulum/edit/') . $kurikulum->id ?>" enctype="multipart/form-data">
 										<h3> Tahun Ajaran <?php echo $kurikulum->tahun; ?> </h3>
 										<div class="form-group">
 											<label>File akademik</label>

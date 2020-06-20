@@ -130,29 +130,6 @@ class Mdata extends CI_Model
 		$query = $this->db->get('staff', $limit, $start);
 		return $query;
 	}
-	//AKADEMIK
-
-	function akademik()
-	{
-		$this->db->select('*');
-		$this->db->from('kalendar');
-		$this->db->order_by('id', 'desc');
-		return $this->db->get();
-	}
-
-	function idakademik($id)
-	{
-		$this->db->select('*');
-		$this->db->from('kalendar');
-		$this->db->where('id', $id);
-		return $this->db->get();
-	}
-
-	function updateakademik($id, $data)
-	{
-		$this->db->where('id', $id);
-		$this->db->update('kalendar', $data);
-	}
 
 	//PRESTASI
 	function prestasi()
@@ -166,6 +143,7 @@ class Mdata extends CI_Model
 	{
 		$this->db->insert('prestasi', $data);
 	}
+
 	function idprestasi($id)
 	{
 		$this->db->select('*');
@@ -186,7 +164,6 @@ class Mdata extends CI_Model
 	}
 
 	//KP
-
 	function kpskrip()
 	{
 		$this->db->select('*');
@@ -450,16 +427,6 @@ class Mdata extends CI_Model
 
 
 	//user
-
-	//Kalendar akademik
-	function kalendar()
-	{
-		$this->db->select('*');
-		$this->db->from('kalendar');
-		$this->db->order_by('id', 'desc');
-		return $this->db->get();
-	}
-
 
 	//KP
 	function kp()

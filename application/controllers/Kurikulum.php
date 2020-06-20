@@ -17,7 +17,43 @@ class Kurikulum extends CI_Controller
 
 	public function create()
 	{
-		
+		$this->form_validation->set_rules('tahun', 'Tahun', 'required');
+		if (empty($_FILES['file']['tmp_name'])) {
+			$this->form_validation->set_rules('file', 'File', 'required');
+		}
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('admin/addKurikulumFile');
+		} else {
+			$data = [
+				'tahun' => $this->input->post('tahun'),
+				'status' => $this->input->post('status', true) ? $this->input->post('status', true) : 0
+			];
+
+			if ($_FILES['file']['tmp_name']) {
+				$config['file_name'] = changeFileName($_FILES['image']);
+				$config['upload_path']          = './assets/file/kurikulum/';
+				$config['max_size']             = 10000;
+				$config['allowed_types'] 		= 'jpg|png|jpeg|gif|doc|docx|xls|pdf';
+				$config['remove_spaces'] = false;
+
+				if (!uploadFile($config, 'file')) {
+					$error = $this->upload->display_errors();
+					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal mengupload file!<br>' . $error . '</div>');
+					redirect('admin/kurikulum');
+				}
+
+				$data['file'] = $config['upload_path'] . $config['file_name'];
+			}
+
+			if ($this->kurikulum->insert($data)) {
+				$this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil menambahkan data</div>');
+			} else {
+				$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menambahkan data</div>');
+			}
+
+			redirect('admin/kurikulum');
+		}
 	}
 
 	public function edit($id)
@@ -30,8 +66,8 @@ class Kurikulum extends CI_Controller
 			$this->load->view('admin/editKurikulum', $data);
 		} else {
 			$data = array(
-				'id' 	=> $this->input->post('id'),
-				'tahun' => $this->input->post('tahun')
+				'tahun' => $this->input->post('tahun'),
+				'status' => $this->input->post('status', true) ? $this->input->post('status', true) : 0
 			);
 
 			if ($_FILES['file']['tmp_name'] != '') {
@@ -60,10 +96,10 @@ class Kurikulum extends CI_Controller
 			}
 
 			$id = $this->input->post('id');
-			$this->mdata->update($id, $data);
+			$this->kurikulum->update($id, $data);
 			$this->session->set_flashdata('notif', 'Berhasil disimpan');
 
-			redirect(site_url('Admin/kurikulum'));
+			redirect(site_url('admin/kurikulum'));
 		}
 	}
 

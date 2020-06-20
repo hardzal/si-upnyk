@@ -18,9 +18,13 @@ class Specialization extends CI_Controller
 	public function create()
 	{
 		$this->form_validation->set_rules('Keterangan', 'description', 'min_Length[3]');
+		$this->form_validation->set_rules('Judul', 'title', 'min_Length[3]');
+		$this->form_validation->set_rules('dosen', 'dosen', 'required');
 		if (empty($_FILES['image']['tmp_name'])) {
 			$this->form_validation->set_rules('image', 'Image', 'required');
 		}
+
+		$data['dosen'] = $this->specialization->getListDosen();
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('admin/addSpecialization');
@@ -59,14 +63,19 @@ class Specialization extends CI_Controller
 
 	public function edit($id)
 	{
-		$this->form_validation->set_rules('description', 'keterangan', 'min_Length[3]');
+		$this->form_validation->set_rules('description', 'keterangan', 'required|min_Length[3]');
+		$this->form_validation->set_rules('title', 'title', 'required|min_Length[3]');
+		$this->form_validation->set_rules('dosen', 'dosen', 'required');
+
 		$data['specialization'] = $this->specialization->get($id);
+		$data['dosen'] = $this->specialization->getListDosen();
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('admin/editSpecialization', $data);
 		} else {
 			$data = [
-			    'title' => $this->input->post('title', true),
+				'id_dosen' => $this->input->post('id_dosen', true),
+				'title' => $this->input->post('title', true),
 				'description' => $this->input->post('description', true),
 				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
 			];

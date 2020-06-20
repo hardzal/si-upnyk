@@ -36,13 +36,12 @@
 										</div>
 
 										<div class="form-group">
-											<label>Keterangan</label>
-											<input class="form-control" placeholder="Keterangan" type="text" name="keterangan">
-										</div>
-
-										<div class="form-group">
-											<label>Publish?</label>
-											<input type="checkbox" name="status" value=1 />
+											<label class="col-form-label" for="status">Status</label>
+											<select name="status" class="form-control" id="status" required>
+												<option value>Pilih Status</option>
+												<option value=1>Publish</option>
+												<option value=0>Unpublish</option>
+											</select>
 										</div>
 
 										<button type="submit" class="btn btn-info">Submit Button</button>

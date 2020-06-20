@@ -13,7 +13,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header">Edit Kalender</h3>
+					<h3 class="page-header">Edit Wisuda</h3>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
@@ -25,29 +25,42 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-8">
-									<form role="form" method="POST" action="<?php echo base_url('admin/kalender/edit/') . $kalender->id ?>" enctype="multipart/form-data">
-										<h3> Tahun Ajaran <?php echo $kalender->tahun; ?> </h3>
+									<?php if (validation_errors()) : ?>
+										<p class="alert alert-danger"><?php echo validation_errors(); ?></p>
+									<?php endif; ?>
+
+									<form role="form" method="POST" action="<?php echo base_url('wisuda/edit/') . $wisuda->id ?>" enctype="multipart/form-data">
+
 										<div class="form-group">
-											<label>File akademik</label>
-											<?php if ($kalender->file) : ?>
-												<a href='<?php echo base_url('assets/file/') . $kalender->file; ?>'>Lihat File</a>
-												<input type="file" name="file" class="form-control" />
-												<small class="text-danger">* Max File 10MB</small>
-											<?php else : ?>
-												<input type="file" name="file" class="form-control" />
-											<?php endif; ?>
+											<label>Judul</label>
+											<input class="form-control" placeholder="Keterangan" type="text" name="title" value="<?php echo $wisuda->title; ?>">
+										</div>
+
+										<div class="form-group row">
+											<label>File</label>
 											<small class='text-danger'>* Max file 5 mb</small>
-											<input type="hidden" name="id" value="<?php echo $kalender->id; ?>">
+											<?php if ($wisuda->file) : ?>
+												<div class="col-sm-12 my-5">
+													<a href='<?php echo base_url('') . $wisuda->file; ?>'>Lihat File</a>
+												</div>
+												<div class=' col-md-8'>
+													<input type="file" name="file" class="form-control" id="file" />
+												</div>
+											<?php else : ?>
+												<input type="file" name="file" class="form-control" id="file" />
+											<?php endif; ?>
 										</div>
+
 										<div class="form-group">
-											<label>Tahun Ajaran</label>
-											<input type="text" name="tahun" value="<?php echo $kalender->tahun; ?>" required class="form-control" />
+											<label>Keterangan</label>
+											<textarea id="elm1" class="form-control" rows="3" name="description" value="<?php echo $wisuda->description; ?>"><?php echo $wisuda->description; ?></textarea>
 										</div>
+
 										<div class="form-group">
 											<label class="col-form-label" for="status">Status</label>
 											<select name="status" class="form-control" id="status" required>
 												<option value>Pilih Status</option>
-												<?php if ($kalender->status == 1) : ?>
+												<?php if ($tridharma->status == 1) : ?>
 													<option value=1 selected>Publish</option>
 													<option value=0>Unpublish</option>
 												<?php else : ?>
@@ -56,6 +69,7 @@
 												<?php endif; ?>
 											</select>
 										</div>
+
 										<button type="submit" class="btn btn-info">Submit Button</button>
 										<button type="reset" class="btn btn-warning">Reset Button</button>
 									</form>

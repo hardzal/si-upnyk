@@ -10,6 +10,11 @@ class MSpecialization extends CI_Model
 		return $this->db->get($this->table)->result_object();
 	}
 
+	public function getListDosen()
+	{
+		return $this->db->get('dosen')->result_object();
+	}
+
 	public function getActive()
 	{
 		return $this->db->get_where($this->table, ['status' => 1])->result_object();

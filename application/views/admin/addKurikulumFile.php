@@ -33,6 +33,7 @@
 										<div class="form-group">
 											<label>File Kurikulum</label>
 											<input class="form-control" type="file" name="file" required />
+											<small class='text-danger'>* Max file 5 mb</small>
 										</div>
 
 										<div class="form-group">

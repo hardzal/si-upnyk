@@ -8,7 +8,7 @@ class Event extends CI_Controller
 		$this->load->model('MEvent', 'event');
 	}
 
-	public function list()
+	public function lists()
 	{
 		$data['events'] = $this->event->getAll();
 		$this->load->view('admin/event', $data);

@@ -47,20 +47,20 @@
 						</li>
 						<li>
 							<a href="#">Tri Dharma<span class="fa arrow"></span></a>
-						    <ul class="nav nav-third-level">
-						        <li>
-						            <a href="<?php echo base_url('admin/pengajaran') ?>">Pengajaran</a>
-						        </li>
-						        <li>
-						            <a href="<?php echo base_url('admin/penelitian') ?>">Penelitian</a>
-						        </li>
-						        <li>
-						            <a href="<?php echo base_url('admin/pengabdian') ?>">Pengabdian</a>
-						        </li>
-						    </ul>
+							<ul class="nav nav-third-level">
+								<li>
+									<a href="<?php echo base_url('admin/pengajaran') ?>">Pengajaran</a>
+								</li>
+								<li>
+									<a href="<?php echo base_url('admin/penelitian') ?>">Penelitian</a>
+								</li>
+								<li>
+									<a href="<?php echo base_url('admin/pengabdian') ?>">Pengabdian</a>
+								</li>
+							</ul>
 						</li>
 						<li>
-						    <a href="<?php echo base_url('admin/fasilitas') ?>">Fasilitas</a>
+							<a href="<?php echo base_url('admin/fasilitas') ?>">Fasilitas</a>
 						</li>
 					</ul>
 					<!-- /.nav-second-level -->
@@ -81,20 +81,20 @@
 					<a href="#"><i class="fa fa-book fa-fw"></i>Akademik<span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a href="<?php echo base_url('admin/Akademik') ?>">Kalendar Akademik</a>
+							<a href="<?php echo base_url('admin/kalender') ?>">Kalendar Akademik</a>
 						</li>
 						<li>
 							<a href="<?php echo base_url('admin/Kurikulum') ?>">Kurikulum</a>
 						</li>
 						<li>
-        					<a href="<?php echo base_url('admin/specialization'); ?>"> Perminatan</a>
-        				</li>
-                        <li>
-        					<a href="<?php echo base_url('admin/kerja_praktik'); ?>"> Kerja Praktik</a>
-        				</li>
-        				<li>
-        					<a href="<?php echo base_url('admin/skripsi'); ?>"> Skripsi</a>    
-        				</li>
+							<a href="<?php echo base_url('admin/specialization'); ?>"> Perminatan</a>
+						</li>
+						<li>
+							<a href="<?php echo base_url('admin/kerja_praktik'); ?>"> Kerja Praktik</a>
+						</li>
+						<li>
+							<a href="<?php echo base_url('admin/skripsi'); ?>"> Skripsi</a>
+						</li>
 					</ul>
 					<!-- /.nav-second-level -->
 				</li>
@@ -117,9 +117,13 @@
 					<a href="<?php echo base_url('index.php/admin/galleries'); ?>"><i class="fa fa-picture-o" aria-hidden="true"></i>
 						Galery</a>
 				</li>
-				
+
 				<li>
 					<a href="<?php echo base_url('index.php/admin/question'); ?>"><i class="fa fa-question-circle" aria-hidden="true"></i> Pertanyaan</a>
+				</li>
+
+				<li>
+					<a href="<?php echo base_url('admin/wisuda'); ?>"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Wisuda</a>
 				</li>
 
 				<!-- <li class="active">

@@ -36,6 +36,7 @@
 											<?php else : ?>
 												<input type="file" name="file" class="form-control" />
 											<?php endif; ?>
+											<small class='text-danger'>* Max file 5 mb</small>
 											<input type="hidden" name="id" value="<?php echo $kurikulum->id; ?>">
 										</div>
 										<div class="form-group">

@@ -13,7 +13,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header">Tambah Bidang Perminatan</h3>
+					<h3 class="page-header">Perbaharui Bidang Perminatan</h3>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
@@ -28,6 +28,18 @@
 										<div class="form-group">
 											<label for="title">Nama Bidang Perminatan</label>
 											<input class="form-control" placeholder="Bidang Perminatan" type="text" name="title" id="title" value="<?php echo $specialization->title; ?>" required />
+										</div>
+										<div class="form-group">
+											<label for="title">Dosen Pengampu</label>
+											<select name="dosen" class="form-control">
+												<?php foreach ($dosen as $dsn) : ?>
+													<?php if ($dsn->id == $specialization->id_dosen) : ?>
+														<option value="<?php echo $dsn->id; ?>" selected><?php echo $dsn->nama; ?></option>
+													<?php else : ?>
+														<option value="<?php echo $dsn->id; ?>"><?php echo $dsn->nama; ?></option>
+													<?php endif; ?>
+												<?php endforeach; ?>
+											</select>
 										</div>
 										<div class="form-group">
 											<div class="row">

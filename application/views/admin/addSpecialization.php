@@ -30,6 +30,14 @@
 											<input class="form-control" placeholder="Bidang Perminatan" type="text" name="title" id="title" required />
 										</div>
 										<div class="form-group">
+											<label for="title">Dosen Pengampu</label>
+											<select name="dosen" class="form-control">
+												<?php foreach ($dosen as $dsn) : ?>
+													<option value="<?php echo $dsn->id; ?>"><?php echo $dsn->nama; ?></option>
+												<?php endforeach; ?>
+											</select>
+										</div>
+										<div class="form-group">
 											<label for="image">Cover</label>
 											<input type="file" name="image" class="form-control" id="image" />
 										</div>

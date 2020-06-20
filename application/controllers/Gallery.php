@@ -8,7 +8,7 @@ class Gallery extends CI_Controller
 		$this->load->model('MGallery', 'gallery');
 	}
 
-	public function list()
+	public function lists()
 	{
 		$data['galleries'] = $this->gallery->getAll();
 		$this->load->view('admin/gallery', $data);

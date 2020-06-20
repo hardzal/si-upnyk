@@ -55,49 +55,64 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['admin/agenda'] = 'Event/lists';
 $route['admin/agenda/create'] = 'Event/create';
-$route['admin/agenda/edit/(:any)'] = 'Event/edit/$1';
-$route['admin/agenda/delete/(:any)'] = 'Event/delete/$1';
+$route['admin/agenda/edit/(:num)'] = 'Event/edit/$1';
+$route['admin/agenda/delete/(:num)'] = 'Event/delete/$1';
 
 $route['admin/galleries'] = 'Gallery/lists';
 $route['admin/galleries/create'] = 'Gallery/create';
-$route['admin/galleries/edit/(:any)'] = 'Gallery/edit/$1';
-$route['admin/galleries/delete/(:any)'] = 'Gallery/delete/$1';
+$route['admin/galleries/edit/(:num)'] = 'Gallery/edit/$1';
+$route['admin/galleries/delete/(:num)'] = 'Gallery/delete/$1';
 
 $route['admin/specialization'] = 'Specialization/lists';
 $route['admin/specialization/create'] = 'Specialization/create';
-$route['admin/specialization/edit/(:any)'] = 'Specialization/edit/$1';
-$route['admin/specialization/delete/(:any)'] = 'Specialization/delete/$1';
+$route['admin/specialization/edit/(:num)'] = 'Specialization/edit/$1';
+$route['admin/specialization/delete/(:num)'] = 'Specialization/delete/$1';
 
 $route['admin/question'] = 'Question/lists';
-$route['admin/question/show/(:any)'] = 'Question/show/$1';
-$route['admin/question/delete/(:any)'] = 'Question/delete/$1';
+$route['admin/question/show/(:num)'] = 'Question/show/$1';
+$route['admin/question/delete/(:num)'] = 'Question/delete/$1';
 
 $route['admin/pengajaran'] = 'Tridharma/list_pengajaran';
 $route['admin/pengajaran/create'] = 'Tridharma/create_pengajaran';
-$route['admin/pengajaran/edit/(:any)'] = 'Tridharma/edit_pengajaran/$1';
-$route['admin/pengajaran/delete/(:any)'] = 'Tridharma/delete_pengajaran/$1';
+$route['admin/pengajaran/edit/(:num)'] = 'Tridharma/edit_pengajaran/$1';
+$route['admin/pengajaran/delete/(:num)'] = 'Tridharma/delete_pengajaran/$1';
 
 $route['admin/penelitian'] = 'Tridharma/list_penelitian';
 $route['admin/penelitian/create'] = 'Tridharma/create_penelitian';
-$route['admin/penelitian/edit/(:any)'] = 'Tridharma/edit_penelitian/$1';
-$route['admin/penelitian/delete/(:any)'] = 'Tridharma/delete_penelitian/$1';
+$route['admin/penelitian/edit/(:num)'] = 'Tridharma/edit_penelitian/$1';
+$route['admin/penelitian/delete/(:num)'] = 'Tridharma/delete_penelitian/$1';
 
 $route['admin/pengabdian'] = 'Tridharma/list_pengabdian';
 $route['admin/pengabdian/create'] = 'Tridharma/create_pengabdian';
-$route['admin/pengabdian/edit/(:any)'] = 'Tridharma/edit_pengabdian/$1';
-$route['admin/pengabdian/delete/(:any)'] = 'Tridharma/delete_pengabdian/$1';
+$route['admin/pengabdian/edit/(:num)'] = 'Tridharma/edit_pengabdian/$1';
+$route['admin/pengabdian/delete/(:num)'] = 'Tridharma/delete_pengabdian/$1';
 
 $route['admin/fasilitas'] = 'Fasilitas/lists';
 $route['admin/fasilitas/create'] = 'Fasilitas/create';
-$route['admin/fasilitas/edit/(:any)'] = 'Fasilitas/edit/$1';
-$route['admin/fasilitas/delete/(:any)'] = 'Fasilitas/delete/$1';
+$route['admin/fasilitas/edit/(:num)'] = 'Fasilitas/edit/$1';
+$route['admin/fasilitas/delete/(:num)'] = 'Fasilitas/delete/$1';
 
 $route['admin/kerja_praktik'] = 'KerjaPraktik/lists';
 $route['admin/kerja_praktik/create'] = 'KerjaPraktik/create';
-$route['admin/kerja_praktik/edit/(:any)'] = 'KerjaPraktik/edit/$1';
-$route['admin/kerja_praktik/delete/(:any)'] = 'KerjaPraktik/delete/$1';
+$route['admin/kerja_praktik/edit/(:num)'] = 'KerjaPraktik/edit/$1';
+$route['admin/kerja_praktik/delete/(:num)'] = 'KerjaPraktik/delete/$1';
 
 $route['admin/skripsi'] = 'Skripsi/lists';
 $route['admin/skripsi/create'] = 'Skripsi/create';
-$route['admin/skripsi/edit/(:any)'] = 'Skripsi/edit/$1';
-$route['admin/skripsi/delete/(:any)'] = 'Skripsi/delete/$1';
+$route['admin/skripsi/edit/(:num)'] = 'Skripsi/edit/$1';
+$route['admin/skripsi/delete/(:num)'] = 'Skripsi/delete/$1';
+
+$route['admin/kalender'] = 'Kalender/lists';
+$route['admin/kalender/create'] = 'Kalender/create';
+$route['admin/kalender/edit/(:num)'] = 'Kalender/edit/$1';
+$route['admin/kalender/delete/(:num)'] = 'Kalender/delete/$1';
+
+$route['admin/kurikulum'] = 'Kurikulum/lists';
+$route['admin/kurikulum/create'] = 'Kurikulum/create';
+$route['admin/kurikulum/edit/(:num)'] = 'Kurikulum/edit/$1';
+$route['admin/kurikulum/delete/(:num)'] = 'Kurikulum/delete/$1';
+
+$route['admin/wisuda'] = 'Wisuda/lists';
+$route['admin/wisuda/create'] = 'Wisuda/create';
+$route['admin/wisuda/edit/(:num)'] = 'Wisuda/edit/$1';
+$route['admin/wisuda/delete/(:num)'] = 'Wisuda/delete/$1';

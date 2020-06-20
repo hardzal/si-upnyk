@@ -101,3 +101,18 @@ $route['admin/skripsi'] = 'Skripsi/lists';
 $route['admin/skripsi/create'] = 'Skripsi/create';
 $route['admin/skripsi/edit/(:any)'] = 'Skripsi/edit/$1';
 $route['admin/skripsi/delete/(:any)'] = 'Skripsi/delete/$1';
+
+$route['admin/organisasi_mahasiswa'] = 'OrganisasiMahasiswa/lists';
+$route['admin/organisasi_mahasiswa/create'] = 'OrganisasiMahasiswa/create';
+$route['admin/organisasi_mahasiswa/edit/(:any)'] = 'OrganisasiMahasiswa/edit/$1';
+$route['admin/organisasi_mahasiswa/delete/(:any)'] = 'OrganisasiMahasiswa/delete/$1';
+
+$route['admin/alumni'] = 'Alumni/lists';
+$route['admin/alumni/create'] = 'Alumni/create';
+$route['admin/alumni/edit/(:any)'] = 'Alumni/edit/$1';
+$route['admin/alumni/delete/(:any)'] = 'Alumni/delete/$1';
+
+$route['admin/prestasi'] = 'Prestasi/lists';
+$route['admin/prestasi/create'] = 'Prestasi/create';
+$route['admin/prestasi/edit/(:any)'] = 'Prestasi/edit/$1';
+$route['admin/prestasi/delete/(:any)'] = 'Prestasi/delete/$1';

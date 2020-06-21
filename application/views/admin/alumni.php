@@ -13,7 +13,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header">Daftar Prestasi</h3>
+					<h3 class="page-header">Daftar Informasi Alumni</h3>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
@@ -23,7 +23,7 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<div class="mb-3">
-								<a href="<?php echo base_url('admin/prestasi/create') ?>"><button type="button" class="btn btn-primary btn-sm">Tambah Prestasi</button></a>
+								<a href="<?php echo base_url('admin/alumni/create') ?>"><button type="button" class="btn btn-primary btn-sm">Tambah Informasi Alumni</button></a>
 							</div>
 						</div>
 						<div class="panel-body">
@@ -40,16 +40,16 @@
 									</thead>
 									<tbody>
 										<?php $no = 1;
-										foreach ($prestasi as $pres) : ?>
+										foreach ($alumni as $al) : ?>
 											<tr>
 												<td width="10px" class="text-center"><?php echo $no++; ?>
-												<td><?php echo $pres->title; ?></td>
-												<td><?php echo date('H:i d-F-Y', strtotime($pres->created_at)); ?></td>
-												<td><?php echo substr(html_entity_decode($pres->description), 0, 200); ?>...</td>
-												<td><?php echo is_publish($pres->status); ?></td>
+												<td><?php echo $al->title; ?></td>
+												<td><?php echo date('H:i d-F-Y', strtotime($al->created_at)); ?></td>
+												<td><?php echo substr(html_entity_decode($al->description), 0, 200); ?>...</td>
+												<td><?php echo is_publish($al->status); ?></td>
 												<td>
-													<a href="<?php echo base_url('admin/prestasi/edit/') . $pres->id; ?>" class="btn btn-xs btn-primary mr-3">Edit</a>
-													<a href="<?php echo base_url('admin/prestasi/delete/') . $pres->id; ?>" class="btn btn-xs btn-danger" onclick="return confirm('apakah kamu yakin ingin menghapusnya?')">Hapus</a>
+													<a href="<?php echo base_url('admin/alumni/edit/') . $al->id; ?>" class="btn btn-xs btn-primary mr-3">Edit</a>
+													<a href="<?php echo base_url('admin/alumni/delete/') . $al->id; ?>" class="btn btn-xs btn-danger" onclick="return confirm('apakah kamu yakin ingin menghapusnya?')">Hapus</a>
 												</td>
 											</tr>
 										<?php endforeach; ?>

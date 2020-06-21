@@ -13,7 +13,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header">Tambah Prestasi</h3>
+					<h3 class="page-header">Edit Informasi Alumni</h3>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
@@ -24,29 +24,40 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-12">
-									<form role="form" method="POST" action="<?php echo base_url('admin/prestasi/create') ?>" enctype="multipart/form-data">
+									<form role="form" method="POST" action="<?php echo base_url('admin/alumni/edit/' . $alumni->id) ?>" enctype="multipart/form-data">
 										<div class="form-group">
-											<label for="title">Judul</label>
-											<input class="form-control" placeholder="Judul" type="text" name="title" id="title" required />
+											<label for="title">Judul Informasi Alumni</label>
+											<input class="form-control" placeholder="Judul" type="text" name="title" id="title" value="<?php echo $alumni->title; ?>" required />
 										</div>
 										<div class="form-group">
-											<label for="image">Gambar</label>
+											<div class="row">
+												<label for="image" class="col-form-label col-md-12">Gambar</label>
+												<?php if ($alumni->image) : ?>
+													<div class="col-md-12 my-5">
+														<img src="<?php echo base_url($alumni->image); ?>" width="300px" class="img-thumbnail" />
+													</div>
+												<?php endif; ?>
+											</div>
 											<input type="file" name="image" class="form-control" id="image" />
 										</div>
 										<div class="form-group">
 											<label for="description" class="col-form-label">Deskripsi</label>
-											<textarea id="elm1" class="form-control" rows="3" name="description"></textarea>
+											<textarea id="elm1" class="form-control" rows="3" name="description" value="<?php echo $alumni->description; ?>"><?php echo $alumni->description; ?></textarea>
 										</div>
 										<div class="form-group">
 											<label class="col-form-label" for="status">Status</label>
 											<select name="status" class="form-control" id="status" required>
 												<option value>Pilih Status</option>
-												<option value=1>Publish</option>
-												<option value=0>Unpublish</option>
+												<?php if ($alumni->status == 1) : ?>
+													<option value=1 selected>Publish</option>
+													<option value=0>Unpublish</option>
+												<?php else : ?>
+													<option value=1>Publish</option>
+													<option value=0 selected>Unpublish</option>
+												<?php endif; ?>
 											</select>
 										</div>
 										<div class="mt-3">
-											<input type="hidden" name="user_id" value="<?php echo $this->session->userdata('user_id'); ?>" />
 											<button type="submit" class="btn btn-primary">Submit Button</button>
 											<button type="reset" class="btn btn-danger">Reset Button</button>
 										</div>

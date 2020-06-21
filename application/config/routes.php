@@ -116,3 +116,18 @@ $route['admin/wisuda'] = 'Wisuda/lists';
 $route['admin/wisuda/create'] = 'Wisuda/create';
 $route['admin/wisuda/edit/(:num)'] = 'Wisuda/edit/$1';
 $route['admin/wisuda/delete/(:num)'] = 'Wisuda/delete/$1';
+
+$route['admin/organisasi_mahasiswa'] = 'OrganisasiMahasiswa/lists';
+$route['admin/organisasi_mahasiswa/create'] = 'OrganisasiMahasiswa/create';
+$route['admin/organisasi_mahasiswa/edit/(:any)'] = 'OrganisasiMahasiswa/edit/$1';
+$route['admin/organisasi_mahasiswa/delete/(:any)'] = 'OrganisasiMahasiswa/delete/$1';
+
+$route['admin/alumni'] = 'Alumni/lists';
+$route['admin/alumni/create'] = 'Alumni/create';
+$route['admin/alumni/edit/(:any)'] = 'Alumni/edit/$1';
+$route['admin/alumni/delete/(:any)'] = 'Alumni/delete/$1';
+
+$route['admin/prestasi'] = 'Prestasi/lists';
+$route['admin/prestasi/create'] = 'Prestasi/create';
+$route['admin/prestasi/edit/(:any)'] = 'Prestasi/edit/$1';
+$route['admin/prestasi/delete/(:any)'] = 'Prestasi/delete/$1';

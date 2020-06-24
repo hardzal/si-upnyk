@@ -131,3 +131,13 @@ $route['admin/prestasi'] = 'Prestasi/lists';
 $route['admin/prestasi/create'] = 'Prestasi/create';
 $route['admin/prestasi/edit/(:any)'] = 'Prestasi/edit/$1';
 $route['admin/prestasi/delete/(:any)'] = 'Prestasi/delete/$1';
+
+$route['admin/user'] = 'User/lists';
+$route['admin/user/create'] = 'User/create';
+$route['admin/user/edit/(:any)'] = 'User/edit/$1';
+$route['admin/user/delete/(:any)'] = 'User/delete/$1';
+
+$route['admin/category'] = 'Category/lists';
+$route['admin/category/create'] = 'Category/create';
+$route['admin/category/edit/(:any)'] = 'Category/edit/$1';
+$route['admin/category/delete/(:any)'] = 'Category/delete/$1';

@@ -99,6 +99,9 @@
 					<!-- /.nav-second-level -->
 				</li>
 				<li>
+					<a href="<?php echo base_url('admin/category'); ?>"><i class="fa fa-tags" aria-hidden="true"></i> Kategori </a>
+				</li>
+				<li>
 					<a href="<?php echo base_url('index.php/admin/Berita') ?>"><i class="fa fa-bullhorn fa-fw"></i> Informasi</a>
 				</li>
 				<!--  <li>
@@ -124,6 +127,10 @@
 
 				<li>
 					<a href="<?php echo base_url('admin/wisuda'); ?>"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Wisuda</a>
+				</li>
+
+				<li>
+					<a href="<?php echo base_url('admin/user'); ?>"><i class="fa fa-users" aria-hidden="true"></i> Users</a>
 				</li>
 
 				<!-- <li class="active">

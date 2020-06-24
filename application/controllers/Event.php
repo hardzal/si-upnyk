@@ -159,14 +159,19 @@ class Event extends CI_Controller
 	public function delete($id)
 	{
 		$event = $this->event->get($id);
-		if (!deleteFile($event->cover)) {
-			$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus gambar sebelumnya!</div>');
-			redirect('admin/agenda');
+		// die(var_dump($event));
+		if (!empty($event->cover)) {
+			if (!deleteFile($event->cover)) {
+				$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus gambar sebelumnya!</div>');
+				redirect('admin/agenda');
+			}
 		}
 
-		if (!deleteFile($event->file)) {
-			$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus file sebelumnya!</div>');
-			redirect('admin/agenda');
+		if (!empty($event->file)) {
+			if (!deleteFile($event->file)) {
+				$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus file sebelumnya!</div>');
+				redirect('admin/agenda');
+			}
 		}
 
 		if ($this->event->delete($id)) {

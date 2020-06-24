@@ -73,7 +73,7 @@ class Tridharma extends CI_Controller
 				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
 			];
 
-			if ($_FILES['image']['tmp_name']) {
+			if ($_FILES['file']['tmp_name']) {
 				$config['file_name'] = changeFileName($_FILES['file']);
 				$config['allowed_types'] = "pdf|doc|docx";
 				$config['max_size'] = 2048;

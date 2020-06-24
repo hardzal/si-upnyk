@@ -234,8 +234,10 @@ class Mdata extends CI_Model
 
 	function all_berita()
 	{
-		$this->db->select('*');
+		$this->db->select('berita.*, admin.username, category.name as kategori');
 		$this->db->from('berita');
+		$this->db->join('admin', 'berita.user_id=admin.id', 'left');
+		$this->db->join('category', 'category.id = berita.category_id', 'left');
 		$this->db->order_by('tgl', 'desc');
 		return $this->db->get();
 	}
@@ -425,6 +427,10 @@ class Mdata extends CI_Model
 		$this->db->update('admin', $data);
 	}
 
+	function getAllAdmin()
+	{
+		return $this->db->get('admin')->result_object();
+	}
 
 	//user
 

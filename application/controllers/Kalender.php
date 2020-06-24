@@ -30,8 +30,8 @@ class Kalender extends CI_Controller
 				'status' => $this->input->post('status', true) ? $this->input->post('status', true) : 0
 			];
 
-			if ($_FILES['image']['tmp_name']) {
-				$config['file_name'] = changeFileName($_FILES['image']);
+			if ($_FILES['file']['tmp_name']) {
+				$config['file_name'] = changeFileName($_FILES['file']);
 				$config['upload_path']          = './assets/file/kalender/';
 				$config['max_size']             = 10000;
 				$config['allowed_types'] 		= 'jpg|png|jpeg|gif|doc|docx|xls|pdf';
@@ -70,9 +70,12 @@ class Kalender extends CI_Controller
 				'tahun' => $this->input->post('tahun')
 			);
 
+			// echo validation_errors();
+
+			// die(var_dump($_FILES));
 			if ($_FILES['file']['tmp_name'] != '') {
 
-				$config['upload_path']          = './assets/file/';
+				$config['upload_path']          = './assets/file/kalender/';
 				$config['max_size']             = 10000;
 				$config['allowed_types'] 		= 'jpg|png|jpeg|gif|doc|docx|xls|pdf';
 
@@ -84,7 +87,6 @@ class Kalender extends CI_Controller
 				$data['file'] = $this->kalender->get($id);
 				$a = $data['file']->file;
 
-
 				if (file_exists('./assets/' . $a)) {
 					unlink('assets/' . $a);
 				}
@@ -93,7 +95,7 @@ class Kalender extends CI_Controller
 
 				if ($status) {
 					$upload_data = $this->upload->data();
-					$data['file'] = 'kalender/' . $upload_data['file_name'];
+					$data['file'] = $config['upload_path'] . $upload_data['file_name'];
 				}
 			}
 

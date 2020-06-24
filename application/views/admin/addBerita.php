@@ -33,6 +33,15 @@
 										</div>
 
 										<div class="form-group">
+											<label>Kategori</label>
+											<select class="form-control" name="category_id">
+												<?php foreach ($categories as $category) : ?>
+													<option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
+												<?php endforeach; ?>
+											</select>
+										</div>
+
+										<div class="form-group">
 											<label>Tanggal</label>
 											<input class="form-control" type="date" name="tgl">
 										</div>
@@ -45,6 +54,16 @@
 											<label>Isi Berita</label>
 											<textarea id="elm1" class="form-control" rows="3" name="isi"></textarea>
 										</div>
+
+										<div class="form-group">
+											<label class="col-form-label-sm">Penulis</label>
+											<select name="user_id" class="form-control">
+												<?php foreach ($author as $auth) : ?>
+													<option value="<?php echo $auth->id; ?>"><?php echo $auth->username; ?></option>
+												<?php endforeach; ?>
+											</select>
+										</div>
+
 										<br>
 										<br>
 										<button type="submit" class="btn btn-info">Submit Button</button>

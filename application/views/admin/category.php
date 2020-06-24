@@ -13,7 +13,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header">Berita</h3>
+					<h3 class="page-header">Kategori</h3>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
@@ -25,7 +25,7 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-12">
-									<a href="<?php echo base_url('index.php/admin/addberita') ?>"><button type="button" class="btn btn-primary btn-sm">Tambah Berita</button></a>
+									<a href="<?php echo base_url('admin/category/create') ?>"><button type="button" class="btn btn-primary btn-sm">Tambah Kategori</button></a>
 									<br>
 									<br>
 									<div class="panel panel-default">
@@ -37,33 +37,21 @@
 														<tr>
 															<th>#</th>
 															<th>Judul</th>
-															<th width="10%">Tanggal</th>
-															<th>Kategori</th>
-															<th>Penulis</th>
-															<th width="40%">Isi</th>
-															<th>Lihat file </th>
 															<th width="10%">Opsi</th>
 														</tr>
 													</thead>
 													<tbody>
 														<?php
 														$no = 0;
-														foreach ($berita as $data) {
+														foreach ($categories as $category) {
 															$no++;
 														?>
 															<tr class="gradeC">
 																<td><?php echo $no ?></td>
-																<td><?php echo $data->judul; ?></td>
-																<td><?php echo $data->tgl; ?></td>
-																<td><?php echo $data->kategori; ?></td>
-																<td><?php echo $data->username; ?></td>
-																<td class="center"><?php echo substr(strip_tags(str_replace('\\', '', str_replace('\r\n', " ", $data->isi))), 0, 350) . "...."; ?> <br> <a href="<?php echo base_url('index.php/admin/beritaadmin/' . $data->id) ?>">
-																		<p style="color:#e3722e;"><u>Lihat Selengkapnya</u></p>
-																	</a></td>
-																<td class="center"><a href="<?php echo base_url('assets/images/' . $data->file) ?>" target="blank">Lihat File</a></td>
+																<td><?php echo $category->name; ?></td>
 																<td class="center">
-																	<a href="<?php echo base_url('index.php/admin/ubahberita/' . $data->id) ?>" class="btn btn-xs btn-primary">Edit</a>
-																	<a href="<?php echo base_url('index.php/admin/deleteberita/' . $data->id) ?>" onclick='return confirm("Anda Yakin Akan Menghapus?")' class="btn btn-xs btn-danger">hapus</a>
+																	<a href="<?php echo base_url('admin/category/edit/' . $category->id) ?>" class="btn btn-xs btn-primary">Edit</a>
+																	<a href="<?php echo base_url('admin/category/delete/' . $category->id) ?>" onclick='return confirm("Anda Yakin Akan Menghapus?")' class="btn btn-xs btn-danger">hapus</a>
 																</td>
 															</tr>
 														<?php } ?>

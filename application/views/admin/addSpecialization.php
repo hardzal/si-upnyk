@@ -31,7 +31,7 @@
 										</div>
 										<div class="form-group">
 											<label for="title">Dosen Pengampu</label>
-											<select name="dosen" class="form-control">
+											<select name="id_dosen" class="form-control">
 												<?php foreach ($dosen as $dsn) : ?>
 													<option value="<?php echo $dsn->id; ?>"><?php echo $dsn->nama; ?></option>
 												<?php endforeach; ?>

@@ -13,7 +13,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header">Daftar Kalender Akademik</h3>
+					<h3 class="page-header">Daftar User</h3>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
@@ -23,7 +23,7 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<div class="mb-3">
-								<a href="<?php echo base_url('admin/kalender/create'); ?>"><button type="button" class="btn btn-primary btn-sm">Tambah Kalender</button></a>
+								<a href="<?php echo base_url('admin/user/create') ?>"><button type="button" class="btn btn-primary btn-sm">Tambah User</button></a>
 							</div>
 						</div>
 						<div class="panel-body">
@@ -32,24 +32,20 @@
 								<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead>
 										<th>No</th>
-										<th>Tanggal</th>
-										<th>Tahun Ajaran</th>
-										<th>Kalender</th>
-										<th>Status</th>
+										<th>Username</th>
+										<th>Hak Akses</th>
 										<th>Aksi</th>
 									</thead>
 									<tbody>
 										<?php $no = 1;
-										foreach ($kalender as $kur) : ?>
+										foreach ($users as $user) : ?>
 											<tr>
 												<td width="10px" class="text-center"><?php echo $no++; ?>
-												<td><?php echo date('H:i d-F-Y', strtotime($kur->created_at)); ?></td>
-												<td><?php echo $kur->tahun; ?></td>
-												<td><a href='<?php echo base_url('') . $kur->file; ?>'>Lihat File</a></td>
-												<td><?php echo is_publish($kur->status); ?></td>
+												<td><?php echo $user->username; ?></td>
+												<td><?php echo $user->role; ?></td>
 												<td>
-													<a href="<?php echo base_url('admin/kalender/edit/') . $kur->id; ?>" class="btn btn-xs btn-primary mr-3">Edit</a>
-													<a href="<?php echo base_url('admin/kalender/delete/') . $kur->id; ?>" class="btn btn-xs btn-danger" onclick="return confirm('apakah kamu yakin ingin menghapusnya?')">Hapus</a>
+													<a href="<?php echo base_url('admin/user/edit/') . $user->id; ?>" class="btn btn-xs btn-primary mr-3">Edit</a>
+													<a href="<?php echo base_url('admin/user/delete/') . $user->id; ?>" class="btn btn-xs btn-danger" onclick="return confirm('apakah kamu yakin ingin menghapusnya?')">Hapus</a>
 												</td>
 											</tr>
 										<?php endforeach; ?>

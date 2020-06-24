@@ -25,6 +25,7 @@ class Admin extends CI_Controller
 
 		$this->load->model('mdata');
 		$this->load->model('MTriDharma', 'mdharma');
+		$this->load->model('MCategory', 'category');
 	}
 
 	public function index()
@@ -561,17 +562,22 @@ class Admin extends CI_Controller
 
 	public function addberita()
 	{
-		$this->load->view('admin/addBerita');
+		$data['author'] = $this->mdata->getAllAdmin();
+		$data['categories'] = $this->category->getAll();
+
+		$this->load->view('admin/addBerita', $data);
 	}
 
 	public function insertberita()
 	{
+		$user_id = $this->input->post('user_id') ? $this->input->post('user_id') : $this->session->userdata('user_id');
 		$data = array(
 			'judul' 			=> $this->input->post('judul'),
-			'user_id' 		=> $this->session->userdata('user_id'),
+			'category_id' => $this->input->post('category_id'),
+			'user_id' 		=> $user_id,
 			'tgl' 			=> $this->input->post('tgl'),
 			'isi' 				=> $this->input->post('isi'),
-			'file' 				=> $this->input->post('file')
+			'file' 				=> $this->input->post('file'),
 		);
 
 		$config['upload_path']          = './assets/images/berita';
@@ -597,17 +603,23 @@ class Admin extends CI_Controller
 
 	public function ubahberita($id)
 	{
+		$data['author'] = $this->mdata->getAllAdmin();
 		$data['berita'] = $this->mdata->idberita($id)->row();
+		$data['categories'] = $this->category->getAll();
 		$this->load->view('admin/editBerita', $data);
 	}
 
 	public function updateberita()
 	{
+		$user_id = $this->input->post('user_id') ? $this->input->post('user_id') : $this->session->userdata('user_id');
+
 		$data = array(
 			'id' 			=> $this->input->post('id'),
+			'category_id' => $this->input->post('category_id'),
 			'judul' 		=> $this->input->post('judul'),
 			'tgl' 			=> $this->input->post('tgl'),
-			'isi' 			=> $this->input->post('isi')
+			'isi' 			=> $this->input->post('isi'),
+			'user_id'  		=> $user_id
 		);
 
 		if ($_FILES['file']['tmp_name'] != '') {
@@ -658,7 +670,11 @@ class Admin extends CI_Controller
 	public function beritaadmin($id)
 	{
 		$data['berita'] = $this->mdata->idberita($id)->row();
-		$this->load->view('admin/beritaadmin', $data);
+		if ($data['berita']) {
+			$this->load->view('admin/beritaadmin', $data);
+		} else {
+			redirect('admin/berita');
+		}
 	}
 
 	/*		

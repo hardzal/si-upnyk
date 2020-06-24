@@ -32,11 +32,10 @@
 											<?php if ($kurikulum->file) : ?>
 												<a href='<?php echo base_url('assets/file/') . $kurikulum->file; ?>'>Lihat File</a>
 												<input type="file" name="file" class="form-control" />
-												<small class="text-danger">* Max File 10MB</small>
 											<?php else : ?>
 												<input type="file" name="file" class="form-control" />
 											<?php endif; ?>
-											<small class='text-danger'>* Max file 5 mb</small>
+											<small class="text-danger">* Max File 10MB</small>
 											<input type="hidden" name="id" value="<?php echo $kurikulum->id; ?>">
 										</div>
 										<div class="form-group">

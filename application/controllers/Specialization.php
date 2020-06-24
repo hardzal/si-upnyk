@@ -17,9 +17,9 @@ class Specialization extends CI_Controller
 
 	public function create()
 	{
-		$this->form_validation->set_rules('Keterangan', 'description', 'min_Length[3]');
-		$this->form_validation->set_rules('Judul', 'title', 'min_Length[3]');
-		$this->form_validation->set_rules('dosen', 'dosen', 'required');
+		$this->form_validation->set_rules('description', 'description', 'min_Length[3]');
+		$this->form_validation->set_rules('title', 'title', 'min_Length[3]');
+		$this->form_validation->set_rules('id_dosen', 'dosen', 'required');
 		if (empty($_FILES['image']['tmp_name'])) {
 			$this->form_validation->set_rules('image', 'Image', 'required');
 		}
@@ -30,6 +30,7 @@ class Specialization extends CI_Controller
 			$this->load->view('admin/addSpecialization');
 		} else {
 			$data = [
+				'id_dosen' => $this->input->post('id_dosen', true),
 				'title' => $this->input->post('title', true),
 				'description' => $this->input->post('description', true),
 				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
@@ -65,7 +66,7 @@ class Specialization extends CI_Controller
 	{
 		$this->form_validation->set_rules('description', 'keterangan', 'required|min_Length[3]');
 		$this->form_validation->set_rules('title', 'title', 'required|min_Length[3]');
-		$this->form_validation->set_rules('dosen', 'dosen', 'required');
+		$this->form_validation->set_rules('id_dosen', 'dosen', 'required');
 
 		$data['specialization'] = $this->specialization->get($id);
 		$data['dosen'] = $this->specialization->getListDosen();
@@ -87,7 +88,9 @@ class Specialization extends CI_Controller
 				$config['upload_path'] = "./assets/images/perminatan/";
 				$config['remove_spaces'] = false;
 
-				if (!deleteFile($data['specialization']->image)) {
+				$specialization = $this->specialization->get($id);
+
+				if (!deleteFile($specialization->img)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus gambar sebelumnya!</div>');
 					redirect('admin/specialization');
 				}

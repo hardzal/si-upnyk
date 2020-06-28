@@ -88,4 +88,8 @@ class User extends CI_Controller
 
 		redirect('admin/user');
 	}
+
+	public function menu()
+	{
+	}
 }

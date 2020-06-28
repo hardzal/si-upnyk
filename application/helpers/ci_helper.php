@@ -1,12 +1,12 @@
 <?php
 
-function is_publish($status)
+function is_publish($status, $name = "Publish")
 {
 	if ($status) {
-		return "<div class='btn btn-xs btn-success'>Publish</div>";
+		return "<div class='btn btn-xs btn-success'>{$name}</div>";
 	}
 
-	return "<div class='btn btn-xs btn-danger'>Unpublish</div>";
+	return "<div class='btn btn-xs btn-danger'>Un{$name}</div>";
 }
 
 function show_role($role_id)
@@ -48,4 +48,19 @@ function deleteFile($file)
 	}
 
 	return true;
+}
+
+
+function showMenu($submenu)
+{
+	$ci = &get_instance();
+	$menu = $ci->db->get_where('menus', ['id' => $submenu->menu_id])->row_object();
+
+	if (!$menu->has_submenu) {
+		$second_submenu = $ci->db->get_where('submenus', ['id' => $submenu->menu_id])->row_object();
+
+		return $second_submenu->submenu;
+	}
+
+	return $submenu->menu;
 }

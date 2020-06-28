@@ -141,3 +141,13 @@ $route['admin/category'] = 'Category/lists';
 $route['admin/category/create'] = 'Category/create';
 $route['admin/category/edit/(:any)'] = 'Category/edit/$1';
 $route['admin/category/delete/(:any)'] = 'Category/delete/$1';
+
+$route['admin/menu'] = 'Menu/lists';
+$route['admin/menu/create'] = 'Menu/create';
+$route['admin/menu/edit/(:num)'] = 'Menu/edit/$1';
+$route['admin/menu/delete/(:num)'] = 'Menu/delete/$1';
+
+$route['admin/submenu'] = 'SubMenu/lists';
+$route['admin/submenu/create'] = 'SubMenu/create';
+$route['admin/submenu/edit/(:num)'] = 'SubMenu/edit/$1';
+$route['admin/submenu/delete/(:num)'] = 'SubMenu/delete/$1';

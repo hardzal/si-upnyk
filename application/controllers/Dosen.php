@@ -6,6 +6,13 @@ class Dosen extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		if ($this->session->userdata('username') == NULL) {
+			redirect('login/logout');
+			exit();
+		}
+		if (checkRoleMenus($this->session->userdata('role_id'))) {
+			redirect(base_url());
+		}
 
 		if ($this->session->userdata('username') == NULL) {
 			redirect('login/logout');

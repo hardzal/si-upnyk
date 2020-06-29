@@ -46,4 +46,14 @@ class MMenu extends CI_Model
 			->get()
 			->row_object();
 	}
+
+	public function getByRoleId($role_id)
+	{
+		return $this->db->get_where('role_menus', ['role_id' => $role_id])->result_object();
+	}
+
+	public function getByUri($uri)
+	{
+		return $this->db->get_where('menus', ['url' => $uri])->row_object();
+	}
 }

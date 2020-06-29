@@ -6,6 +6,12 @@ class Tridharma extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		if (checkRoleMenus($this->session->userdata('role_id'))) {
+			redirect(base_url());
+		}
+		if (checkRoleMenus($this->session->userdata('role_id'))) {
+			redirect(base_url());
+		}
 		$this->load->model('MTriDharma', 'tridharmas');
 	}
 

@@ -42,6 +42,7 @@
 														<option value=<?php echo $menu->id; ?>><?php echo $menu->menu; ?></option>
 													<?php endif; ?>
 												<?php endforeach; ?>
+												<input type="hidden" name="menu_id_old" value="<?php echo $submenu_data->menu_id; ?>" />
 											</select>
 										</div>
 

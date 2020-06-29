@@ -151,3 +151,8 @@ $route['admin/submenu'] = 'SubMenu/lists';
 $route['admin/submenu/create'] = 'SubMenu/create';
 $route['admin/submenu/edit/(:num)'] = 'SubMenu/edit/$1';
 $route['admin/submenu/delete/(:num)'] = 'SubMenu/delete/$1';
+
+$route['admin/roleaccess'] = 'RoleAccess/lists';
+$route['admin/roleaccess/create'] = 'RoleAccess/create';
+$route['admin/roleaccess/edit/(:num)'] = 'RoleAccess/edit/$1';
+$route['admin/roleaccess/delete/(:num)'] = 'RoleAccess/delete/$1';

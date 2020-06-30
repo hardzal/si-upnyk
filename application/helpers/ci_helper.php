@@ -72,6 +72,7 @@ function checkRoleMenus($role_id)
 
 	$menus = $ci->menu->getByRoleId($role_id);
 	$current_uri = $ci->uri->segment(1) . "/" . $ci->uri->segment(2); // uri_string()
+
 	$current_menu = $ci->menu->getByUri($current_uri);
 
 	$menu_id = [];
@@ -80,8 +81,10 @@ function checkRoleMenus($role_id)
 		$menu_id[] = $menu->menu_id;
 	}
 
-	if (in_array($current_menu->id, $menu_id)) {
-		return false;
+	if ($current_menu) {
+		if (in_array($current_menu->id, $menu_id)) {
+			return false;
+		}
 	}
 
 	return true;

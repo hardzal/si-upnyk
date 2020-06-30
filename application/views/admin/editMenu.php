@@ -73,6 +73,21 @@
 											</select>
 										</div>
 
+										<div class="form-group">
+											<label>Urutan</label>
+											<select name="order" class="form-control">
+												<?php for ($i = 1; $i <= $total_menu; $i++) : ?>
+													<?php if ($i == 0) : ?>
+														<option value="" selected>Pilih Urutan Menu</option>
+													<?php elseif ($menu_data->urutan == $i) : ?>
+														<option value="<?php echo $i; ?>" selected><?php echo $i; ?></option>
+													<?php else : ?>
+														<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+													<?php endif; ?>
+												<?php endfor; ?>
+											</select>
+										</div>
+
 										<br>
 										<button type="submit" class="btn btn-info">Submit Button</button>
 										<button type="reset" class="btn btn-warning">Reset Button</button>

@@ -9,7 +9,7 @@ class Menu extends CI_Controller
 			redirect('login/logout');
 			exit();
 		}
-		
+
 		if (checkRoleMenus($this->session->userdata('role_id'))) {
 			redirect(base_url());
 		}
@@ -30,14 +30,23 @@ class Menu extends CI_Controller
 		$this->form_validation->set_rules('has_submenu', 'Punya Submenu?', 'required');
 
 		if ($this->form_validation->run() == false) {
-			$this->load->view('admin/addMenu');
+			$data['total_menu'] = $this->menu->total();;
+			$this->load->view('admin/addMenu', $data);
 		} else {
+			$urutan = $this->input->post('order');
+			$menu = $this->menu->urutan($urutan);
+
+			if ($menu) {
+				$this->menu->updateUrutan(['urutan' => $urutan], $menu->id);
+			}
+
 			$data = [
 				'menu' => $this->input->post('menu'),
 				'icon' => $this->input->post('icon'),
 				'url' => $this->input->post('url'),
 				'is_active' => $this->input->post('is_active'),
-				'has_submenu' => $this->input->post('has_submenu')
+				'has_submenu' => $this->input->post('has_submenu'),
+				'urutan' => $this->input->post('order')
 			];
 
 			if ($this->menu->insert($data)) {
@@ -61,14 +70,23 @@ class Menu extends CI_Controller
 		$data['menu_data'] = $this->menu->get($id);
 
 		if ($this->form_validation->run() == false) {
+			$data['total_menu'] = $this->menu->total();
 			$this->load->view('admin/editMenu', $data);
 		} else {
+			$urutan = $this->input->post('order');
+			$menu = $this->menu->urutan($urutan);
+
+			if ($menu) {
+				$this->menu->updateUrutan(['urutan' => $urutan], $menu->id);
+			}
+
 			$data = [
 				'menu' => $this->input->post('menu'),
 				'icon' => $this->input->post('icon'),
 				'url' => $this->input->post('url'),
 				'is_active' => $this->input->post('is_active'),
-				'has_submenu' => $this->input->post('has_submenu')
+				'has_submenu' => $this->input->post('has_submenu'),
+				'urutan' => $this->input->post('order')
 			];
 
 			if ($this->menu->update($data, $id)) {

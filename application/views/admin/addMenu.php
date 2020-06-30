@@ -4,7 +4,6 @@
 <?php include 'head.php'; ?>
 
 <body>
-
 	<div id="wrapper">
 
 		<!-- Navigation -->
@@ -64,6 +63,15 @@
 											</select>
 										</div>
 
+										<div class="form-group">
+											<label>Urutan</label>
+											<select name="order" class="form-control">
+												<option value="">Pilih Urutan Menu</option>
+												<?php for ($i = 1; $i <= $total_menu; $i++) : ?>
+													<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+												<?php endfor; ?>
+											</select>
+										</div>
 										<br>
 										<button type="submit" class="btn btn-info">Submit Button</button>
 										<button type="reset" class="btn btn-warning">Reset Button</button>

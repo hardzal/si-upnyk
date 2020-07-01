@@ -10,6 +10,7 @@ class Specialization extends CI_Controller
 			redirect('login/logout');
 			exit();
 		}
+
 		if (checkRoleMenus($this->session->userdata('role_id'))) {
 			redirect(base_url());
 		}
@@ -26,7 +27,7 @@ class Specialization extends CI_Controller
 	{
 		$this->form_validation->set_rules('description', 'description', 'min_Length[3]');
 		$this->form_validation->set_rules('title', 'title', 'min_Length[3]');
-		$this->form_validation->set_rules('id_dosen', 'dosen', 'required');
+		$this->form_validation->set_rules('dosen_id[]', 'dosen', 'required');
 		if (empty($_FILES['image']['tmp_name'])) {
 			$this->form_validation->set_rules('image', 'Image', 'required');
 		}
@@ -34,10 +35,9 @@ class Specialization extends CI_Controller
 		$data['dosen'] = $this->specialization->getListDosen();
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('admin/addSpecialization');
+			$this->load->view('admin/addSpecialization', $data);
 		} else {
 			$data = [
-				'id_dosen' => $this->input->post('id_dosen', true),
 				'title' => $this->input->post('title', true),
 				'description' => $this->input->post('description', true),
 				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
@@ -58,8 +58,17 @@ class Specialization extends CI_Controller
 
 				$data['img'] = $config['upload_path'] . $config['file_name'];
 			}
+			$process = $this->specialization->insert($data);
+			$specialization_id  = $this->db->insert_id();
+			foreach ($this->input->post('dosen_id') as $dosen) {
+				$data = [
+					'specialization_id' => $specialization_id,
+					'dosen_id' => $dosen
+				];
 
-			if ($this->specialization->insert($data)) {
+				$this->specialization->insertDosen($data);
+			}
+			if ($process) {
 				$this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil menambahkan data</div>');
 			} else {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menambahkan data</div>');
@@ -73,16 +82,21 @@ class Specialization extends CI_Controller
 	{
 		$this->form_validation->set_rules('description', 'keterangan', 'required|min_Length[3]');
 		$this->form_validation->set_rules('title', 'title', 'required|min_Length[3]');
-		$this->form_validation->set_rules('id_dosen', 'dosen', 'required');
+		$this->form_validation->set_rules('dosen_id[]', 'dosen', 'required');
 
 		$data['specialization'] = $this->specialization->get($id);
 		$data['dosen'] = $this->specialization->getListDosen();
 
 		if ($this->form_validation->run() == FALSE) {
+			$dosen = $this->specialization->getDosen($id);
+			$dosen_id = [];
+			foreach ($dosen as $dsn) {
+				$dosen_id[] = $dsn->dosen_id;
+			}
+			$data['dosen_id'] = $dosen_id;
 			$this->load->view('admin/editSpecialization', $data);
 		} else {
 			$data = [
-				'id_dosen' => $this->input->post('id_dosen', true),
 				'title' => $this->input->post('title', true),
 				'description' => $this->input->post('description', true),
 				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
@@ -110,8 +124,20 @@ class Specialization extends CI_Controller
 
 				$data['img'] = $config['upload_path'] . $config['file_name'];
 			}
+			$process = $this->specialization->update($data, $id);
+			$specialization_id  = $id;
+			$this->specialization->deleteDosen($specialization_id);
 
-			if ($this->specialization->update($data, $id)) {
+			foreach ($this->input->post('dosen_id') as $dosen) {
+				$data = [
+					'specialization_id' => $specialization_id,
+					'dosen_id' => $dosen
+				];
+
+				$this->specialization->insertDosen($data);
+			}
+
+			if ($process) {
 				$this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil memperbaharui data</div>');
 			} else {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal memperbaharui data</div>');

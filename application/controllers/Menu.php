@@ -13,6 +13,7 @@ class Menu extends CI_Controller
 		if (checkRoleMenus($this->session->userdata('role_id'))) {
 			redirect(base_url());
 		}
+		$this->load->model('MRoleAccess', 'role');
 	}
 
 	public function lists()
@@ -28,9 +29,12 @@ class Menu extends CI_Controller
 		$this->form_validation->set_rules('url', 'Url', 'required');
 		$this->form_validation->set_rules('is_active', 'Status', 'required');
 		$this->form_validation->set_rules('has_submenu', 'Punya Submenu?', 'required');
+		$this->form_validation->set_rules('order', 'Urutan', 'required');
+		$this->form_validation->set_rules('roles[]', 'Hak Akses', 'required');
 
 		if ($this->form_validation->run() == false) {
-			$data['total_menu'] = $this->menu->total();;
+			$data['total_menu'] = $this->menu->total();
+			$data['roles'] = $this->role->getAll();
 			$this->load->view('admin/addMenu', $data);
 		} else {
 			$urutan = $this->input->post('order');
@@ -49,7 +53,18 @@ class Menu extends CI_Controller
 				'urutan' => $this->input->post('order')
 			];
 
-			if ($this->menu->insert($data)) {
+			$process = $this->menu->insert($data);
+			$menu_id = $this->db->insert_id();
+
+			foreach ($this->input->post('roles') as $role) {
+				$data = [
+					'menu_id' => $menu_id,
+					'role_id' => $role
+				];
+				$process = $this->role->insertAccess($data);
+			}
+
+			if ($process) {
 				$this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil menambahkan data</div>');
 			} else {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menambahkan data</div>');
@@ -66,11 +81,20 @@ class Menu extends CI_Controller
 		$this->form_validation->set_rules('url', 'Url', 'required');
 		$this->form_validation->set_rules('is_active', 'Status', 'required');
 		$this->form_validation->set_rules('has_submenu', 'Punya Submenu?', 'required');
+		$this->form_validation->set_rules('roles[]', 'Hak Akses', 'required');
 
 		$data['menu_data'] = $this->menu->get($id);
 
 		if ($this->form_validation->run() == false) {
 			$data['total_menu'] = $this->menu->total();
+			$data['roles'] = $this->role->getAll();
+			$menus = $this->role->getMenu($id);
+
+			$role_id  = [];
+			foreach ($menus as $menu) {
+				$role_id[] = $menu->role_id;
+			}
+			$data['menu_roles'] = $role_id;
 			$this->load->view('admin/editMenu', $data);
 		} else {
 			$urutan = $this->input->post('order');
@@ -89,7 +113,18 @@ class Menu extends CI_Controller
 				'urutan' => $this->input->post('order')
 			];
 
-			if ($this->menu->update($data, $id)) {
+			$process = $this->menu->update($data, $id);
+			$this->role->delete('role_menus', ['menu_id' => $id]);
+
+			foreach ($this->input->post('roles') as $role) {
+				$data = [
+					'menu_id' => $id,
+					'role_id' => $role
+				];
+				$this->role->insertAccess($data);
+			}
+
+			if ($process) {
 				$this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil memperbaharui data</div>');
 			} else {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal memperbaharui data</div>');

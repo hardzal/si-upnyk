@@ -24,18 +24,17 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-12">
-									<form role="form" method="POST" action="<?php echo base_url('specialization/create') ?>" enctype="multipart/form-data">
+									<form role="form" method="POST" action="<?php echo base_url('admin/specialization/create') ?>" enctype="multipart/form-data">
 										<div class="form-group">
 											<label for="title">Nama Bidang Perminatan</label>
 											<input class="form-control" placeholder="Bidang Perminatan" type="text" name="title" id="title" required />
 										</div>
 										<div class="form-group">
-											<label for="title">Dosen Pengampu</label>
-											<select name="id_dosen" class="form-control">
-												<?php foreach ($dosen as $dsn) : ?>
-													<option value="<?php echo $dsn->id; ?>"><?php echo $dsn->nama; ?></option>
-												<?php endforeach; ?>
-											</select>
+											<label for="dosen_id">Dosen Pengampu</label><br>
+											<input type="checkbox" onclick="checkAll(this)" /> <strong>Pilih Semua</strong><br><br>
+											<?php foreach ($dosen as $dsn) : ?>
+												<input type="checkbox" name="dosen_id[]" value="<?php echo $dsn->id; ?>"> <?php echo $dsn->nama; ?><br />
+											<?php endforeach; ?>
 										</div>
 										<div class="form-group">
 											<label for="image">Cover</label>
@@ -79,7 +78,14 @@
 	<!-- /#wrapper -->
 
 	<?php include 'foot.php'; ?>
-
+	<script type="text/javascript">
+		function checkAll(source) {
+			let input = document.getElementsByName('dosen_id[]');
+			for (let i = 0, n = input.length; i < n; i++) {
+				input[i].checked = source.checked;
+			}
+		}
+	</script>
 </body>
 
 </html>

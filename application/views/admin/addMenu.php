@@ -70,8 +70,19 @@
 												<?php for ($i = 1; $i <= $total_menu; $i++) : ?>
 													<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
 												<?php endfor; ?>
+												<option value="<?php echo $i + 1; ?>"><?php echo $i; ?></option>
 											</select>
 										</div>
+
+										<div class="form-group">
+											<label>Hak Akses</label><br>
+											<input type="checkbox" onclick="checkAll(this)" /> <strong>Pilih Semua</strong><br><br>
+											<?php foreach ($roles as $role) : ?>
+												<input type="checkbox" name="roles[]" value="<?php echo $role->id; ?>" /> <?php echo $role->role; ?>
+												<br />
+											<?php endforeach; ?>
+										</div>
+
 										<br>
 										<button type="submit" class="btn btn-info">Submit Button</button>
 										<button type="reset" class="btn btn-warning">Reset Button</button>
@@ -96,7 +107,14 @@
 	<!-- /#wrapper -->
 
 	<?php include 'foot.php'; ?>
-
+	<script type="text/javascript">
+		function checkAll(source) {
+			let input = document.getElementsByName('roles[]');
+			for (let i = 0, n = input.length; i < n; i++) {
+				input[i].checked = source.checked;
+			}
+		}
+	</script>
 </body>
 
 </html>

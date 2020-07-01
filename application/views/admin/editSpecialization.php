@@ -35,16 +35,15 @@
 											<input class="form-control" placeholder="Bidang Perminatan" type="text" name="title" id="title" value="<?php echo $specialization->title; ?>" required />
 										</div>
 										<div class="form-group">
-											<label for="title">Dosen Pengampu</label>
-											<select name="id_dosen" class="form-control">
-												<?php foreach ($dosen as $dsn) : ?>
-													<?php if ($dsn->id == $specialization->id_dosen) : ?>
-														<option value="<?php echo $dsn->id; ?>" selected><?php echo $dsn->nama; ?></option>
-													<?php else : ?>
-														<option value="<?php echo $dsn->id; ?>"><?php echo $dsn->nama; ?></option>
-													<?php endif; ?>
-												<?php endforeach; ?>
-											</select>
+											<label for="dosen_id">Dosen Pengampu</label><br>
+											<input type="checkbox" onclick="checkAll(this)" /> <strong>Pilih Semua</strong><br><br>
+											<?php foreach ($dosen as $dsn) : ?>
+												<?php if (in_array($dsn->id, $dosen_id)) : ?>
+													<input type="checkbox" name="dosen_id[]" value="<?php echo $dsn->id; ?>" checked> <?php echo $dsn->nama; ?><br />
+												<?php else : ?>
+													<input type="checkbox" name="dosen_id[]" value="<?php echo $dsn->id; ?>"> <?php echo $dsn->nama; ?><br />
+												<?php endif; ?>
+											<?php endforeach; ?>
 										</div>
 										<div class="form-group">
 											<div class="row">

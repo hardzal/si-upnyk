@@ -37,4 +37,9 @@ class MRoleAccess extends CI_Model
 	{
 		return $this->db->insert('role_menus', $data);
 	}
+
+	public function getMenu($id)
+	{
+		return $this->db->get_where('role_menus', ['menu_id' => $id])->result_object();
+	}
 }

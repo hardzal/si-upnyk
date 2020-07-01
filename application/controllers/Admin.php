@@ -13,10 +13,6 @@ class Admin extends CI_Controller
 			exit();
 		}
 
-		if (checkRoleMenus($this->session->userdata('role_id'))) {
-			redirect(base_url());
-		}
-
 		if ($this->session->userdata('role_id') != 1) {
 			if ($this->session->userdata('role_id') == 2) {
 				redirect('Dosen');

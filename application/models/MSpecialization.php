@@ -39,4 +39,19 @@ class MSpecialization extends CI_Model
 	{
 		return $this->db->delete($this->table, ['id' => $id]);
 	}
+
+	public function getDosen($specialization_id)
+	{
+		return $this->db->get_where('dosen_specialization', ['specialization_id' => $specialization_id])->result_object();
+	}
+
+	public function insertDosen($data)
+	{
+		return $this->db->insert('dosen_specialization', $data);
+	}
+
+	public function deleteDosen($specialization_id)
+	{
+		return $this->db->delete('dosen_specialization', ['specialization_id' => $specialization_id]);
+	}
 }

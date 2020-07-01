@@ -12,7 +12,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header">Tambah Menu</h3>
+					<h3 class="page-header">Perbaharui Menu</h3>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
@@ -86,6 +86,19 @@
 													<?php endif; ?>
 												<?php endfor; ?>
 											</select>
+										</div>
+
+										<div class="form-group">
+											<label>Hak Akses</label><br>
+											<input type="checkbox" onclick="checkAll(this)" /> <strong>Pilih Semua</strong><br><br>
+											<?php foreach ($roles as $role) : ?>
+												<?php if (in_array($role->id, $menu_roles)) : ?>
+													<input type="checkbox" name="roles[]" value="<?php echo $role->id; ?>" checked /> <?php echo $role->role; ?>
+												<?php else : ?>
+													<input type="checkbox" name="roles[]" value="<?php echo $role->id; ?>" /> <?php echo $role->role; ?>
+												<?php endif; ?>
+												<br />
+											<?php endforeach; ?>
 										</div>
 
 										<br>

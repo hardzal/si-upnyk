@@ -29,7 +29,7 @@
 										<p class="alert alert-danger"><?php echo validation_errors(); ?></p>
 									<?php endif; ?>
 
-									<form role="form" method="POST" action="<?php echo base_url('wisuda/create') ?>" enctype="multipart/form-data">
+									<form role="form" method="POST" action="<?php echo base_url('admin/wisuda/create') ?>" enctype="multipart/form-data">
 
 										<div class="form-group">
 											<label>Judul</label>

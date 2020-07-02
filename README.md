@@ -42,13 +42,4 @@ sisfo:password
 dosen1:123456
 mahasiswa1:123456
 --------
-->Ketika data menunya terhapus, maka akses menunya juga ikut terhapus. (add trigger)
-```
-CREATE TRIGGER `delete_rolemenus` AFTER DELETE ON `menus` FOR EACH ROW DELETE FROM role_menus WHERE menu_id = old.id
-```
-
-```
-CREATE TRIGGER `delete_rolemenus` AFTER DELETE ON `roles` FOR EACH ROW DELETE FROM role_menus WHERE role_id = old.id
-```
-->Dosen pada Perminatan lebih dari satu.
 ->Validasi+Testing

@@ -29,7 +29,7 @@
 										<p class="alert alert-danger"><?php echo validation_errors(); ?></p>
 									<?php endif; ?>
 
-									<form role="form" method="POST" action="<?php echo base_url('index.php/Gallery/create') ?>" enctype="multipart/form-data">
+									<form role="form" method="POST" action="<?php echo base_url('admin/galleries/create') ?>" enctype="multipart/form-data">
 										<div class="form-group">
 											<label>File Image</label>
 											<input class="form-control" type="file" name="image">

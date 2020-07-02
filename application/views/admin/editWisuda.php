@@ -29,7 +29,7 @@
 										<p class="alert alert-danger"><?php echo validation_errors(); ?></p>
 									<?php endif; ?>
 
-									<form role="form" method="POST" action="<?php echo base_url('wisuda/edit/') . $wisuda->id ?>" enctype="multipart/form-data">
+									<form role="form" method="POST" action="<?php echo base_url('admin/wisuda/edit/') . $wisuda->id ?>" enctype="multipart/form-data">
 
 										<div class="form-group">
 											<label>Judul</label>
@@ -60,7 +60,7 @@
 											<label class="col-form-label" for="status">Status</label>
 											<select name="status" class="form-control" id="status" required>
 												<option value>Pilih Status</option>
-												<?php if ($tridharma->status == 1) : ?>
+												<?php if ($wisuda->status == 1) : ?>
 													<option value=1 selected>Publish</option>
 													<option value=0>Unpublish</option>
 												<?php else : ?>

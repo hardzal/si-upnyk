@@ -24,7 +24,7 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-12">
-									<form role="form" method="POST" action="<?php echo base_url('event/edit/') . $event->id ?>" enctype="multipart/form-data">
+									<form role="form" method="POST" action="<?php echo base_url('admin/event/edit/') . $event->id ?>" enctype="multipart/form-data">
 										<div class="form-group">
 											<label for="title">Judul Agenda</label>
 											<input class="form-control" placeholder="Judul Berita" type="text" name="title" id="title" value="<?php echo $event->title; ?>" required />

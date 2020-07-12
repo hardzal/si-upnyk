@@ -142,17 +142,32 @@ $route['admin/category/create'] = 'Category/create';
 $route['admin/category/edit/(:any)'] = 'Category/edit/$1';
 $route['admin/category/delete/(:any)'] = 'Category/delete/$1';
 
+$route['admin/Kurikulum'] = 'Kurikulum/lists';
+$route['admin/Kurikulum/create'] = 'Kurikulum/create';
+$route['admin/Kurikulum/edit/(:any)'] = 'Kurikulum/edit/$1';
+$route['admin/Kurikulum/delete/(:any)'] = 'Kurikulum/delete/$1';
+
 $route['admin/menu'] = 'Menu/lists';
 $route['admin/menu/create'] = 'Menu/create';
 $route['admin/menu/edit/(:num)'] = 'Menu/edit/$1';
 $route['admin/menu/delete/(:num)'] = 'Menu/delete/$1';
 
-$route['admin/submenu'] = 'SubMenu/lists';
-$route['admin/submenu/create'] = 'SubMenu/create';
-$route['admin/submenu/edit/(:num)'] = 'SubMenu/edit/$1';
-$route['admin/submenu/delete/(:num)'] = 'SubMenu/delete/$1';
+$route['admin/submenu'] = 'Submenu/lists';
+$route['admin/submenu/create'] = 'Submenu/create';
+$route['admin/submenu/edit/(:num)'] = 'Submenu/edit/$1';
+$route['admin/submenu/delete/(:num)'] = 'Submenu/delete/$1';
 
 $route['admin/roleaccess'] = 'RoleAccess/lists';
 $route['admin/roleaccess/create'] = 'RoleAccess/create';
 $route['admin/roleaccess/edit/(:num)'] = 'RoleAccess/edit/$1';
 $route['admin/roleaccess/delete/(:num)'] = 'RoleAccess/delete/$1';
+
+$route['admin/grafik'] = 'Grafik/lists';
+$route['admin/grafik/create'] = 'Grafik/create';
+$route['admin/grafik/edit/(:num)'] = 'Grafik/edit/$1';
+$route['admin/grafik/delete/(:num)'] = 'Grafik/delete/$1';
+
+$route['admin/grafik/isi/(:num)'] = 'Grafik/lists_isi/$1';
+$route['admin/grafik/isi/create/(:num)'] = 'Grafik/create_isi/$1';
+$route['admin/grafik/isi/edit/(:num)/(:num)'] = 'Grafik/edit_isi/$1/$2';
+$route['admin/grafik/isi/delete/(:num)/(:num)'] = 'Grafik/delete_isi/$1/$2';

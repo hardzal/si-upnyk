@@ -26,8 +26,8 @@
                             <div class="row">
                                 <div class="col-lg-12">
 								<h3> <?php echo $dosen->nama; ?></h3>
-									 <?php echo $dosen->nip; ?>
-											
+									 <?php echo $dosen->nip; ?> <br>
+									 e-mail : <?php echo $dosen->email; ?>
 									<br>
 									<br>
 										<img src="<?php echo base_url('assets/images/'.$dosen->file)?>" width="20%">
@@ -37,6 +37,12 @@
 									
 										<!-- /.panel-heading -->
 										<div class="panel-body">
+										    <b>Mata Kuliah yang diajarkan</b>
+											<br>
+											 <?php echo $dosen->matkul; ?>
+											<br>
+											<br>
+											
 											<b>Bidang</b>
 											<br>
 											 <?php echo $dosen->bidang; ?>
@@ -52,14 +58,15 @@
 											<br>
 											<?php echo $dosen->penelitian; ?>
 											<br><br>
-											<b>Pengabdian</b>
-											<br>
-											 <?php echo $dosen->pengabdian; ?>
-											<br>
-											<br>
+											
 											<b>Pelatihan</b>
 											<br>
 											 <?php echo $dosen->pelatihan; ?>
+											<br>
+											<br>
+											<b>Pengabdian</b>
+											<br>
+											 <?php echo $dosen->pengabdian; ?>
 											<br>
 											<br>
 										</div>

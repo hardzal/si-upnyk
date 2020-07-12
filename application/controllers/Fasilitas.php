@@ -6,7 +6,7 @@ class Fasilitas extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		if ($this->session->userdata('username') == NULL) {
+if ($this->session->userdata('username') == NULL) {
 			redirect('login/logout');
 			exit();
 		}
@@ -72,7 +72,7 @@ class Fasilitas extends CI_Controller
 			$this->load->view('admin/editFasilitas', $data);
 		} else {
 			$data = [
-				'title' => $this->input->post('title', true),
+			    'title' => $this->input->post('title', true),
 				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
 			];
 
@@ -82,8 +82,8 @@ class Fasilitas extends CI_Controller
 				$config['max_size'] = 2048;
 				$config['upload_path'] = "./assets/images/perminatan/";
 				$config['remove_spaces'] = false;
-
-				$data['image'] = $this->fasilitas->get($id);
+				
+                $data['image'] = $this->fasilitas->get($id);
 				if (!deleteFile($data['image']->image)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus gambar sebelumnya!</div>');
 					redirect('admin/fasilitas');

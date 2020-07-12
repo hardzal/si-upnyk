@@ -26,6 +26,7 @@
 							<div class="row">
 								<div class="col-lg-12">
 									<h3> <?php echo $question->name; ?></h3>
+									<small><?php echo $question->email;?></small>
 									<br>
 									<br>
 									<div class="panel panel-default">

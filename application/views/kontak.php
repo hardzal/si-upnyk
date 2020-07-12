@@ -63,7 +63,7 @@
         <br>
           <div class="row">
             <div class="col-md-12 ftco-animate">
-              <h3>Ajukan Pertanyaan</h3>
+              <h3>Pertanyaan, Kritik dan Saran</h3>
               <hr>
             </div>
             <div class="col-md-12 ftco-animate ">

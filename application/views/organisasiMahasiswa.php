@@ -27,7 +27,23 @@
         <hr>
         <div class="row" id="topSection">
           <div class="col-md-12 ftco-animate">
-
+            <?
+            if(empty($organisasi)){
+                      ?>
+    
+                        <div class="w-100 alert alert-danger" role="alert" align="center">
+                          Organisasi Masih Kosong..
+                        </div>
+                    <?php
+                    }
+            foreach($organisasi as $row) :
+            ?>
+            <h4 align="center"><?=$row->title?></h4>
+            <img class="w-100 img-responsive mb-3" src="<?php echo base_url($row->image);?>">
+            <hr>
+            <?php
+            endforeach;
+            ?>
             <!-- <img class="w-100" src="<?php echo base_url('assets/images/struktur.png')?>"> -->
             <!-- <hr> -->
             <!-- Row kurikulum -->

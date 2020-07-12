@@ -13,7 +13,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header">Tambah Agenda</h3>
+					<h3 class="page-header">Edit Agenda</h3>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
@@ -24,7 +24,7 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-12">
-									<form role="form" method="POST" action="<?php echo base_url('admin/event/edit/') . $event->id ?>" enctype="multipart/form-data">
+									<form role="form" method="POST" action="<?php echo base_url('admin/agenda/edit/') . $event->id ?>" enctype="multipart/form-data">
 										<div class="form-group">
 											<label for="title">Judul Agenda</label>
 											<input class="form-control" placeholder="Judul Berita" type="text" name="title" id="title" value="<?php echo $event->title; ?>" required />
@@ -69,7 +69,14 @@
 											<textarea id="elm1" class="form-control" rows="3" name="description" value="<?php echo $event->description; ?>"><?php echo $event->description; ?></textarea>
 										</div>
 										<div class="form-group">
-											<label for="file" class="col-form-label">File</label>
+										    <label for="file" class="col-form-label">File</label>
+										    <div class="row">
+										    	<?php if ($event->file) : ?>
+													<div class="col-md-12 my-5">
+													    <a href="<?php echo base_url($event->file); ?>">Lihat File</a>
+													</div>
+												<?php endif; ?>
+											</div>
 											<input type="file" name="file" class="form-control" id="file" />
 										</div>
 										<div class="form-group">

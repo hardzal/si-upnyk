@@ -6,7 +6,7 @@ class Question extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		if ($this->session->userdata('username') == NULL) {
+if ($this->session->userdata('username') == NULL) {
 			redirect('login/logout');
 			exit();
 		}

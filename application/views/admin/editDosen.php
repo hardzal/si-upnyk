@@ -46,6 +46,10 @@
                                             <label>Email</label>
                                             <input class="form-control" placeholder="Email" name="email" type="email" value="<?php echo $dosen->email; ?>">
                                         </div>
+                                        <div class="form-group">
+                                            <label>Mata Kuliah</label>
+                                            <input class="form-control" placeholder="Mata Kuliah" name="matkul" type="matkul" value="<?php echo $dosen->matkul; ?>">
+                                        </div>
 										
 										<div class="form-group">
                                             <label>Bidang</label>

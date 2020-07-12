@@ -44,6 +44,10 @@
                                             <label>Email</label>
                                             <input class="form-control" placeholder="Email" type="email" name="email">
                                         </div>
+                                        <div class="form-group">
+                                            <label>Mata Kuliah</label>
+                                            <input class="form-control" placeholder="Mata Kuliah" type="matkul" name="matkul">
+                                        </div>
 										
 										<div class="form-group">
                                             <label>Bidang</label>

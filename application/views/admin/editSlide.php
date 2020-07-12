@@ -29,6 +29,11 @@
                                         
                                         <div class="form-group">
                                             <label>File Upload</label>
+                                            <?php if ($slide->file) : ?>
+												<div class="col-md-12 my-5">
+													<img src="<?php echo base_url('assets/images/' . $slide->file); ?>" width="300px" class="img-thumbnail" />
+												</div>
+											<?php endif; ?>
                                             <input class="form-control"  type="hidden" name="id" value="<?php echo $slide->id; ?>">
                                             <input class="form-control"  type="file" name="file" >
                                             <input class="form-control"  type="hidden" name="file" value="<?php echo $slide->file; ?>">

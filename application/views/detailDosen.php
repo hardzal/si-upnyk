@@ -11,15 +11,15 @@
 </head>
 <body>
 	<?php $this->load->view("_partial/navbar.php") ?>
-	<section class="hero-wrap hero-wrap-2" style="background-image: url(<?php echo base_url('assets/images/event.jpg') ?>);">
+	<section class="hero-wrap hero-wrap-2" style="background-image: url(<?php echo base_url('assets/images/helloquence-5fNmWej4tAA-unsplash.jpg') ?>);">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-            <h1 class="mb-2 bread">Detail Event</h1>
+            <h1 class="mb-2 bread">Detail Dosen</h1>
             <p class="breadcrumbs">
-            	<span class="mr-2">Berita <i class="ion-ios-arrow-forward"></i></span>
-            	<span class="mr-2">Event <i class="ion-ios-arrow-forward"></i></span> 
+            	<span class="mr-2">Data Personil <i class="ion-ios-arrow-forward"></i></span>
+            	<span class="mr-2">Dosen <i class="ion-ios-arrow-forward"></i></span> 
             	<span >Detail <i class="ion-ios-arrow-forward"></i></span>
             </p>
           </div>
@@ -64,6 +64,10 @@
 									<td><?=$dosen->nip;?></td>
 								</tr>
 								<tr>
+									<td class="font-weight-bold">Email</td>
+									<td><?=$dosen->email;?></td>
+								</tr>
+								<tr>
 									<td class="font-weight-bold">Pendidikan</td>
 									<td><?=$dosen->pendidikan;?></td>
 								</tr>
@@ -72,16 +76,15 @@
 									<td><?=$dosen->bidang;?></td>
 								</tr>
 								<tr>
+									<td class="font-weight-bold">Mata Kuliah yang diajarkan</td>
+									<td><?=$dosen->matkul;?></td>
+								</tr>
+								
+								<tr>
 									<td class="font-weight-bold">Penelitian</td>
 								</tr>
 								<tr>
 									<td colspan="2"><?=$dosen->penelitian;?></td>
-								</tr>
-								<tr>
-									<td class="font-weight-bold">Pengabdian</td>
-								</tr>
-								<tr>
-									<td colspan="2"><?=$dosen->pengabdian;?></td>
 								</tr>
 								<tr>	
 									<td class="font-weight-bold">Pelatihan</td>
@@ -90,8 +93,10 @@
 									<td colspan="2"><?=$dosen->pelatihan;?></td>
 								</tr>
 								<tr>
-									<td class="font-weight-bold">Email</td>
-									<td><?=$dosen->email;?></td>
+									<td class="font-weight-bold">Pengabdian</td>
+								</tr>
+								<tr>
+									<td colspan="2"><?=$dosen->pengabdian;?></td>
 								</tr>
 								
 							</table>

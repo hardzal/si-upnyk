@@ -25,16 +25,11 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-8">
-									<?php if (validation_errors()) : ?>
-										<div class='alert alert-danger'>
-											<?php echo validation_errors(); ?>
-										</div>
-									<?php endif; ?>
 									<form role="form" method="POST" action="<?php echo base_url('admin/user/edit/') . $user->id ?>" enctype="multipart/form-data">
 
 										<div class="form-group">
 											<label>Username</label>
-											<input class="form-control" placeholder="Username" type="text" name="username" value="<?php echo $user->username; ?>" disabled>
+											<input class="form-control" placeholder="Username" type="text" name="username" value="<?php echo $user->username; ?>">
 										</div>
 
 										<div class="form-group">

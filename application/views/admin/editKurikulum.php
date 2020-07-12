@@ -30,13 +30,13 @@
 										<div class="form-group">
 											<label>File akademik</label>
 											<?php if ($kurikulum->file) : ?>
-												<a href='<?php echo base_url('assets/file/') . $kurikulum->file; ?>'>Lihat File</a>
+												<a href='<?php echo base_url() . $kurikulum->file; ?>'>Lihat File</a>
 												<input type="file" name="file" class="form-control" />
+											
 											<?php else : ?>
 												<input type="file" name="file" class="form-control" />
 											<?php endif; ?>
-											<small class="text-danger">* Max File 10MB</small>
-											<input type="hidden" name="id" value="<?php echo $kurikulum->id; ?>">
+												<small class="text-danger">* Max File 10MB</small>											<input type="hidden" name="id" value="<?php echo $kurikulum->id; ?>">
 										</div>
 										<div class="form-group">
 											<label>Tahun Ajaran</label>

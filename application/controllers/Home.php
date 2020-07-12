@@ -30,6 +30,19 @@ class Home extends CI_Controller
 		$this->load->model('MEvent', 'event');
 		$this->load->model('MGallery', 'gallery');
 		$this->load->model('MSpecialization', 'specialization');
+		$this->load->model('MTriDharma', 'tridharma');
+		$this->load->model('MFasilitas', 'fasilitas');
+		$this->load->model('MKerjaPraktik', 'kerja_praktik');
+		$this->load->model('MSkripsi', 'skripsi');
+		$this->load->model('MOrganisasiMahasiswa', 'organisasi_mahasiswa');
+		$this->load->model('MPrestasi', 'prestasi');
+		$this->load->model('MAlumni', 'alumni');
+		$this->load->model('MWisuda', 'wisuda');
+		$this->load->model('MKurikulum', 'kurikulum');
+		$this->load->model('MKalender', 'kalender');
+		$this->load->model('MAkademik', 'akademik');
+		$this->load->model('MLowker', 'lowker');
+		$this->load->model('MGrafik', 'grafik');
 		//$this->load->view('admin/head');
 		//$this->load->view('sidebar');
 	}
@@ -152,7 +165,7 @@ class Home extends CI_Controller
 
 	public function Kurikulum()
 	{
-		$data['kurikulum'] = $this->mdata->kurikulum()->result();
+		$data['kurikulum'] = $this->kurikulum->getAll();
 		$this->load->view('kurikulum', $data);
 	}
 
@@ -220,7 +233,7 @@ class Home extends CI_Controller
 		//konfigurasi pagination
 		$this->load->library('pagination');
 
-		$config['base_url'] = site_url('sisfo/dosen/'); //site url
+		$config['base_url'] = site_url('home/dosen/'); //site url
 		$config['total_rows'] = $this->db->count_all('dosen'); //total row
 		$config['per_page'] = 8;  //show record per halaman
 		$config["uri_segment"] = 3;  // uri parameter
@@ -302,17 +315,23 @@ class Home extends CI_Controller
 
 	public function akademik()
 	{
-		$data['akademik'] = $this->mdata->akademik()->result();
+		$data['akademik'] = $this->kalender->getAll();
 		$this->load->view('akademik', $data);
 	}
 
 	//prestasi
 	public function prestasi()
 	{
-		// $data['prestasi'] = $this->mdata->prestasi()->result();
+		$data['prestasi'] = $this->prestasi->getActive();
 
 		// $this->load->view('prestasi', $data);
-		$this->load->view('prestasi');
+		$this->load->view('prestasi',$data);
+	}
+	
+	public function detailprestasi($id)
+	{
+	    $data['prestasi'] = $this->prestasi->get($id);
+	    $this->load->view('detailprestasi',$data);
 	}
 
 	//kp
@@ -338,7 +357,8 @@ class Home extends CI_Controller
 
 	public function sambutan()
 	{
-		$this->load->view('sambutan'); // Statis
+	    $data['profil'] = $this->mdata->profil()->row_object();
+		$this->load->view('sambutan',$data); // Statis
 	}
 
 	public function applist()
@@ -348,7 +368,8 @@ class Home extends CI_Controller
 
 	public function organisasiMahasiswa()
 	{
-		$this->load->view('organisasiMahasiswa');
+	    $data['organisasi'] = $this->organisasi_mahasiswa->getActive();
+		$this->load->view('organisasiMahasiswa',$data);
 	}
 
 	public function karier()
@@ -358,12 +379,26 @@ class Home extends CI_Controller
 
 	public function alumni()
 	{
-		$this->load->view('alumni');
+	    $data['alumni'] = $this->alumni->getActive();
+		$this->load->view('alumni',$data);
+	}
+	
+	public function detail_alumni($id){
+	    $data['alumni'] = $this->alumni->get($id);
+	    $this->load->view('detail_alumni',$data);
+	    
 	}
 
 	public function informasiWisuda()
 	{
-		$this->load->view('informasiWisuda');
+	    $data['wisuda'] = $this->wisuda->getActive();
+		$this->load->view('informasiWisuda',$data);
+	}
+	
+	public function detail_wisuda($id){
+	    $data['wisuda'] = $this->wisuda->get($id);
+	    $this->load->view('detail_wisuda',$data);
+	    
 	}
 
 	public function organisasiDosen()
@@ -385,12 +420,22 @@ class Home extends CI_Controller
 
 	public function informasiAkademik()
 	{
-		$this->load->view('informasiAkademik');
+	    $data['akademik'] = $this->akademik->getAll();
+		$this->load->view('informasiAkademik',$data);
+	}
+	
+	public function detailAkademik($id)
+	{
+	    $data['akademik'] = $this->akademik->get($id);
+	    $this->load->view('detailAkademik',$data);
 	}
 
 	public function informasiGrafik()
 	{
-		$this->load->view('informasiGrafik');
+	    $data['grafik'] = $this->grafik->getAllGrafik();
+		$data['isi_grafik'] = $this->grafik->getAllIsiGrafik();
+		
+		$this->load->view('informasiGrafik',$data);
 	}
 
 	public function event()
@@ -412,26 +457,66 @@ class Home extends CI_Controller
 
 	public function triDharma()
 	{
-		$this->load->view('tri_dharma');
+	    $data['pengajaran'] = $this->tridharma->getPengajaranActive();
+	    $data['penelitian'] = $this->tridharma->getPenelitianActive();
+	    $data['pengabdian'] = $this->tridharma->getPengabdianActive();
+		$this->load->view('tri_dharma',$data);
+	}
+	
+	public function detailpengajaran($id)
+	{
+	    $data['pengajaran'] = $this->tridharma->get($id);
+	    $this->load->view('detailpengajaran',$data);
+	}
+	public function detailpenelitian($id)
+	{
+	    $data['penelitian'] = $this->tridharma->getPenelitian($id);
+	    $this->load->view('detailpenelitian',$data);
+	}
+	public function detailpengabdian($id)
+	{
+	    $data['pengabdian'] = $this->tridharma->getPengabdian($id);
+	    $this->load->view('detailpengabdian',$data);
 	}
 
 	public function fasilitas()
 	{
-		$this->load->view('fasilitas');
+	    $data['fasilitas'] = $this->fasilitas->getActive();
+		$this->load->view('fasilitas',$data);
 	}
 
 	public function informasilowker()
 	{
-		$this->load->view('informasilowker');
+	    $data['lowker'] = $this->lowker->getAll();
+		$this->load->view('informasilowker',$data);
+	}
+	public function detailLowker($id)
+	{
+	    $data['lowker'] = $this->lowker->get($id);
+	    $this->load->view('detailLowker',$data);
 	}
 
 	public function skripsi()
 	{
-		$this->load->view('skripsi');
+	    $data['skripsi'] = $this->skripsi->getActive();
+		$this->load->view('skripsi', $data);
+	}
+	
+	public function detailskripsi($id){
+	    $data['skripsi'] = $this->skripsi->get($id);
+	    $this->load->view('detailskripsi',$data);
+	    
 	}
 
 	public function kerja_praktik()
 	{
-		$this->load->view('kerja_praktik');
+	    $data['kp'] = $this->kerja_praktik->getActive();
+		$this->load->view('kerja_praktik',$data);
+	}
+	
+	public function detail_kerja_praktik($id){
+	    $data['kp'] = $this->kerja_praktik->get($id);
+	    $this->load->view('detailkp',$data);
+	    
 	}
 }

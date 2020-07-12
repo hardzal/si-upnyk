@@ -73,7 +73,7 @@ class Prestasi extends CI_Controller
 			$this->load->view('admin/editPrestasi', $data);
 		} else {
 			$data = [
-				'title' => $this->input->post('title', true),
+			    'title' => $this->input->post('title', true),
 				'description' => $this->input->post('description', true),
 				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
 			];
@@ -84,15 +84,15 @@ class Prestasi extends CI_Controller
 				$config['max_size'] = 10000;
 				$config['upload_path'] = "./assets/images/prestasi/";
 				$config['remove_spaces'] = false;
-
-				$data['image'] = $this->prestasi->get($id);
-				if (!deleteFile($data['image']->image)) {
+                
+                $data['image'] = $this->prestasi->get($id);
+                if (!deleteFile($data['image']->image)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus gambar sebelumnya!</div>');
 					redirect('admin/prestasi');
 				}
-
+    			
 				// if (!deleteFile($data['specialization']->image)) {
-
+					
 				// }
 
 				if (!uploadFile($config, 'image')) {

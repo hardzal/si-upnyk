@@ -30,7 +30,7 @@
 										<div class="form-group">
 											<label>File akademik</label>
 											<?php if ($kalender->file) : ?>
-												<a href='<?php echo base_url('assets/file/') . $kalender->file; ?>'>Lihat File</a>
+												<a href='<?php echo base_url() . $kalender->file; ?>'>Lihat File</a>
 												<input type="file" name="file" class="form-control" />
 											<?php else : ?>
 												<input type="file" name="file" class="form-control" />

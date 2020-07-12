@@ -11,6 +11,10 @@ class Dosen extends CI_Controller
 			redirect('login/logout');
 			exit();
 		}
+		//if (checkRoleMenus($this->session->userdata('role_id'))) {
+		//	redirect(base_url());
+		//}
+
 		$this->load->model('mdata');
 
 		if ($this->session->userdata('role_id') != 2) {
@@ -44,6 +48,8 @@ class Dosen extends CI_Controller
 			'isi' 				=> $this->input->post('isi'),
 			'file' 				=> $this->input->post('file')
 		);
+		var_dump($data);
+		die();
 		$config['upload_path']          = './assets/images/berita';
 		$config['max_size']             = 10000;
 		$config['allowed_types'] 		= 'jpg|png|jpeg|JPG|PNG';
@@ -134,6 +140,7 @@ class Dosen extends CI_Controller
 
 	public function updateadmin()
 	{
+
 		$data['id'] 		= $this->input->post('id');
 		$data['username'] 		= $this->input->post('username');
 		$data['password'] 		= md5($this->input->post('password'));

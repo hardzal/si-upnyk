@@ -10,7 +10,6 @@ class Alumni extends CI_Controller
 			redirect('login/logout');
 			exit();
 		}
-
 		if (checkRoleMenus($this->session->userdata('role_id'))) {
 			redirect(base_url());
 		}
@@ -25,7 +24,9 @@ class Alumni extends CI_Controller
 
 	public function create()
 	{
-		$this->form_validation->set_rules('Keterangan', 'description', 'min_Length[3]');
+		$this->form_validation->set_rules('title', 'description', 'required|min_Length[3]');
+		$this->form_validation->set_rules('description', 'description', 'min_Length[3]');
+		$this->form_validation->set_rules('status', 'description', 'required');
 		if (empty($_FILES['image']['tmp_name'])) {
 			$this->form_validation->set_rules('image', 'Image', 'required');
 		}
@@ -74,7 +75,7 @@ class Alumni extends CI_Controller
 			$this->load->view('admin/editAlumni', $data);
 		} else {
 			$data = [
-				'title' => $this->input->post('title', true),
+			    'title' => $this->input->post('title', true),
 				'description' => $this->input->post('description', true),
 				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
 			];
@@ -85,15 +86,15 @@ class Alumni extends CI_Controller
 				$config['max_size'] = 10000;
 				$config['upload_path'] = "./assets/images/alumni/";
 				$config['remove_spaces'] = false;
-
-				$data['image'] = $this->alumnis->get($id);
-				if (!deleteFile($data['image']->image)) {
+                
+                $data['image'] = $this->alumnis->get($id);
+                if (!deleteFile($data['image']->image)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus gambar sebelumnya!</div>');
 					redirect('admin/alumni');
 				}
-
+    			
 				// if (!deleteFile($data['specialization']->image)) {
-
+					
 				// }
 
 				if (!uploadFile($config, 'image')) {

@@ -29,7 +29,7 @@
 									<center>
 									<h3> <?php echo $berita->judul; ?></h3>
                                         <br><br>
-										<img src="<?php echo '../../../assets/images/'.$berita->file; ?>" width="50%">
+										<img src="<?php echo base_url() . $berita->file; ?>" width="50%">
                                         </center>
 									<p><?php echo $berita->isi; ?></p>
                                         

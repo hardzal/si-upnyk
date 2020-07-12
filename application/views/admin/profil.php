@@ -84,7 +84,22 @@
                     </div>
                 </div>
             </div>
-			
+            
+			<h3>Sambutan</h3>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                       
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                   <?php echo $data->sambutan; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- /.row -->
             
 			

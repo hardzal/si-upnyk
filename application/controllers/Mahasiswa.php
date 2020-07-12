@@ -6,11 +6,15 @@ class Mahasiswa extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+
 		if ($this->session->userdata('username') == NULL) {
 			redirect('login/logout');
 			exit();
 		}
-
+		//if (checkRoleMenus($this->session->userdata('role_id'))) {
+		//	redirect(base_url());
+		//}
+		
 		$this->load->model('mdata');
 		if ($this->session->userdata('role_id') != 3) {
 			redirect(base_url());

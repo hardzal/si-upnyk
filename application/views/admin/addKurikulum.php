@@ -73,7 +73,8 @@
                                             <select class="form-control" name="status">
                                                 <option value="#">-Pilih Status-</option>
                                                 <option value="Wajib">Wajib</option>
-                                                <option value="Pilihan">Pilihan</option>              
+                                                <option value="Pilihan">Pilihan</option>
+                                                
                                             </select>
                                         </div>
 										

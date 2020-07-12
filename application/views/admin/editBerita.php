@@ -67,6 +67,7 @@
 
 										<div class="form-group">
 											<label>File Photo</label>
+											<img class="img-thumbnail" src="<?php echo base_url($berita->file); ?>">
 											<input type="file" name="file">
 											<input type="hidden" name="file" value="<?php echo $berita->file; ?>">
 										</div>
@@ -74,6 +75,13 @@
 										<div class="form-group">
 											<label>Isi</label>
 											<textarea id="elm1" class="form-control" rows="3" name="isi"><?php echo $berita->isi; ?></textarea>
+										</div>
+										
+										<div class="form-group">
+											<label>File Tambahan</label>
+											<a href="<?php echo base_url($berita->file2); ?>">Lihat File</a>
+											<input type="file" name="file2">
+											<input type="hidden" name="file" value="<?php echo $berita->file2; ?>">
 										</div>
 
 										<button type="submit" class="btn btn-info">Submit Button</button>

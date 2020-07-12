@@ -54,7 +54,12 @@
 											<label>Isi Berita</label>
 											<textarea id="elm1" class="form-control" rows="3" name="isi"></textarea>
 										</div>
-
+                                        
+                                        <div class="form-group">
+											<label>File Tambahan</label>
+											<input type="file" name="file2">
+										</div>
+										
 										<div class="form-group">
 											<label class="col-form-label-sm">Penulis</label>
 											<select name="user_id" class="form-control">
@@ -63,7 +68,6 @@
 												<?php endforeach; ?>
 											</select>
 										</div>
-
 										<br>
 										<br>
 										<button type="submit" class="btn btn-info">Submit Button</button>

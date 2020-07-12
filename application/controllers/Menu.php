@@ -9,7 +9,7 @@ class Menu extends CI_Controller
 			redirect('login/logout');
 			exit();
 		}
-
+		
 		if (checkRoleMenus($this->session->userdata('role_id'))) {
 			redirect(base_url());
 		}
@@ -63,7 +63,7 @@ class Menu extends CI_Controller
 				];
 				$process = $this->role->insertAccess($data);
 			}
-
+			
 			if ($process) {
 				$this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil menambahkan data</div>');
 			} else {
@@ -86,7 +86,7 @@ class Menu extends CI_Controller
 		$data['menu_data'] = $this->menu->get($id);
 
 		if ($this->form_validation->run() == false) {
-			$data['total_menu'] = $this->menu->total();
+			$data['total_menu'] = $this->menu->total();;
 			$data['roles'] = $this->role->getAll();
 			$menus = $this->role->getMenu($id);
 
@@ -98,12 +98,11 @@ class Menu extends CI_Controller
 			$this->load->view('admin/editMenu', $data);
 		} else {
 			$urutan = $this->input->post('order');
-			$menu = $this->menu->urutan($urutan);
+			$menu = $this->menu->get($urutan);
 
 			if ($menu) {
 				$this->menu->updateUrutan(['urutan' => $urutan], $menu->id);
 			}
-
 			$data = [
 				'menu' => $this->input->post('menu'),
 				'icon' => $this->input->post('icon'),

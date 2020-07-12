@@ -65,7 +65,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<div class="col-md-6 col-lg-4 ftco-animate">
 									<div class="blog-entry">
 										<a href="<?php echo base_url('assets/images/' . $value->file) ?>" class="block-16 d-flex align-items-end">
-											<img class="img-terkini w-100" src="<?php echo base_url('assets/images/' . $value->file) ?>" style="height: 250px;" alt="<?php echo $value->file ?>">
+											<img class="img-terkini w-100" src="<?php echo base_url($value->file) ?>" style="height: 250px;" alt="<?php echo $value->file ?>">
 											<div class="meta-date text-center p-2" style="position: absolute;">
 												<span class="day"><?= date("d", $waktu); ?></span>
 												<span class="mos"><?= date("F", $waktu); ?></span>
@@ -74,21 +74,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</a>
 										<div class="text bg-white p-4">
 											<h3 class="heading"><a href="<?php echo base_url('home/detailberita/' . $value->id) ?>"><?php echo $value->judul; ?></a></h3>
-											<p>
-												<?php
-												$string = strip_tags($value->isi);
-												if (strlen($string) > 50) {
-													// truncate string
-													$stringCut = substr($string, 0, 40);
-													$endPoint = strrpos($stringCut, ' ');
-
-													//if the string doesn't contain any space then it will cut without word basis.
-													$string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-													$string .= '... ';
-												}
-												echo $string;
-												?>
-											</p>
+											
 											<div class="d-flex justify-content-end mt-4">
 												<p class="mb-0"><a href="<?php echo base_url('home/detailberita/' . $value->id) ?>" class="btn btn-sm btn-outline-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
 											</div>
@@ -279,7 +265,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										<a class="mb-0" href="<?php echo base_url('home/detailevent/' . $event->id) ?>">
 											<p style="font-size: 18px;  color: black;"><?php echo $event->title; ?></p>
 										</a>
-										<p style=" margin-top: -10px;"><i class="icon icon-calendar"></i> <?= date("H:i", $waktu); ?> - <?= date("H:i", $waktu); ?></p>
+										<p style=" margin-top: -10px;"><i class="icon icon-calendar"></i> <?= date("H:i", $waktu); ?> - <?= date("H:i", $waktu2); ?></p>
 										<p style=" margin-top: -18px;"><i class="icon icon-map-marker"></i> <?php echo $event->location; ?></p>
 									</div>
 								</div>

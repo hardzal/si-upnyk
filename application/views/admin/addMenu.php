@@ -4,6 +4,7 @@
 <?php include 'head.php'; ?>
 
 <body>
+
 	<div id="wrapper">
 
 		<!-- Navigation -->
@@ -107,14 +108,7 @@
 	<!-- /#wrapper -->
 
 	<?php include 'foot.php'; ?>
-	<script type="text/javascript">
-		function checkAll(source) {
-			let input = document.getElementsByName('roles[]');
-			for (let i = 0, n = input.length; i < n; i++) {
-				input[i].checked = source.checked;
-			}
-		}
-	</script>
+
 </body>
 
 </html>

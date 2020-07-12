@@ -241,6 +241,16 @@ class Mdata extends CI_Model
 		$this->db->order_by('tgl', 'desc');
 		return $this->db->get();
 	}
+	
+	function berita_by_category($id_category){
+	    $this->db->select('berita.*, admin.username, category.name as kategori');
+		$this->db->from('berita');
+		$this->db->join('admin', 'berita.user_id=admin.id', 'left');
+		$this->db->join('category', 'category.id = berita.category_id', 'left');
+		$this->db->where('category.id' , $id_category);
+		$this->db->order_by('tgl', 'desc');
+		return $this->db->get();
+	}
 
 	function idberita($id)
 	{

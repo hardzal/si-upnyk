@@ -25,9 +25,14 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-12">
-									<a href="<?php echo base_url('admin/addberita') ?>"><button type="button" class="btn btn-primary btn-sm">Tambah Berita</button></a>
+									<a href="<?php echo base_url('admin/berita/create') ?>"><button type="button" class="btn btn-primary btn-sm">Tambah Berita</button></a>
 									<br>
 									<br>
+									<?php if ($this->session->userdata('message')) : ?>
+										<div class="alert alert-success">
+											<?php echo $this->session->userdata('message'); ?>
+										</div>
+									<?php endif; ?>
 									<div class="panel panel-default">
 										<!-- /.panel-heading -->
 										<div class="panel-body">
@@ -57,13 +62,13 @@
 																<td><?php echo $data->tgl; ?></td>
 																<td><?php echo $data->kategori; ?></td>
 																<td><?php echo $data->username; ?></td>
-																<td class="center"><?php echo substr(strip_tags(str_replace('\\', '', str_replace('\r\n', " ", $data->isi))), 0, 350) . "...."; ?> <br> <a href="<?php echo base_url('index.php/admin/beritaadmin/' . $data->id) ?>">
+																<td class="center"><?php echo substr(strip_tags(str_replace('\\', '', str_replace('\r\n', " ", $data->isi))), 0, 350) . "...."; ?> <br> <a href="<?php echo base_url('admin/berita/show/' . $data->id) ?>">
 																		<p style="color:#e3722e;"><u>Lihat Selengkapnya</u></p>
 																	</a></td>
 																<td class="center"><a href="<?php echo base_url($data->file2) ?>" target="blank">Lihat File</a></td>
 																<td class="center">
-																	<a href="<?php echo base_url('index.php/admin/ubahberita/' . $data->id) ?>" class="btn btn-xs btn-primary">Edit</a>
-																	<a href="<?php echo base_url('index.php/admin/deleteberita/' . $data->id) ?>" onclick='return confirm("Anda Yakin Akan Menghapus?")' class="btn btn-xs btn-danger">hapus</a>
+																	<a href="<?php echo base_url('admin/berita/edit/' . $data->id) ?>" class="btn btn-xs btn-primary">Edit</a>
+																	<a href="<?php echo base_url('admin/berita/delete/' . $data->id) ?>" onclick='return confirm("Anda Yakin Akan Menghapus?")' class="btn btn-xs btn-danger">hapus</a>
 																</td>
 															</tr>
 														<?php } ?>

@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -171,3 +170,36 @@ $route['admin/grafik/isi/(:num)'] = 'Grafik/lists_isi/$1';
 $route['admin/grafik/isi/create/(:num)'] = 'Grafik/create_isi/$1';
 $route['admin/grafik/isi/edit/(:num)/(:num)'] = 'Grafik/edit_isi/$1/$2';
 $route['admin/grafik/isi/delete/(:num)/(:num)'] = 'Grafik/delete_isi/$1/$2';
+
+$route['admin/berita'] = 'Berita/lists';
+$route['admin/berita/create'] = 'Berita/create';
+$route['admin/berita/edit/(:num)'] = 'Berita/edit/$1';
+$route['admin/berita/delete/(:num)'] = 'Berita/delete/$1';
+$route['admin/berita/show/(:num)'] = 'Berita/show/$1';
+
+$route['admin/slide'] = 'Slide/lists';
+$route['admin/slide/create'] = 'Slide/create';
+$route['admin/slide/edit/(:num)'] = 'Slide/edit/$1';
+$route['admin/slide/delete/(:num)'] = 'Slide/delete/$1';
+
+$route['admin/document'] = 'Doument/lists';
+$route['admin/document/create'] = 'Doument/create';
+$route['admin/document/edit/(:num)'] = 'Doument/edit/$1';
+$route['admin/document/delete/(:num)'] = 'Doument/delete/$1';
+
+$route['admin/dosen'] = 'Dosen/lists';
+$route['admin/dosen/create'] = 'Dosen/create';
+$route['admin/dosen/edit/(:num)'] = 'Dosen/edit/$1';
+$route['admin/dosen/delete/(:num)'] = 'Dosen/delete/$1';
+
+$route['admin/struktur'] = 'Struktur/index';
+$route['admin/struktur/edit/(:num)'] = 'Struktur/edit/$1';
+
+$route['admin/tendik'] = 'Tendik/lists';
+$route['admin/tendik/create'] = 'Tendik/create';
+$route['admin/tendik/edit/(:num)'] = 'Tendik/edit/$1';
+$route['admin/tendik/delete/(:num)'] = 'Tendik/delete/$1';
+$route['admin/tendik/show/(:num)'] = 'Tendik/show/$1';
+
+$route['admin/profile'] = 'Profile/index';
+$route['admin/profile/edit/(:num)'] = 'Profile/edit/$1';

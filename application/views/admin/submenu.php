@@ -22,9 +22,9 @@
 				<div class="col-lg-12">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<div class="mb-3">
+							<!-- <div class="mb-3">
 								<a href="<?php echo base_url('admin/submenu/create') ?>"><button type="button" class="btn btn-primary btn-sm">Tambah SubMenu</button></a>
-							</div>
+							</div> -->
 						</div>
 						<div class="panel-body">
 							<?php echo $this->session->flashdata('message'); ?>
@@ -47,7 +47,7 @@
 												<td><?php echo is_publish($submenu->is_active, "aktif"); ?></td>
 												<td>
 													<a href="<?php echo base_url('admin/submenu/edit/') . $submenu->id; ?>" class="btn btn-xs btn-primary mr-3">Edit</a>
-													<a href="<?php echo base_url('admin/submenu/delete/') . $submenu->id; ?>" class="btn btn-xs btn-danger" onclick="return confirm('apakah kamu yakin ingin menghapusnya?')">Hapus</a>
+													<!-- <a href="<?php echo base_url('admin/submenu/delete/') . $submenu->id; ?>" class="btn btn-xs btn-danger" onclick="return confirm('apakah kamu yakin ingin menghapusnya?')">Hapus</a> -->
 												</td>
 											</tr>
 										<?php endforeach; ?>

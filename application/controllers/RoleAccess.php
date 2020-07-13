@@ -36,7 +36,7 @@ class RoleAccess extends CI_Controller
 		} else {
 
 			$data = [
-				'role' => $this->input->post('role', true)
+				'role' => strtolower($this->input->post('role', true))
 			];
 
 			$menus = $this->input->post('menu');

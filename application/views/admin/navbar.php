@@ -49,14 +49,14 @@
 						<?php if ($checkSubMenu->has_submenu) : ?>
 							<ul class="nav nav-second-level">
 								<?php foreach ($subMenus as $submenu) :
-																		$submenu_url = ($submenu->url != "#") ? base_url($submenu->url) : "#";
+									$submenu_url = ($submenu->url != "#") ? base_url($submenu->url) : "#";
 									$checkThirdMenu = $this->submenu->check($submenu->id);
 									$subThirdMenu = $this->submenu->listThirdMenu($submenu->id);
 
 									$arrowIconThird = ($subThirdMenu && $checkThirdMenu->has_submenu) ? "<span class='fa arrow'></span>" : "";
 								?>
 									<li>
-																				<a href="<?php echo $submenu_url; ?>"><?php echo $submenu->submenu . "" . $arrowIconThird; ?></a>
+										<a href="<?php echo $submenu_url; ?>"><?php echo $submenu->submenu . "" . $arrowIconThird; ?></a>
 										<?php if ($submenu->has_submenu) :
 										?>
 											<ul class="nav nav-third-level">

@@ -39,7 +39,7 @@
 					<!-- /.panel -->
 				</div>
 				<!-- /.col-lg-12 -->
-				<a href="<?php echo base_url('index.php/admin/ubahStruktur/' . $data->id) ?>"><button type="button" class="btn btn-primary btn-sm">Ubah Profil</button></a>
+				<a href="<?php echo base_url('admin/struktur/edit/' . $data->id) ?>"><button type="button" class="btn btn-primary btn-sm">Ubah Profil</button></a>
 				<br><?php } ?>
 			</div>
 		</div>

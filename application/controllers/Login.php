@@ -33,14 +33,7 @@ class Login extends CI_Controller
 			];
 
 			$this->session->set_userdata($data);
-
-			if ($data['role_id'] == 1) {
-				redirect('admin/home');
-			} else if ($data['role_id'] == 2) {
-				redirect('dosen/index');
-			} else if ($data['role_id'] == 3) {
-				redirect('mahasiswa/index');
-			}
+			redirect('dashboard');
 		} else {
 			$this->session->set_flashdata('notif', '<div class="alert alert-danger">Maaf, Kombinasi Username dan Password salah.</div>');
 			redirect('login');

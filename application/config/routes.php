@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -142,17 +141,65 @@ $route['admin/category/create'] = 'Category/create';
 $route['admin/category/edit/(:any)'] = 'Category/edit/$1';
 $route['admin/category/delete/(:any)'] = 'Category/delete/$1';
 
+$route['admin/Kurikulum'] = 'Kurikulum/lists';
+$route['admin/Kurikulum/create'] = 'Kurikulum/create';
+$route['admin/Kurikulum/edit/(:any)'] = 'Kurikulum/edit/$1';
+$route['admin/Kurikulum/delete/(:any)'] = 'Kurikulum/delete/$1';
+
 $route['admin/menu'] = 'Menu/lists';
 $route['admin/menu/create'] = 'Menu/create';
 $route['admin/menu/edit/(:num)'] = 'Menu/edit/$1';
 $route['admin/menu/delete/(:num)'] = 'Menu/delete/$1';
 
-$route['admin/submenu'] = 'SubMenu/lists';
-$route['admin/submenu/create'] = 'SubMenu/create';
-$route['admin/submenu/edit/(:num)'] = 'SubMenu/edit/$1';
-$route['admin/submenu/delete/(:num)'] = 'SubMenu/delete/$1';
+$route['admin/submenu'] = 'Submenu/lists';
+$route['admin/submenu/create'] = 'Submenu/create';
+$route['admin/submenu/edit/(:num)'] = 'Submenu/edit/$1';
+$route['admin/submenu/delete/(:num)'] = 'Submenu/delete/$1';
 
 $route['admin/roleaccess'] = 'RoleAccess/lists';
 $route['admin/roleaccess/create'] = 'RoleAccess/create';
 $route['admin/roleaccess/edit/(:num)'] = 'RoleAccess/edit/$1';
 $route['admin/roleaccess/delete/(:num)'] = 'RoleAccess/delete/$1';
+
+$route['admin/grafik'] = 'Grafik/lists';
+$route['admin/grafik/create'] = 'Grafik/create';
+$route['admin/grafik/edit/(:num)'] = 'Grafik/edit/$1';
+$route['admin/grafik/delete/(:num)'] = 'Grafik/delete/$1';
+
+$route['admin/grafik/isi/(:num)'] = 'Grafik/lists_isi/$1';
+$route['admin/grafik/isi/create/(:num)'] = 'Grafik/create_isi/$1';
+$route['admin/grafik/isi/edit/(:num)/(:num)'] = 'Grafik/edit_isi/$1/$2';
+$route['admin/grafik/isi/delete/(:num)/(:num)'] = 'Grafik/delete_isi/$1/$2';
+
+$route['admin/berita'] = 'Berita/lists';
+$route['admin/berita/create'] = 'Berita/create';
+$route['admin/berita/edit/(:num)'] = 'Berita/edit/$1';
+$route['admin/berita/delete/(:num)'] = 'Berita/delete/$1';
+$route['admin/berita/show/(:num)'] = 'Berita/show/$1';
+
+$route['admin/slide'] = 'Slide/lists';
+$route['admin/slide/create'] = 'Slide/create';
+$route['admin/slide/edit/(:num)'] = 'Slide/edit/$1';
+$route['admin/slide/delete/(:num)'] = 'Slide/delete/$1';
+
+$route['admin/document'] = 'Doument/lists';
+$route['admin/document/create'] = 'Doument/create';
+$route['admin/document/edit/(:num)'] = 'Doument/edit/$1';
+$route['admin/document/delete/(:num)'] = 'Doument/delete/$1';
+
+$route['admin/dosen'] = 'Dosen/lists';
+$route['admin/dosen/create'] = 'Dosen/create';
+$route['admin/dosen/edit/(:num)'] = 'Dosen/edit/$1';
+$route['admin/dosen/delete/(:num)'] = 'Dosen/delete/$1';
+
+$route['admin/struktur'] = 'Struktur/index';
+$route['admin/struktur/edit/(:num)'] = 'Struktur/edit/$1';
+
+$route['admin/tendik'] = 'Tendik/lists';
+$route['admin/tendik/create'] = 'Tendik/create';
+$route['admin/tendik/edit/(:num)'] = 'Tendik/edit/$1';
+$route['admin/tendik/delete/(:num)'] = 'Tendik/delete/$1';
+$route['admin/tendik/show/(:num)'] = 'Tendik/show/$1';
+
+$route['admin/profile'] = 'Profile/index';
+$route['admin/profile/edit/(:num)'] = 'Profile/edit/$1';

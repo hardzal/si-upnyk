@@ -25,7 +25,12 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-8">
-									<form role="form" method="POST" action="<?php echo base_url('index.php/admin/insertBerita') ?>" enctype="multipart/form-data">
+									<?php if (validation_errors()) : ?>
+										<div class="alert alert-danger">
+											<?php echo validation_errors(); ?>
+										</div>
+									<?php endif; ?>
+									<form role="form" method="POST" action="<?php echo base_url('admin/berita/create') ?>" enctype="multipart/form-data">
 
 										<div class="form-group">
 											<label>Judul Berita</label>
@@ -46,7 +51,7 @@
 											<input class="form-control" type="date" name="tgl">
 										</div>
 										<div class="form-group">
-											<label>File Pas Photo</label>
+											<label>Cover Berita</label>
 											<input type="file" name="file">
 										</div>
 
@@ -54,12 +59,12 @@
 											<label>Isi Berita</label>
 											<textarea id="elm1" class="form-control" rows="3" name="isi"></textarea>
 										</div>
-                                        
-                                        <div class="form-group">
+
+										<div class="form-group">
 											<label>File Tambahan</label>
 											<input type="file" name="file2">
 										</div>
-										
+
 										<div class="form-group">
 											<label class="col-form-label-sm">Penulis</label>
 											<select name="user_id" class="form-control">

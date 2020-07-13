@@ -25,8 +25,12 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-8">
-									<form role="form" method="POST" action="<?php echo base_url('index.php/admin/updateBerita') ?>" enctype="multipart/form-data">
-
+									<form role="form" method="POST" action="<?php echo base_url('admin/berita/edit/' . $berita->id) ?>" enctype="multipart/form-data">
+										<?php if (validation_errors()) : ?>
+											<div class="alert alert-danger">
+												<?php echo validation_errors(); ?>
+											</div>
+										<?php endif; ?>
 										<div class="form-group">
 											<label>Judul Berita</label>
 											<input class="form-control" name="id" type="hidden" value="<?php echo $berita->id; ?>">
@@ -76,7 +80,7 @@
 											<label>Isi</label>
 											<textarea id="elm1" class="form-control" rows="3" name="isi"><?php echo $berita->isi; ?></textarea>
 										</div>
-										
+
 										<div class="form-group">
 											<label>File Tambahan</label>
 											<a href="<?php echo base_url($berita->file2); ?>">Lihat File</a>

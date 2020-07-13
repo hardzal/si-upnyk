@@ -53,6 +53,12 @@
                                         </div>
 										
 										<br>
+										<div class="form-group">
+                                            <label>Sambutan</label>
+                                            <textarea id="elm1" class="form-control" rows="3" name="sambutan"><?php echo $profil->sambutan; ?></textarea>
+                                        </div>
+										
+										<br>
 										
                                         <button type="submit" class="btn btn-info">Submit Button</button>
                                         <button type="reset" class="btn btn-warning">Reset Button</button>

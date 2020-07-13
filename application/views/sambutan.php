@@ -34,32 +34,13 @@
         <div class="row">
          <div class="profil mb-3 ftco-animate">
            <h4 class="text-uppercase ">Koordinator Program Studi <br> Sistem Informasi</h4>
-           <small>
-             <p>Menjadi Program Studi Sistem Informasi yang profesional dan berintegritas berlandaskan jiwa bela negara dengan keunggulan di bidang Sistem Informasi Kebumian di Tingkat Nasional pada tahun 2027</p>
-           </small>
+           
          </div>
          <div class="profil ftco-animate">
            <small>
-             <p> 1. Menyelenggarakan pendidikan tinggi untuk menghasilkan sarjana sistem informasi di bidang kebumian dengan berpedoman pada standar mutu pendidikan nasional dan trend perkembangan TIK di tingkat internasional
-              <br>
-              2. Berperan aktif dalam penelitian dan pemanfaatan sistem informasi/teknologi informasi yang bertujuan meningkatkan kesejahteraan masyarakat dan daya saing bangsa
-              <br>
-            3. Menyelenggarakan penabdian kepada masyarakat dengan memanfaatkan dan menerapkan hasil penelitian di bidang sistem informasi dan telekomunikasi</p>
+             <?php echo $profil->sambutan; ?>
           </small>
         </div>
-        <div class="profil ftco-animate">
-         <small>
-           <p>
-             1. Menghasilkan lulusan sistem informasi yang bermoral, profesional, berintegritas dan memiliki jiwa bela negara serta memiliki kompetensi di bidang sistem informasi
-             <br>
-             2. Menghasilkan penelitian yang berorientasi pada pengembangan Sistem Informasi
-             <br>
-             3. Mengembangkan kegiatan pengabdian pada masyarakat yang dapat membantu penanganan masalah dan meningkatkan kualitas hidup
-             <br>
-             4. Menjalin kerjasama dengan lembaga pemerintah maupun swasta dalam rangka meningkatkan mutu pendidikan sistem informasi
-           </p>
-         </small>
-       </div>
 
        <hr>
      </div>

@@ -13,6 +13,10 @@ class Admin extends CI_Controller
 			exit();
 		}
 
+		//if (checkRoleMenus($this->session->userdata('role_id'))) {
+		//	redirect(base_url());
+		//}
+
 		if ($this->session->userdata('role_id') != 1) {
 			if ($this->session->userdata('role_id') == 2) {
 				redirect('Dosen');
@@ -26,16 +30,25 @@ class Admin extends CI_Controller
 		$this->load->model('mdata');
 		$this->load->model('MTriDharma', 'mdharma');
 		$this->load->model('MCategory', 'category');
+		$this->load->model('MGrafik', 'grafik');
 	}
 
 	public function index()
 	{
-		$this->load->view('admin/home');
+		$data['grafik'] = $this->grafik->getAllGrafik();
+		$data['isi_grafik'] = $this->grafik->getAllIsiGrafik();
+		
+		
+		$this->load->view('admin/home',$data);
 	}
 
 	public function home()
 	{
-		$this->load->view('admin/home');
+	    $data['grafik'] = $this->grafik->getAllGrafik();
+		$data['isi_grafik'] = $this->grafik->getAllIsiGrafik();
+		
+		
+		$this->load->view('admin/home',$data);
 	}
 
 	//PROFIL
@@ -57,8 +70,9 @@ class Admin extends CI_Controller
 		$data['sejarah']    = $this->input->post('sejarah');
 		$data['visi'] 		= $this->input->post('visi');
 		$data['misi'] 		= $this->input->post('misi');
-		$data['tujuan'] 		= $this->input->post('tujuan');
-
+		$data['tujuan'] 	= $this->input->post('tujuan');
+        $data['sambutan']   = $this->input->post('sambutan');
+        
 		$id = $this->input->post('id');
 
 		$this->mdata->updateprofil($id, $data);
@@ -141,7 +155,8 @@ class Admin extends CI_Controller
 			'penelitian' 				=> $this->input->post('penelitian'),
 			'pengabdian' 				=> $this->input->post('pengabdian'),
 			'pelatihan' 				=> $this->input->post('pelatihan'),
-			'file' 						=> $this->input->post('file')
+			'file' 						=> $this->input->post('file'),
+			'matkul'                    => $this->input->post('matkul'),
 		);
 
 		$config['upload_path']          = './assets/images/dosen/';
@@ -182,7 +197,8 @@ class Admin extends CI_Controller
 			'pendidikan' 				=> $this->input->post('pendidikan'),
 			'penelitian' 				=> $this->input->post('penelitian'),
 			'pengabdian' 				=> $this->input->post('pengabdian'),
-			'pelatihan' 				=> $this->input->post('pelatihan')
+			'pelatihan' 				=> $this->input->post('pelatihan'),
+			'matkul'                    => $this->input->post('matkul'),
 		);
 
 		if ($_FILES['file']['tmp_name'] != '') {
@@ -333,8 +349,7 @@ class Admin extends CI_Controller
 	{
 		$data['file'] = $this->mdata->idtendik($id)->row();
 		$a = $data['file']->file;
-
-		unlink('assets/images/' . $a);
+		unlink('assets/' . $a);
 		$this->mdata->deletetendik($id);
 		$this->session->set_flashdata('notif', 'Berhasil dihapus');
 		redirect(site_url('admin/tendik'));
@@ -578,9 +593,10 @@ class Admin extends CI_Controller
 			'tgl' 			=> $this->input->post('tgl'),
 			'isi' 				=> $this->input->post('isi'),
 			'file' 				=> $this->input->post('file'),
+			'file2'         => $this->input->post('file2'),
 		);
 
-		$config['upload_path']          = './assets/images/berita';
+		$config['upload_path']          = './assets/images/berita/';
 		$config['max_size']             = 10000;
 		$config['allowed_types'] 		= 'jpg|png|jpeg|JPG|PNG';
 
@@ -592,8 +608,28 @@ class Admin extends CI_Controller
 		if ($data) {
 			$upload_data = $this->upload->data();
 			$name = $upload_data['file_name'];
-			$data['file'] = 'berita/' . $name;
-			$this->mdata->insertberita($data);
+			$data['file'] = $config['upload_path'] . $name;
+			
+		}
+		
+		$config['upload_path']          = './assets/file/berita/';
+		$config['max_size']             = 10000;
+		$config['allowed_types'] 		= 'jpg|png|jpeg|gif|doc|docx|xls|pdf';
+
+		$this->load->library('upload', $config);
+		$this->upload->initialize($config);
+
+		$status = $this->upload->do_upload('file2');
+
+		if ($data) {
+			$upload_data = $this->upload->data();
+			$name = $upload_data['file_name'];
+			$data['file2'] = $config['upload_path'] . $name;
+			
+		}
+		
+		if($data){
+		    $this->mdata->insertberita($data);
 			$this->session->set_flashdata('notif', 'Berhasil disimpan');
 		}
 
@@ -637,15 +673,42 @@ class Admin extends CI_Controller
 			$a = $data['file']->file;
 
 
-			if (file_exists('./assets/images/' . $a)) {
-				unlink('./assets/images/' . $a);
+			if (file_exists($a)) {
+				unlink($a);
 			}
 
 			$status = $this->upload->do_upload('file');
 
 			if ($status) {
 				$upload_data = $this->upload->data();
-				$data['file'] = 'berita/' . $upload_data['file_name'];
+				$data['file'] = $config['upload_path'] . $upload_data['file_name'];
+			}
+		}
+		
+		if ($_FILES['file2']['tmp_name'] != '') {
+
+			$config['upload_path']          = './assets/file/berita/';
+			$config['max_size']             = 10000;
+			$config['allowed_types'] 		= 'jpg|png|jpeg|gif|doc|docx|xls|pdf';
+
+			$this->load->library('upload');
+			$this->upload->initialize($config);
+
+			$id = $this->input->post('id');
+
+			$data['file2'] = $this->mdata->idberita($id)->row();
+			$a = $data['file2']->file2;
+
+			
+			if (file_exists($a)) {
+				unlink($a);
+			}
+
+			$status = $this->upload->do_upload('file2');
+
+			if ($status) {
+				$upload_data = $this->upload->data();
+				$data['file2'] = $config['upload_path'] . $upload_data['file_name'];
 			}
 		}
 
@@ -660,8 +723,9 @@ class Admin extends CI_Controller
 	{
 		$data['file'] = $this->mdata->idberita($id)->row();
 		$a = $data['file']->file;
-
-		unlink('assets/images/' . $a);
+        $b = $data['file']->file2;
+		unlink($a);
+		unlink($b);
 		$this->mdata->delete_berita($id);
 		$this->session->set_flashdata('notif', 'Berhasil dihapus');
 		redirect(site_url('admin/berita'));
@@ -938,7 +1002,7 @@ class Admin extends CI_Controller
 	public function ubahslide($id)
 	{
 		$data['slide'] = $this->mdata->idslide($id)->row();
-		$this->load->view('admin/editslide', $data);
+		$this->load->view('admin/editSlide', $data);
 	}
 
 	public function updateslide()

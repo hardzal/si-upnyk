@@ -45,7 +45,7 @@
 												<td width="10px" class="text-center"><?php echo $no++; ?>
 												<td><?php echo date('H:i d-F-Y', strtotime($kur->created_at)); ?></td>
 												<td><?php echo $kur->tahun; ?></td>
-												<td><a href='<?php echo base_url('assets/file/kurikulum/') . $kur->file; ?>'>Lihat File</a></td>
+												<td><a href='<?php echo base_url() . $kur->file; ?>'>Lihat File</a></td>
 												<td><?php echo is_publish($kur->status); ?></td>
 												<td>
 													<a href="<?php echo base_url('admin/kurikulum/edit/') . $kur->id; ?>" class="btn btn-xs btn-primary mr-3">Edit</a>

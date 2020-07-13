@@ -29,7 +29,7 @@
         <div class="col-md-8 col-sm-8">
           <?php
         //   $no = 1;
-          foreach ($specializations as $sp) {
+          foreach ($specializations as $sp) :
           ?>
             <h4 class=" mb-3 text-center text-uppercase ftco-animate"><?= $sp->title; ?></h4>
             <hr>
@@ -43,27 +43,19 @@
               <small style="text-align: justify;">
                 <?= html_entity_decode($sp->description); ?>
               </small>
-              <?php
-            //   $no++;
-              ?>
+            </div>
+            <div>
+                <h5 style="text-decoration: underline;">Kepala Bidang Minat</h5>
+                <?php echo $sp->koordinator; ?>
+            </div>
+            <div>
+                <h5 style="text-decoration: underline;">Anggota</h5>
+                <small><?php echo html_entity_decode($sp->anggota); ?></small>
             </div>
             <hr>
             <br>
-          <?php } ?>
-          <!-- <hr>
-        Row Download
-        <div class="row">
-          <?php
-          foreach ($file as $data) {
-          ?>
-          data Download
-          <div class="col-md-6 mb-2">
-            <a href="<?php echo base_url('assets/' . $data->file) ?>" class="text-capitalize"><i class="fas fa-download"></i> <?php echo $data->keterangan; ?></a>
-          </div>
-          <?php } ?>
-        </div>
-        End Row Download
-        <hr> -->
+          <?php endforeach; ?>
+          
         </div>
         <!-- End Kolom Download -->
         <!-- Kolom Link Terkait -->

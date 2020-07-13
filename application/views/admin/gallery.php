@@ -43,7 +43,7 @@
 											<tr>
 												<td width="10px" class="text-center"><?php echo $no++; ?>
 												<td><img src='<?php echo base_url($gallery->image) ? base_url($gallery->image) : base_url('assets/images/gallery/default.png'); ?>' width="100px;" alt="<?php echo $gallery->image; ?>" /></td>
-												<td><?php echo $gallery->keterangan; ?></td>
+												<td><?php echo html_entity_decode($gallery->keterangan); ?></td>
 												<td><?php echo is_publish($gallery->status); ?></td>
 												<td>
 													<a href="<?php echo base_url('admin/galleries/edit/') . $gallery->id; ?>" class="btn btn-xs btn-primary mr-3">Edit</a>

@@ -29,6 +29,7 @@ class Kurikulum extends CI_Controller
 			$this->form_validation->set_rules('file', 'File', 'required');
 		}
 
+
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('admin/addKurikulumFile');
 		} else {
@@ -38,7 +39,7 @@ class Kurikulum extends CI_Controller
 			];
 
 			if ($_FILES['file']['tmp_name']) {
-				$config['file_name'] = changeFileName($_FILES['image']);
+				$config['file_name'] = changeFileName($_FILES['file']);
 				$config['upload_path']          = './assets/file/kurikulum/';
 				$config['max_size']             = 10000;
 				$config['allowed_types'] 		= 'jpg|png|jpeg|gif|doc|docx|xls|pdf';
@@ -58,7 +59,7 @@ class Kurikulum extends CI_Controller
 			} else {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menambahkan data</div>');
 			}
-
+			
 			redirect('admin/kurikulum');
 		}
 	}
@@ -78,7 +79,7 @@ class Kurikulum extends CI_Controller
 			);
 
 			if ($_FILES['file']['tmp_name'] != '') {
-				$config['upload_path']          = './assets/file/';
+				$config['upload_path']          = './assets/file/kurikulum/';
 				$config['max_size']             = 10000;
 				$config['allowed_types'] 		= 'jpg|png|jpeg|gif|doc|docx|xls|pdf';
 
@@ -90,15 +91,15 @@ class Kurikulum extends CI_Controller
 				$data['file'] = $this->kurikulum->get($id);
 				$a = $data['file']->file;
 
-				if (file_exists('./assets/file/' . $a)) {
-					unlink('assets/file/' . $a);
+				if (file_exists($a)) {
+					unlink($a);
 				}
 
 				$status = $this->upload->do_upload('file');
 
 				if ($status) {
 					$upload_data = $this->upload->data();
-					$data['file'] = 'kurikulum/' . $upload_data['file_name'];
+					$data['file'] = $config['upload_path'] . $upload_data['file_name'];
 				}
 			}
 

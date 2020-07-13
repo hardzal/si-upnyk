@@ -5,7 +5,7 @@
 </a>
 
 <a href="http://www.if.upnyk.ac.id/" class="ftco-animate">
-	<img class="img-fluid" src="<?php echo base_url('assets/assets2/img-link/if.png')?>">
+	<img class="img-fluid" src="<?php echo base_url('assets/assets2/img-link/RemakeDesignInformatika.png')?>">
 	<br>
 	<br>
 </a>

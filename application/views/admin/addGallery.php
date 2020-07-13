@@ -34,6 +34,11 @@
 											<label>File Image</label>
 											<input class="form-control" type="file" name="image">
 										</div>
+										
+										<div class="form-group">
+											<label class="col-form-label">Keterangan</label>
+											<textarea id="elm1" class="form-control" rows="3" name="description"></textarea>
+										</div>
 
 										<div class="form-group">
 											<label class="col-form-label" for="status">Status</label>
@@ -61,7 +66,7 @@
 			</div>
 			<!-- /.row -->
 		</div>
-		<!-- /#page-wrapper -->
+		<!-- /#page-wrapper -->\
 
 	</div>
 	<!-- /#wrapper -->

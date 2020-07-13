@@ -44,7 +44,7 @@
             </small>
             <hr>
             <!-- Gambar Berita -->
-            <img src="<?php echo base_url('assets/images/'.$berita->file)?>" class="img-fluid mb-3 foto-berita" alt="gambar">
+            <img src="<?php echo base_url($berita->file)?>" class="img-fluid mb-3 foto-berita" alt="gambar">
             <!-- Isi Berita -->
             <p>
               <?php echo $berita->isi; ?>

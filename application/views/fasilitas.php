@@ -27,7 +27,50 @@
         <hr>
         <div class="row" id="topSection">
           <div class="col-md-12 ftco-animate">
-
+            <section class=" row"  style="margin:0px -30px;">
+              <hr>
+              <div class="container py-5">
+                <div class="row">
+                  <?php
+                    if(empty($fasilitas)){
+                      ?>
+    
+                        <div class="w-100 alert alert-danger" role="alert" align="center">
+                          Fasilitas Masih Kosong..
+                        </div>
+                    <?php
+                    }
+                    foreach ($fasilitas as $data) {
+                    //   $waktu = strtotime($data->tgl);
+                    ?>
+                      <div class="col-md-6 col-lg-4 ftco-animate">
+                        <div class="blog-entry">
+                          <a href="" class="block-16 d-flex align-items-end">
+                            <img class="img-terkini w-100 img-thumbnail" src="<?php echo base_url($data->image)?>" style="height: 250px;" alt="<?php echo $data->image ?>">
+                            <div class="meta-date text-center p-2 img-thumbnail" style="position: absolute;">
+                              <!--<span class="day"><?= date("d", $waktu); ?></span>-->
+                              <!--<span class="mos"><?= date("F", $waktu); ?></span>-->
+                              <!--<span class="yr"><?= date("Y", $waktu); ?></span>-->
+                              <span><p><?php echo $data->title; ?></p></span>
+                            </div>
+                          </a>
+                          <!--<div class="text bg-white p-4">-->
+                          <!--  <h3 class="heading"><a href=""><?php echo $data->title; ?></a></h3>-->
+                          <!--  <p></p>-->
+                          <!--  <div class="d-flex justify-content-end mt-4">-->
+                          <!--    <p class="mb-0"><a href="<?php echo base_url('home/detailberita/'.$data->id)?>" class="btn btn-sm btn-outline-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>-->
+                          <!--  </div>-->
+                          <!--</div>-->
+                        </div>
+                      </div>
+                      <?php
+    
+                      // $count++;
+                    }
+                    ?>
+                    </div>
+              </div>
+            </section>
           </div>
         </section>
           </div>

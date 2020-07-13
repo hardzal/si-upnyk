@@ -24,7 +24,7 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-12">
-									<form role="form" method="POST" action="<?php echo base_url('alumni/create') ?>" enctype="multipart/form-data">
+									<form role="form" method="POST" action="<?php echo base_url('admin/alumni/create') ?>" enctype="multipart/form-data">
 										<div class="form-group">
 											<label for="title">Judul Informasi</label>
 											<input class="form-control" placeholder="Judul" type="text" name="title" id="title" required />

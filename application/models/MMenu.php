@@ -7,14 +7,14 @@ class MMenu extends CI_Model
 		return $this->db->get('menus')->result_object();
 	}
 
-	public function total()
-	{
-		return $this->db->get('menus')->num_rows();
-	}
-
 	public function get($id)
 	{
 		return $this->db->get_where('menus', ['id' => $id])->row_object();
+	}
+
+	public function total()
+	{
+		return $this->db->get('menus')->num_rows();
 	}
 
 	public function insert($data)

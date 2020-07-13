@@ -25,7 +25,7 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-12">
-									<a href="<?php echo base_url('index.php/admin/addberita') ?>"><button type="button" class="btn btn-primary btn-sm">Tambah Berita</button></a>
+									<a href="<?php echo base_url('admin/addberita') ?>"><button type="button" class="btn btn-primary btn-sm">Tambah Berita</button></a>
 									<br>
 									<br>
 									<div class="panel panel-default">
@@ -60,7 +60,7 @@
 																<td class="center"><?php echo substr(strip_tags(str_replace('\\', '', str_replace('\r\n', " ", $data->isi))), 0, 350) . "...."; ?> <br> <a href="<?php echo base_url('index.php/admin/beritaadmin/' . $data->id) ?>">
 																		<p style="color:#e3722e;"><u>Lihat Selengkapnya</u></p>
 																	</a></td>
-																<td class="center"><a href="<?php echo base_url('assets/images/' . $data->file) ?>" target="blank">Lihat File</a></td>
+																<td class="center"><a href="<?php echo base_url($data->file2) ?>" target="blank">Lihat File</a></td>
 																<td class="center">
 																	<a href="<?php echo base_url('index.php/admin/ubahberita/' . $data->id) ?>" class="btn btn-xs btn-primary">Edit</a>
 																	<a href="<?php echo base_url('index.php/admin/deleteberita/' . $data->id) ?>" onclick='return confirm("Anda Yakin Akan Menghapus?")' class="btn btn-xs btn-danger">hapus</a>

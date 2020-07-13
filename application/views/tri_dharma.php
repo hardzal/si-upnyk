@@ -32,29 +32,137 @@
         <hr>
         <!-- Row Berita -->
         <div class="row">
-          <div class="profil ftco-animate">
+          <div class="profil ftco-animate w-100">
               <h4>
                   1. Pendidikan dan Pengajaran
               </h4>
-           <small>
-             <p>Poin pertama Tri Dharma Perguruan Tinggi adalah Pendidikan dan Pengajaran. Pendidikan adalah usaha sadar dan terencana untuk mewujudkan suasana belajar dan proses pembelajaran agar peserta didik secara aktif mengembangkan potensi dirinya untuk memiliki kekuatan spiritual kegamaan, pengendalian diri, kepribadian, kecerdasan, ahlak mulia serta keterampilan yang diperlukan dirinya, masyarakat, bangsa dan Negara.</p>
-           </small>
+           <div class="col-md-12 ftco-animate">
+            <section class=" row"  style="margin:0px -30px;">
+              <hr>
+              <div class="container py-5">
+                <div class="row">
+                  <?php
+                    if(empty($pengajaran)){
+                      ?>
+    
+                        <div class="w-100 alert alert-danger" role="alert" align="center">
+                          Informasi Masih Kosong..
+                        </div>
+                    <?php
+                    }
+                    foreach ($pengajaran as $data) {
+                    //   $waktu = strtotime($data->tgl);
+                    ?>
+                      <div class="col-md-6 col-lg-4 ftco-animate">
+                        <div class="blog-entry">
+                          <a href="<?php echo base_url('home/detailpengajaran/'.$data->id)?>" class="block-16 d-flex align-items-end">
+                            <img class="img-terkini w-100" src="<?php echo base_url('assets/images/pngwing.com.png')?>" style="height: 250px;" alt="gambar">
+                          </a>
+                          <div class="text bg-white p-4">
+                            <h3 class="heading"><a href="<?php echo base_url('home/detailpengajaran/'.$data->id)?>"><?php echo $data->title; ?></a></h3>
+                            <div class="d-flex justify-content-end mt-4">
+                              <p class="mb-0"><a href="<?php echo base_url('home/detailpengajaran/'.$data->id)?>" class="btn btn-sm btn-outline-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <?php
+    
+                      // $count++;
+                    }
+                    ?>
+                    </div>
+              </div>
+            </section>
+          </div>
          </div>
-         <div class="profil ftco-animate">
-             <h4>2. Penelitian dan Pengembangan</h4>
-           <small>
-             <p> Research and Development, adalah hal yang harus senantiasa dilakukan oleh bangsa ini jika ingin maju dan berkembang. Melaksanakan penelitian dan pengembangan, tentunya akan berdampak kepada majunya ekoomi, pendidikan, sosial, dan sektor-sektor lainnya di masyarakat.</p>
-          </small>
+         <br>
+         <div class="profil ftco-animate w-100">
+             <h4>2. Penelitian</h4>
+           <div class="col-md-12 ftco-animate">
+            <section class=" row"  style="margin:0px -30px;">
+              <hr>
+              <div class="container py-5">
+                <div class="row">
+                  <?php
+                    if(empty($penelitian)){
+                      ?>
+    
+                        <div class="w-100 alert alert-danger" role="alert" align="center">
+                          Informasi Masih Kosong..
+                        </div>
+                    <?php
+                    }
+                    foreach ($penelitian as $data) {
+                    //   $waktu = strtotime($data->tgl);
+                    ?>
+                      <div class="col-md-6 col-lg-4 ftco-animate">
+                        <div class="blog-entry">
+                          <a href="<?php echo base_url('home/detailpenelitian/'.$data->id)?>" class="block-16 d-flex align-items-end">
+                            <img class="img-terkini w-100" src="<?php echo base_url('assets/images/pngwing.com.png')?>" style="height: 250px;" alt="gambar">
+                          </a>
+                          <div class="text bg-white p-4">
+                            <h3 class="heading"><a href="<?php echo base_url('home/detailpenelitian/'.$data->id)?>"><?php echo $data->title; ?></a></h3>
+                            <div class="d-flex justify-content-end mt-4">
+                              <p class="mb-0"><a href="<?php echo base_url('home/detailpenelitian/'.$data->id)?>" class="btn btn-sm btn-outline-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <?php
+    
+                      // $count++;
+                    }
+                    ?>
+                    </div>
+              </div>
+            </section>
+          </div>
         </div>
-        <div class="profil ftco-animate">
+        <br>
+        <div class="profil ftco-animate w-100">
             <h4>
-                3. Pengabdian Kepada Masyarakat
+                3. Pengabdian Masyarakat
             </h4>
-         <small>
-           <p>
-             Dari dua poin di atas, tentunya ada satu hal lagi yang digunakan untuk melengkapi, yaitu Pengabdian Kepada Masyarakat. Tanpa jiwa dan semangat pengabdian kepada masyarakat, tentu saja tidak akan ada artinya. Mahasiswa hanya menjadi cikal bakal manusia yang egois dan tidak peduli terhadap masyarakat. Tentu bukan sesuatu yang baik, dimana mahasiswa adalah harapan besar bangsa ini dan diharapkan mampu tumbuh, berkembang, dan menjadi harapan masa depan bangsa.
-           </p>
-         </small>
+            <div class="col-md-12 ftco-animate">
+            <section class=" row"  style="margin:0px -30px;">
+              <hr>
+              <div class="container py-5">
+                <div class="row">
+                  <?php
+                    if(empty($penelitian)){
+                      ?>
+    
+                        <div class="w-100 alert alert-danger" role="alert" align="center">
+                          Informasi Masih Kosong..
+                        </div>
+                    <?php
+                    }
+                    foreach ($pengabdian as $data) {
+                    //   $waktu = strtotime($data->tgl);
+                    ?>
+                      <div class="col-md-6 col-lg-4 ftco-animate">
+                        <div class="blog-entry">
+                          <a href="<?php echo base_url('home/detailpengabdian/'.$data->id)?>" class="block-16 d-flex align-items-end">
+                            <img class="img-terkini w-100" src="<?php echo base_url($data->image)?>" style="height: 250px;" alt="gambar">
+                          </a>
+                          <div class="text bg-white p-4">
+                            <h3 class="heading"><a href="<?php echo base_url('home/detailpengabdian/'.$data->id)?>"><?php echo $data->title; ?></a></h3>
+                            <div class="d-flex justify-content-end mt-4">
+                              <p class="mb-0"><a href="<?php echo base_url('home/detailpengabdian/'.$data->id)?>" class="btn btn-sm btn-outline-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <?php
+    
+                      // $count++;
+                    }
+                    ?>
+                    </div>
+              </div>
+            </section>
+          </div>
        </div> 
 
        <hr>

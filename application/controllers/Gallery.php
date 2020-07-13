@@ -5,7 +5,7 @@ class Gallery extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		if ($this->session->userdata('username') == NULL) {
+if ($this->session->userdata('username') == NULL) {
 			redirect('login/logout');
 			exit();
 		}
@@ -23,17 +23,18 @@ class Gallery extends CI_Controller
 
 	public function create()
 	{
-		$this->form_validation->set_rules('keterangan', 'keterangan', 'min_Length[3]');
+		$this->form_validation->set_rules('description', 'keterangan', 'min_Length[3]');
 		if (empty($_FILES['image']['tmp_name'])) {
 			$this->form_validation->set_rules('image', 'Image', 'required');
 		}
+		$this->form_validation->set_rules('status', 'Status', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('admin/addGallery');
 		} else {
 			$data = [
 				'keterangan' => $this->input->post('keterangan', true),
-				'status' => $this->input->post('status', true) ?? 0
+				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
 			];
 
 			if ($_FILES['image']['tmp_name']) {
@@ -64,15 +65,16 @@ class Gallery extends CI_Controller
 
 	public function edit($id)
 	{
-		$this->form_validation->set_rules('keterangan', 'keterangan', 'min_Length[3]');
+		$this->form_validation->set_rules('description', 'keterangan', 'min_Length[3]');
+
 		$data['gallery'] = $this->gallery->get($id);
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('admin/editGallery', $data);
 		} else {
 			$data = [
-				'keterangan' => $this->input->post('keterangan', true),
-				'status' => $this->input->post('status', true) ?? 0
+				'keterangan' => $this->input->post('description', true),
+				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
 			];
 
 			if ($_FILES['image']['tmp_name']) {

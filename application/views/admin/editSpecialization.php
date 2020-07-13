@@ -24,26 +24,19 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-12">
-									<?php if (validation_errors()) : ?>
-										<div class='alert alert-danger'>
-											<?php echo validation_errors(); ?>
-										</div>
-									<?php endif; ?>
 									<form role="form" method="POST" action="<?php echo base_url('admin/specialization/edit/' . $specialization->id) ?>" enctype="multipart/form-data">
 										<div class="form-group">
 											<label for="title">Nama Bidang Perminatan</label>
 											<input class="form-control" placeholder="Bidang Perminatan" type="text" name="title" id="title" value="<?php echo $specialization->title; ?>" required />
 										</div>
+										
 										<div class="form-group">
-											<label for="dosen_id">Dosen Pengampu</label><br>
-											<input type="checkbox" onclick="checkAll(this)" /> <strong>Pilih Semua</strong><br><br>
-											<?php foreach ($dosen as $dsn) : ?>
-												<?php if (in_array($dsn->id, $dosen_id)) : ?>
-													<input type="checkbox" name="dosen_id[]" value="<?php echo $dsn->id; ?>" checked> <?php echo $dsn->nama; ?><br />
-												<?php else : ?>
-													<input type="checkbox" name="dosen_id[]" value="<?php echo $dsn->id; ?>"> <?php echo $dsn->nama; ?><br />
-												<?php endif; ?>
-											<?php endforeach; ?>
+											<label for="koordinator">Koordinator</label>
+											<input class="form-control" placeholder="Nama Koordinator" type="text" name="koordinator" id="koordinator" value="<?php echo $specialization->koordinator; ?>" required />
+										</div>
+										<div class="form-group">
+											<label for="description" class="col-form-label">Anggota</label>
+											<textarea id="elm1" class="form-control" rows="3" name="anggota" value="<?php echo $specialization->anggota; ?>"><?php echo $specialization->anggota; ?></textarea>
 										</div>
 										<div class="form-group">
 											<div class="row">

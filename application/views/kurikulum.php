@@ -29,7 +29,15 @@
         <hr>
         <!-- Row kurikulum -->
         <div class="row">
-          <?php 
+          <?php
+            if(empty($kurikulum)){
+              ?>
+
+                <div class="w-100 alert alert-danger" role="alert" align="center">
+                  Informasi Kurikulum Masih Kosong..
+                </div>
+            <?php
+            }
             foreach($kurikulum as $data){
           ?>
           <!-- data kurikulum -->

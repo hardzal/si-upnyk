@@ -29,7 +29,15 @@
         <hr>
         <!-- Row Kalender -->
         <div class="row">
-          <?php 
+          <?php
+          if(empty($akademik)){
+                      ?>
+    
+                        <div class="w-100 alert alert-danger" role="alert" align="center">
+                          Kalender Akademik Masih Kosong..
+                        </div>
+                    <?php
+                    }
               foreach($akademik as $data){
           ?>
           <!-- data Kalender -->

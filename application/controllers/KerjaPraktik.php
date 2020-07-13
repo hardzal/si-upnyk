@@ -6,7 +6,7 @@ class KerjaPraktik extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		if ($this->session->userdata('username') == NULL) {
+if ($this->session->userdata('username') == NULL) {
 			redirect('login/logout');
 			exit();
 		}
@@ -73,7 +73,7 @@ class KerjaPraktik extends CI_Controller
 			$this->load->view('admin/editKerjaPraktik', $data);
 		} else {
 			$data = [
-				'title' => $this->input->post('title', true),
+			    'title' => $this->input->post('title', true),
 				'description' => $this->input->post('description', true),
 				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
 			];
@@ -84,10 +84,10 @@ class KerjaPraktik extends CI_Controller
 				$config['max_size'] = 10000;
 				$config['upload_path'] = "./assets/file/kerja_praktik/";
 				$config['remove_spaces'] = false;
-
-				$data['file'] = $this->kerjapraktiks->get($id);
-
-
+                
+                $data['file'] = $this->kerjapraktiks->get($id);
+                
+    			
 				if (!deleteFile($data['file']->file)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus file sebelumnya!</div>');
 					redirect('admin/kerja_praktik');

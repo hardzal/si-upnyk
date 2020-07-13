@@ -6,8 +6,9 @@ class Tridharma extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		if (checkRoleMenus($this->session->userdata('role_id'))) {
-			redirect(base_url());
+		if ($this->session->userdata('username') == NULL) {
+			redirect('login/logout');
+			exit();
 		}
 		if (checkRoleMenus($this->session->userdata('role_id'))) {
 			redirect(base_url());
@@ -85,8 +86,9 @@ class Tridharma extends CI_Controller
 				$config['max_size'] = 2048;
 				$config['upload_path'] = "./assets/file/tri_dharma/pengajaran/";
 				$config['remove_spaces'] = false;
+				$tridharma = $this->tridharmas->get($id);
 
-				if (!deleteFile($data['tridharma']->file)) {
+				if (!deleteFile($tridharma->file)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus file sebelumnya!</div>');
 					redirect('admin/pengajaran');
 				}
@@ -196,8 +198,9 @@ class Tridharma extends CI_Controller
 				$config['max_size'] = 2048;
 				$config['upload_path'] = "./assets/file/tri_dharma/penelitian/";
 				$config['remove_spaces'] = false;
+				$tridharma = $this->tridharmas->getPenelitian($id);
 
-				if (!deleteFile($data['tridharma']->file)) {
+				if (!deleteFile($tridharma->file)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus file sebelumnya!</div>');
 					redirect('admin/penelitian');
 				}
@@ -208,7 +211,7 @@ class Tridharma extends CI_Controller
 					redirect('admin/penelitian');
 				}
 
-				$data['image'] = $config['upload_path'] . $config['file_name'];
+				$data['file'] = $config['upload_path'] . $config['file_name'];
 			}
 
 			if ($this->tridharmas->updatePenelitian($data, $id)) {
@@ -316,6 +319,7 @@ class Tridharma extends CI_Controller
 				'description' => $this->input->post('description', true),
 				'status' => $this->input->post('status', true) ? $this->input->post('status', true) :  0
 			];
+			$tridharma = $this->tridharmas->getPengabdian($id);
 
 			if ($_FILES['image']['tmp_name']) {
 				$config['file_name'] = changeFileName($_FILES['image']);
@@ -323,8 +327,7 @@ class Tridharma extends CI_Controller
 				$config['max_size'] = 2048;
 				$config['upload_path'] = "./assets/images/tri_dharma/pengabdian/";
 				$config['remove_spaces'] = false;
-
-				if (!deleteFile($data['tridharma']->image)) {
+				if (!deleteFile($tridharma->image)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus gambar sebelumnya!</div>');
 					redirect('admin/pengabdian');
 				}
@@ -339,13 +342,13 @@ class Tridharma extends CI_Controller
 			}
 
 			if ($_FILES['file']['tmp_name']) {
-				$config['file_name'] = changeFileName($_FILES['image']);
+				$config['file_name'] = changeFileName($_FILES['file']);
 				$config['allowed_types'] = "pdf|doc|docx";
 				$config['max_size'] = 2048;
 				$config['upload_path'] = "./assets/file/tri_dharma/pengabdian/";
 				$config['remove_spaces'] = false;
 
-				if (!deleteFile($data['tridharma']->file)) {
+				if (!deleteFile($tridharma->file)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus file sebelumnya!</div>');
 					redirect('admin/pengabdian');
 				}

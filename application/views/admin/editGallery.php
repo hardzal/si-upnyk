@@ -42,7 +42,7 @@
 
 										<div class="form-group">
 											<label>Keterangan</label>
-											<input class="form-control" placeholder="Keterangan" type="text" name="keterangan" value="<?php echo $gallery->keterangan ? $gallery->keterangan : ""; ?>">
+											<textarea id="elm1" class="form-control" rows="3" name="description" value="<?php echo $gallery->keterangan;?>"><?php echo $gallery->keterangan;?></textarea>
 										</div>
 
 										<div class="form-group">

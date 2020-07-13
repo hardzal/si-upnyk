@@ -6,6 +6,11 @@ class MWisuda extends CI_Model
 	{
 		return $this->db->get('wisuda')->result_object();
 	}
+	
+	public function getActive()
+	{
+		return $this->db->get_where('wisuda', ['status' => 1])->result_object();
+	}
 
 	public function get($id)
 	{

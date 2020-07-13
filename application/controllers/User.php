@@ -21,13 +21,9 @@ class User extends CI_Controller
 		$this->load->view('admin/user', $data);
 	}
 
-	public function checkUsername($id)
-	{
-	}
-
 	public function create()
 	{
-		$this->form_validation->set_rules('username', 'Username', 'required|min_Length[3]|is_unique[admin.username]');
+		$this->form_validation->set_rules('username', 'Username', 'required|min_Length[3]');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_Length[3]');
 		$this->form_validation->set_rules('password_repeat', 'Ulangi Password', 'required|min_Length[3]|matches[password]');
 		$this->form_validation->set_rules('role_id', 'Role', 'required');
@@ -55,7 +51,7 @@ class User extends CI_Controller
 
 	public function edit($id)
 	{
-		// $this->form_validation->set_rules('username', 'Username', 'required|min_Length[3]|is_unique[admin.username]');
+		$this->form_validation->set_rules('username', 'Username', 'required|min_Length[3]');
 		$this->form_validation->set_rules('password', 'Password', 'min_Length[3]');
 		$this->form_validation->set_rules('password_repeat', 'Ulangi Password', 'min_Length[3]|matches[password]');
 		$this->form_validation->set_rules('role_id', 'Role', 'required');
@@ -67,7 +63,7 @@ class User extends CI_Controller
 		} else {
 
 			$data = [
-				// 'username' => $this->input->post('username'),
+				'username' => $this->input->post('username'),
 				'role_id' => $this->input->post('role_id')
 			];
 

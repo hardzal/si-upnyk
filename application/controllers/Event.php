@@ -46,8 +46,8 @@ class Event extends CI_Controller
 			];
 
 			if ($_FILES['image']['tmp_name']) {
-				$config['file_name'] = changeFileName($_FILES['image']);
 				$config['allowed_types'] = "gif|jpg|jpeg|png|jfif|bmp";
+				$config['file_name'] = changeFileName($_FILES['image']);
 				$config['max_size'] = 2048;
 				$config['upload_path'] = "./assets/images/agenda/";
 				$config['remove_spaces'] = false;
@@ -119,7 +119,8 @@ class Event extends CI_Controller
 				$config['max_size'] = 2048;
 				$config['upload_path'] = "./assets/images/agenda/";
 
-				if (!deleteFile($data['event']->cover)) {
+                $data['event'] = $this->event->get($id);
+				if (!deleteFile($data['event']->cover) && !empty($event->cover)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus gambar sebelumnya!</div>');
 					redirect('admin/agenda');
 				}
@@ -139,7 +140,7 @@ class Event extends CI_Controller
 				$config['max_size'] = 2048;
 				$config['upload_path'] = "./assets/file/agenda/";
 
-				if (!deleteFile($data['event']->file)) {
+				if (!deleteFile($data['event']->file) && !empty($event->file)) {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus file sebelumnya!</div>');
 					redirect('admin/agenda');
 				}
@@ -166,7 +167,7 @@ class Event extends CI_Controller
 	public function delete($id)
 	{
 		$event = $this->event->get($id);
-		// die(var_dump($event));
+
 		if (!empty($event->cover)) {
 			if (!deleteFile($event->cover)) {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger">Gagal menghapus gambar sebelumnya!</div>');
